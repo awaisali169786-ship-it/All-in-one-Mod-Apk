@@ -1,0 +1,78 @@
+{
+  "name": "The Black Tiger - Mood Expression App",
+  "short_name": "Black Tiger",
+  "description": "Express your mood with the power of a tiger. The most powerful mood expression app with stunning tiger theme.",
+  "start_url": "/",
+  "display": "standalone",
+  "orientation": "portrait",
+  "background_color": "#0A0A0A",
+  "theme_color": "#FFB800",
+  "categories": ["lifestyle", "entertainment", "social"],
+  "lang": "en",
+  "dir": "ltr",
+  "scope": "/",
+  "icons": [
+    {
+      "src": "icon-72.png",
+      "sizes": "72x72",
+      "type": "image/png",
+      "purpose": "any maskable"
+    },
+    {
+      "src": "icon-96.png",
+      "sizes": "96x96",
+      "type": "image/png",
+      "purpose": "any maskable"
+    },
+    {
+      "src": "icon-128.png",
+      "sizes": "128x128",
+      "type": "image/png",
+      "purpose": "any maskable"
+    },
+    {
+      "src": "icon-144.png",
+      "sizes": "144x144",
+      "type": "image/png",
+      "purpose": "any maskable"
+    },
+    {
+      "src": "icon-152.png",
+      "sizes": "152x152",
+      "type": "image/png",
+      "purpose": "any maskable"
+    },
+    {
+      "src": "icon-192.png",
+      "sizes": "192x192",
+      "type": "image/png",
+      "purpose": "any maskable"
+    },
+    {
+      "src": "icon-384.png",
+      "sizes": "384x384",
+      "type": "image/png",
+      "purpose": "any maskable"
+    },
+    {
+      "src": "icon-512.png",
+      "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "any maskable"
+    }
+  ],
+  "screenshots": [
+    {
+      "src": "screenshot-1.png",
+      "sizes": "540x720",
+      "type": "image/png",
+      "form_factor": "narrow"
+    },
+    {
+      "src": "screenshot-2.png",
+      "sizes": "540x720",
+      "type": "image/png",
+      "form_factor": "narrow"
+    }
+  ]
+}

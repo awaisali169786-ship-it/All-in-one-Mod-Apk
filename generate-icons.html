@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Generate Tiger Icons</title>
+    <style>
+        body {
+            font-family: Arial;
+            background: #0A0A0A;
+            color: white;
+            padding: 30px;
+            text-align: center;
+        }
+        canvas {
+            border: 2px solid #FFB800;
+            margin: 10px;
+            border-radius: 20px;
+        }
+        button {
+            background: linear-gradient(135deg, #FFB800, #FF3D00);
+            color: #000;
+            border: none;
+            padding: 12px 25px;
+            border-radius: 25px;
+            font-weight: 700;
+            cursor: pointer;
+            margin: 5px;
+            font-size: 14px;
+        }
+        button:hover { transform: scale(1.05); }
+        .container { display: flex; flex-wrap: wrap; justify-content: center; gap: 15px; margin: 20px 0; }
+        h1 { color: #FFB800; }
+        p { color: #B0B0B0; }
+    </style>
+</head>
+<body>
+    <h1>🐯 The Black Tiger Icon Generator</h1>
+    <p>Click the buttons to download icons in all required sizes</p>
+    
+    <div class="container">
+        <canvas id="icon72" width="72" height="72"></canvas>
+        <canvas id="icon96" width="96" height="96"></canvas>
+        <canvas id="icon128" width="128" height="128"></canvas>
+        <canvas id="icon144" width="144" height="144"></canvas>
+        <canvas id="icon152" width="152" height="152"></canvas>
+        <canvas id="icon192" width="192" height="192"></canvas>
+        <canvas id="icon384" width="384" height="384"></canvas>
+        <canvas id="icon512" width="512" height="512"></canvas>
+    </div>
+    
+    <div>
+        <button onclick="downloadAll()">⬇️ Download All Icons</button>
+        <button onclick="downloadSingle(192)">Download 192x192</button>
+        <button onclick="downloadSingle(512)">Download 512x512</button>
+    </div>
+    
+    <script>
+        const sizes = [72, 96, 128, 144, 152, 192, 384, 512];
+        
+        function drawIcon(canvas) {
+            const ctx = canvas.getContext('2d');
+            const size = canvas.width;
+            
+            // Background gradient
+            const gradient = ctx.createLinearGradient(0, 0, size, size);
+            gradient.addColorStop(0, '#FFB800');
+            gradient.addColorStop(0.5, '#FF3D00');
+            gradient.addColorStop(1, '#000000');
+            
+            // Rounded rectangle background
+            const radius = size * 0.2;
+            ctx.beginPath();
+            ctx.roundRect(0, 0, size, size, radius);
+            ctx.fillStyle = gradient;
+            ctx.fill();
+            
+            // Tiger emoji in center
+            ctx.font = `${size * 0.6}px Arial`;
+            ctx.textAlign = 'center';
+            ctx.textBaseline = 'middle';
+            ctx.fillText('🐯', size/2, size/2);
+        }
+        
+        // Draw all icons
+        sizes.forEach(size => {
+            const canvas = document.getElementById(`icon${size}`);
+            if (canvas) drawIcon(canvas);
+        });
+        
+        function downloadSingle(size) {
+            const canvas = document.getElementById(`icon${size}`);
+            const link = document.createElement('a');
+            link.download = `icon-${size}.png`;
+            link.href = canvas.toDataURL();
+            link.click();
+        }
+        
+        function downloadAll() {
+            sizes.forEach((size, i) => {
+                setTimeout(() => downloadSingle(size), i * 300);
+            });
+        }
+    </script>
+</body>
+</html>
