@@ -1,13 +1,13 @@
 {
-  "name": "The Black Tiger - Mood Expression App",
-  "short_name": "Black Tiger",
-  "description": "Express your mood with the power of a tiger. The most powerful mood expression app with stunning tiger theme.",
+  "name": "All in One Mod APK - Premium Unlocked Apps",
+  "short_name": "All in One Mod",
+  "description": "Download premium unlocked & VIP modded apps for free. Game Guardian, Lucky Patcher, CapCut, Movie Box, Nitflix and more!",
   "start_url": "/",
   "display": "standalone",
   "orientation": "portrait",
   "background_color": "#0A0A0A",
   "theme_color": "#FFB800",
-  "categories": ["lifestyle", "entertainment", "social"],
+  "categories": ["productivity", "entertainment", "utilities", "games"],
   "lang": "en",
   "dir": "ltr",
   "scope": "/",
@@ -59,20 +59,6 @@
       "sizes": "512x512",
       "type": "image/png",
       "purpose": "any maskable"
-    }
-  ],
-  "screenshots": [
-    {
-      "src": "screenshot-1.png",
-      "sizes": "540x720",
-      "type": "image/png",
-      "form_factor": "narrow"
-    },
-    {
-      "src": "screenshot-2.png",
-      "sizes": "540x720",
-      "type": "image/png",
-      "form_factor": "narrow"
     }
   ]
 }

@@ -1,5 +1,5 @@
-// Service Worker for The Black Tiger PWA
-const CACHE_NAME = 'black-tiger-v1';
+// Service Worker for All in One Mod APK PWA
+const CACHE_NAME = 'allinone-modapk-v2';
 const urlsToCache = [
   '/',
   '/index.html',
@@ -17,6 +17,7 @@ self.addEventListener('install', (event) => {
         return cache.addAll(urlsToCache);
       })
   );
+  self.skipWaiting();
 });
 
 // Fetch - serve from cache when offline
@@ -50,4 +51,5 @@ self.addEventListener('activate', (event) => {
       );
     })
   );
+  self.clients.claim();
 });

@@ -6,32 +6,32 @@
     <meta name="theme-color" content="#FFB800">
     <meta name="apple-mobile-web-app-capable" content="yes">
     <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
-    <meta name="apple-mobile-web-app-title" content="Black Tiger">
+    <meta name="apple-mobile-web-app-title" content="All in One Mod APK">
     <meta name="mobile-web-app-capable" content="yes">
-    <meta name="description" content="The Black Tiger - Express your mood like a tiger. The most powerful mood expression app with stunning tiger theme. Download free!">
-    <meta name="keywords" content="mood app, mood expression, tiger app, black tiger, emotion, feelings, mood tracker">
-    <meta name="author" content="The Black Tiger">
+    <meta name="description" content="All in One Mod APK - Download premium unlocked & VIP modded apps for free. Game Guardian, Lucky Patcher, CapCut, Movie Box, Nitflix and more!">
+    <meta name="keywords" content="mod apk, premium apk, vip apk, unlocked apps, modded apps, free premium apps, lucky patcher, game guardian, capcut mod, movie box, nitflix">
+    <meta name="author" content="All in One Mod APK">
     <meta name="robots" content="index, follow">
     
     <!-- Open Graph for social sharing -->
-    <meta property="og:title" content="The Black Tiger - Mood Expression App">
-    <meta property="og:description" content="Express your mood with the power of a tiger. Download The Black Tiger now!">
+    <meta property="og:title" content="All in One Mod APK - Premium Unlocked Apps Free">
+    <meta property="og:description" content="Download all premium modded apps in one place. VIP unlocked versions, no ads, all features free!">
     <meta property="og:type" content="website">
-    <meta property="og:url" content="https://theblacktiger.app">
-    <meta property="og:image" content="https://theblacktiger.app/icon-512.png">
+    <meta property="og:url" content="https://allinonemodapk.app">
+    <meta property="og:image" content="https://allinonemodapk.app/icon-512.png">
     
     <!-- Twitter Card -->
     <meta name="twitter:card" content="summary_large_image">
-    <meta name="twitter:title" content="The Black Tiger - Mood App">
-    <meta name="twitter:description" content="The most powerful mood expression app">
+    <meta name="twitter:title" content="All in One Mod APK - Premium Apps Free">
+    <meta name="twitter:description" content="Download premium unlocked & VIP modded apps for free">
     
-    <link rel="canonical" href="https://theblacktiger.app">
+    <link rel="canonical" href="https://allinonemodapk.app">
     <link rel="manifest" href="manifest.json">
     <link rel="icon" type="image/png" sizes="192x192" href="icon-192.png">
     <link rel="icon" type="image/png" sizes="512x512" href="icon-512.png">
     <link rel="apple-touch-icon" href="icon-192.png">
     
-    <title>The Black Tiger - Express Your Mood | Free Mood App</title>
+    <title>All in One Mod APK - Premium Unlocked & VIP Apps Free Download</title>
     
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -45,6 +45,7 @@
             --primary-dark: #FF8C00;
             --secondary: #FF3D00;
             --accent: #00E5FF;
+            --success: #00E676;
             --bg-dark: #0A0A0A;
             --bg-darker: #000000;
             --bg-card: #1A1A1A;
@@ -55,6 +56,7 @@
             --gradient-1: linear-gradient(135deg, #FFB800 0%, #FF3D00 100%);
             --gradient-2: linear-gradient(135deg, #FF3D00 0%, #FFB800 100%);
             --tiger-gradient: linear-gradient(135deg, #FFB800 0%, #FF3D00 50%, #000000 100%);
+            --gold-gradient: linear-gradient(135deg, #FFD700 0%, #FFA500 50%, #FF8C00 100%);
         }
         
         body {
@@ -107,30 +109,33 @@
         /* Navigation */
         nav {
             position: fixed; top: 0; left: 0; right: 0;
-            padding: 18px 5%; display: flex; justify-content: space-between;
+            padding: 14px 5%; display: flex; justify-content: space-between;
             align-items: center; z-index: 1000;
             backdrop-filter: blur(20px);
-            background: rgba(10, 10, 10, 0.85);
+            background: rgba(10, 10, 10, 0.92);
             border-bottom: 1px solid var(--border);
+            gap: 15px;
+            flex-wrap: wrap;
         }
         
         .logo {
-            font-size: 1.4rem; font-weight: 900;
-            background: var(--tiger-gradient);
+            font-size: 1.3rem; font-weight: 900;
+            background: var(--gold-gradient);
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
             background-clip: text;
-            display: flex; align-items: center; gap: 10px;
+            display: flex; align-items: center; gap: 8px;
             letter-spacing: -0.5px;
+            white-space: nowrap;
         }
         
-        .logo-icon { font-size: 1.8rem; animation: tigerPaw 2.5s infinite; filter: drop-shadow(0 0 10px rgba(255, 184, 0, 0.5)); }
-        @keyframes tigerPaw { 0%, 100% { transform: translateY(0) scale(1); } 50% { transform: translateY(-8px) scale(1.1); } }
+        .logo-icon { font-size: 1.6rem; animation: pulse 2.5s infinite; filter: drop-shadow(0 0 10px rgba(255, 184, 0, 0.5)); }
+        @keyframes pulse { 0%, 100% { transform: scale(1); } 50% { transform: scale(1.12); } }
         
-        .nav-links { display: flex; gap: 35px; list-style: none; }
+        .nav-links { display: flex; gap: 28px; list-style: none; }
         .nav-links a {
             color: var(--text-muted); text-decoration: none;
-            font-weight: 500; font-size: 0.95rem;
+            font-weight: 500; font-size: 0.92rem;
             transition: all 0.3s; position: relative;
         }
         .nav-links a:hover { color: var(--primary); }
@@ -142,48 +147,106 @@
         
         .mobile-menu { display: none; background: none; border: none; color: var(--primary); font-size: 1.5rem; cursor: pointer; }
         
+        /* Search Bar in Nav */
+        .search-container {
+            flex: 1;
+            max-width: 480px;
+            min-width: 220px;
+            position: relative;
+        }
+        .search-input {
+            width: 100%;
+            padding: 11px 18px 11px 44px;
+            background: rgba(255, 255, 255, 0.06);
+            border: 1px solid var(--border);
+            border-radius: 50px;
+            color: var(--text);
+            font-family: 'Poppins', sans-serif;
+            font-size: 0.9rem;
+            outline: none;
+            transition: all 0.3s;
+        }
+        .search-input::placeholder { color: var(--text-muted); }
+        .search-input:focus {
+            border-color: var(--primary);
+            background: rgba(255, 184, 0, 0.08);
+            box-shadow: 0 0 0 3px rgba(255, 184, 0, 0.15);
+        }
+        .search-icon {
+            position: absolute;
+            left: 16px;
+            top: 50%;
+            transform: translateY(-50%);
+            font-size: 1.05rem;
+            pointer-events: none;
+        }
+        .search-clear {
+            position: absolute;
+            right: 14px;
+            top: 50%;
+            transform: translateY(-50%);
+            background: rgba(255, 61, 0, 0.15);
+            border: none;
+            color: var(--secondary);
+            width: 24px;
+            height: 24px;
+            border-radius: 50%;
+            cursor: pointer;
+            font-size: 0.85rem;
+            display: none;
+            align-items: center;
+            justify-content: center;
+        }
+        .search-clear:hover { background: var(--secondary); color: #fff; }
+        .search-clear.show { display: flex; }
+        
         /* Hero */
         .hero {
-            min-height: 100vh; display: flex; align-items: center;
-            justify-content: space-between; padding: 100px 5% 50px; gap: 50px;
+            min-height: 70vh; display: flex; align-items: center;
+            justify-content: center; padding: 140px 5% 60px;
+            text-align: center;
+            position: relative;
         }
         
-        .hero-content { flex: 1; max-width: 600px; }
+        .hero-content { max-width: 850px; }
         
         .badge {
             display: inline-flex; align-items: center; gap: 8px;
             padding: 8px 18px; background: rgba(255, 184, 0, 0.1);
             border: 1px solid rgba(255, 184, 0, 0.3); border-radius: 50px;
             color: var(--primary); font-size: 0.85rem; font-weight: 600;
-            margin-bottom: 20px; animation: fadeInUp 0.8s ease;
+            margin-bottom: 22px; animation: fadeInUp 0.8s ease;
         }
         
         .badge-dot { width: 8px; height: 8px; background: var(--primary); border-radius: 50%; animation: blink 1.5s infinite; }
         @keyframes blink { 0%, 100% { opacity: 1; } 50% { opacity: 0.3; } }
         
         .hero h1 {
-            font-size: clamp(2.8rem, 6vw, 4.8rem); font-weight: 900;
+            font-size: clamp(2.5rem, 6vw, 4.5rem); font-weight: 900;
             line-height: 1.05; margin-bottom: 20px;
             animation: fadeInUp 1s ease; letter-spacing: -2px;
         }
         
         .hero h1 .gradient-text {
-            background: var(--tiger-gradient);
+            background: var(--gold-gradient);
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
             background-clip: text;
         }
         
         .hero .subtitle {
-            font-size: 1.15rem; color: var(--text-muted);
+            font-size: 1.1rem; color: var(--text-muted);
             margin-bottom: 35px; animation: fadeInUp 1.2s ease; line-height: 1.7;
+            max-width: 700px;
+            margin-left: auto;
+            margin-right: auto;
         }
         
-        .hero-buttons { display: flex; gap: 15px; flex-wrap: wrap; animation: fadeInUp 1.4s ease; }
+        .hero-buttons { display: flex; gap: 15px; flex-wrap: wrap; animation: fadeInUp 1.4s ease; justify-content: center; }
         
         .btn {
-            padding: 15px 32px; border-radius: 50px; font-weight: 600;
-            font-size: 1rem; text-decoration: none; display: inline-flex;
+            padding: 14px 30px; border-radius: 50px; font-weight: 600;
+            font-size: 0.95rem; text-decoration: none; display: inline-flex;
             align-items: center; gap: 8px; transition: all 0.3s;
             cursor: pointer; border: none; font-family: 'Poppins', sans-serif;
         }
@@ -200,10 +263,10 @@
         }
         .btn-secondary:hover { background: rgba(255, 184, 0, 0.1); border-color: var(--primary); transform: translateY(-3px); }
         
-        .hero-stats { display: flex; gap: 40px; margin-top: 45px; animation: fadeInUp 1.6s ease; }
-        .stat { text-align: left; }
+        .hero-stats { display: flex; gap: 40px; margin-top: 40px; animation: fadeInUp 1.6s ease; justify-content: center; flex-wrap: wrap; }
+        .stat { text-align: center; }
         .stat-number {
-            font-size: 2.2rem; font-weight: 900;
+            font-size: 2rem; font-weight: 900;
             background: var(--gradient-2);
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
@@ -212,278 +275,8 @@
         }
         .stat-label { font-size: 0.85rem; color: var(--text-muted); margin-top: 4px; }
         
-        /* Phone Mockup */
-        .hero-visual { flex: 1; display: flex; justify-content: center; align-items: center; position: relative; animation: fadeIn 1.5s ease; }
-        
-        .phone-mockup {
-            width: 300px; height: 600px;
-            background: linear-gradient(145deg, #1a1a1a, #0a0a0a);
-            border-radius: 45px; padding: 12px;
-            box-shadow: 0 30px 80px rgba(255, 184, 0, 0.3), 0 0 0 2px rgba(255, 184, 0, 0.2), inset 0 0 0 1px rgba(255, 255, 255, 0.1);
-            position: relative; animation: floatPhone 6s ease-in-out infinite;
-        }
-        @keyframes floatPhone { 0%, 100% { transform: translateY(0) rotate(0deg); } 50% { transform: translateY(-20px) rotate(1.5deg); } }
-        
-        .phone-screen {
-            width: 100%; height: 100%;
-            background: linear-gradient(180deg, #1A1A1A 0%, #0A0A0A 100%);
-            border-radius: 35px; padding: 30px 20px;
-            display: flex; flex-direction: column;
-            align-items: center; justify-content: center;
-            position: relative; overflow: hidden;
-        }
-        
-        .phone-screen::before {
-            content: ''; position: absolute; top: 18px; left: 50%;
-            transform: translateX(-50%); width: 60px; height: 6px;
-            background: rgba(255, 184, 0, 0.3); border-radius: 10px;
-        }
-        
-        .phone-screen::after {
-            content: ''; position: absolute; top: 0; left: 0;
-            width: 100%; height: 100%;
-            background: radial-gradient(circle at 20% 30%, rgba(255, 184, 0, 0.15) 0%, transparent 50%), radial-gradient(circle at 80% 70%, rgba(255, 61, 0, 0.1) 0%, transparent 50%);
-            pointer-events: none;
-        }
-        
-        .mood-emoji { font-size: 7.5rem; animation: pulse 2s infinite; position: relative; z-index: 1; filter: drop-shadow(0 0 20px rgba(255, 184, 0, 0.5)); }
-        @keyframes pulse { 0%, 100% { transform: scale(1); } 50% { transform: scale(1.12); } }
-        
-        .mood-text {
-            margin-top: 30px; font-size: 1.4rem; font-weight: 700;
-            text-align: center; background: var(--gradient-1);
-            -webkit-background-clip: text; -webkit-text-fill-color: transparent;
-            background-clip: text; position: relative; z-index: 1;
-        }
-        .mood-subtitle { color: var(--text-muted); font-size: 0.9rem; margin-top: 10px; position: relative; z-index: 1; }
-        
-        .floating-card {
-            position: absolute; background: rgba(26, 26, 26, 0.9);
-            backdrop-filter: blur(20px); border: 1px solid var(--border);
-            border-radius: 16px; padding: 14px 18px;
-            display: flex; align-items: center; gap: 10px;
-            animation: floatCard 4s ease-in-out infinite;
-            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
-        }
-        .floating-card.card-1 { top: 8%; right: -40px; }
-        .floating-card.card-2 { bottom: 12%; left: -50px; animation-delay: -2s; }
-        @keyframes floatCard { 0%, 100% { transform: translateY(0); } 50% { transform: translateY(-15px); } }
-        .floating-card-icon { font-size: 1.4rem; }
-        .floating-card-text { font-size: 0.85rem; font-weight: 600; color: var(--primary); }
-        
-        /* Features */
-        .features { padding: 100px 5%; }
-        .section-header { text-align: center; max-width: 700px; margin: 0 auto 70px; }
-        .section-tag {
-            display: inline-block; padding: 6px 18px;
-            background: rgba(255, 61, 0, 0.1);
-            border: 1px solid rgba(255, 61, 0, 0.3);
-            border-radius: 50px; color: var(--secondary);
-            font-size: 0.85rem; font-weight: 600;
-            margin-bottom: 18px; text-transform: uppercase; letter-spacing: 1.5px;
-        }
-        .section-header h2 { font-size: clamp(2.2rem, 4.5vw, 3.2rem); font-weight: 900; margin-bottom: 18px; letter-spacing: -1.5px; }
-        .section-header h2 .accent { background: var(--tiger-gradient); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text; }
-        .section-header p { color: var(--text-muted); font-size: 1.1rem; }
-        
-        .features-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 25px; max-width: 1200px; margin: 0 auto; }
-        .feature-card {
-            background: linear-gradient(145deg, var(--bg-card), var(--bg-card-2));
-            border: 1px solid var(--border); border-radius: 20px;
-            padding: 35px 30px; transition: all 0.4s; position: relative; overflow: hidden;
-        }
-        .feature-card::before {
-            content: ''; position: absolute; top: 0; left: 0;
-            width: 100%; height: 3px; background: var(--gradient-1);
-            transform: scaleX(0); transform-origin: left; transition: transform 0.4s;
-        }
-        .feature-card:hover { transform: translateY(-10px); border-color: var(--primary); box-shadow: 0 20px 40px rgba(255, 184, 0, 0.15); }
-        .feature-card:hover::before { transform: scaleX(1); }
-        .feature-icon {
-            width: 65px; height: 65px; border-radius: 18px;
-            display: flex; align-items: center; justify-content: center;
-            font-size: 1.9rem; margin-bottom: 22px;
-            background: var(--gradient-1); box-shadow: 0 10px 25px rgba(255, 184, 0, 0.3);
-        }
-        .feature-card:nth-child(2) .feature-icon { background: var(--gradient-2); }
-        .feature-card:nth-child(3) .feature-icon { background: var(--gradient-3); }
-        .feature-card h3 { font-size: 1.35rem; margin-bottom: 12px; font-weight: 700; }
-        .feature-card p { color: var(--text-muted); font-size: 0.95rem; line-height: 1.6; }
-        
-        /* Screenshots */
-        .screenshots { padding: 100px 5%; background: linear-gradient(180deg, transparent 0%, rgba(255, 184, 0, 0.02) 50%, transparent 100%); }
-        .screenshots-grid { display: flex; gap: 30px; overflow-x: auto; padding: 20px 5%; scroll-snap-type: x mandatory; -webkit-overflow-scrolling: touch; }
-        .screenshots-grid::-webkit-scrollbar { height: 8px; }
-        .screenshots-grid::-webkit-scrollbar-track { background: rgba(255, 255, 255, 0.05); border-radius: 10px; }
-        .screenshots-grid::-webkit-scrollbar-thumb { background: var(--gradient-1); border-radius: 10px; }
-        .screenshot-item {
-            flex: 0 0 250px; height: 500px;
-            background: linear-gradient(180deg, #1A1A1A 0%, #0A0A0A 100%);
-            border-radius: 30px; padding: 20px;
-            display: flex; flex-direction: column;
-            align-items: center; justify-content: center;
-            scroll-snap-align: start; position: relative;
-            border: 1px solid var(--border); transition: all 0.3s;
-        }
-        .screenshot-item:hover { transform: scale(1.05); border-color: var(--primary); box-shadow: 0 20px 40px rgba(255, 184, 0, 0.2); }
-        .screenshot-emoji { font-size: 5rem; margin-bottom: 20px; filter: drop-shadow(0 0 15px rgba(255, 184, 0, 0.4)); }
-        .screenshot-title { font-size: 1.2rem; font-weight: 700; margin-bottom: 10px; background: var(--gradient-1); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text; }
-        .screenshot-desc { color: var(--text-muted); font-size: 0.85rem; text-align: center; }
-        
-        /* Download */
-        .download { padding: 100px 5%; text-align: center; }
-        .download-card {
-            max-width: 950px; margin: 0 auto;
-            background: linear-gradient(135deg, rgba(255, 184, 0, 0.08), rgba(255, 61, 0, 0.08));
-            border: 1px solid var(--border); border-radius: 32px;
-            padding: 70px 40px; position: relative; overflow: hidden;
-        }
-        .download-card::before {
-            content: ''; position: absolute; top: -50%; left: -50%;
-            width: 200%; height: 200%;
-            background: radial-gradient(circle, rgba(255, 184, 0, 0.1) 0%, transparent 60%);
-            animation: rotate 25s linear infinite;
-        }
-        @keyframes rotate { from { transform: rotate(0deg); } to { transform: rotate(360deg); } }
-        .download-content { position: relative; z-index: 1; }
-        .download h2 { font-size: clamp(2.2rem, 4.5vw, 3.2rem); font-weight: 900; margin-bottom: 20px; letter-spacing: -1px; }
-        .download h2 .accent { background: var(--tiger-gradient); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text; }
-        .download p { color: var(--text-muted); font-size: 1.1rem; margin-bottom: 45px; max-width: 600px; margin-left: auto; margin-right: auto; line-height: 1.7; }
-        .download-buttons { display: flex; gap: 18px; justify-content: center; flex-wrap: wrap; }
-        .download-btn {
-            display: flex; align-items: center; gap: 14px;
-            padding: 18px 30px; background: var(--bg-card);
-            border: 1px solid var(--border); border-radius: 16px;
-            color: var(--text); text-decoration: none; transition: all 0.3s;
-        }
-        .download-btn:hover { transform: translateY(-5px); border-color: var(--primary); box-shadow: 0 15px 35px rgba(255, 184, 0, 0.25); background: rgba(255, 184, 0, 0.05); }
-        .download-btn-icon { font-size: 2.2rem; }
-        .download-btn-text { text-align: left; }
-        .download-btn-text small { display: block; color: var(--text-muted); font-size: 0.75rem; text-transform: uppercase; letter-spacing: 1px; }
-        .download-btn-text strong { font-size: 1.1rem; font-weight: 700; }
-        
-        /* Install Banner */
-        .install-banner {
-            position: fixed; bottom: 20px; left: 20px; right: 20px;
-            max-width: 500px; margin: 0 auto;
-            background: linear-gradient(135deg, var(--bg-card), var(--bg-card-2));
-            border: 1px solid var(--primary); border-radius: 16px;
-            padding: 16px 20px; display: none;
-            align-items: center; gap: 14px; z-index: 9999;
-            box-shadow: 0 10px 30px rgba(255, 184, 0, 0.3);
-            animation: slideUp 0.5s ease;
-        }
-        .install-banner.show { display: flex; }
-        @keyframes slideUp { from { transform: translateY(100px); opacity: 0; } to { transform: translateY(0); opacity: 1; } }
-        .install-banner-icon { font-size: 2rem; }
-        .install-banner-text { flex: 1; }
-        .install-banner-text strong { display: block; font-size: 0.95rem; }
-        .install-banner-text small { color: var(--text-muted); font-size: 0.8rem; }
-        .install-banner-btn { background: var(--gradient-1); color: #000; border: none; padding: 10px 18px; border-radius: 10px; font-weight: 700; cursor: pointer; font-size: 0.9rem; }
-        .install-banner-close { background: none; border: none; color: var(--text-muted); font-size: 1.3rem; cursor: pointer; padding: 0 5px; }
-        
-        /* Testimonials */
-        .testimonials { padding: 100px 5%; }
-        .testimonials-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 25px; max-width: 1200px; margin: 0 auto; }
-        .testimonial-card { background: linear-gradient(145deg, var(--bg-card), var(--bg-card-2)); border: 1px solid var(--border); border-radius: 20px; padding: 32px; transition: all 0.3s; position: relative; }
-        .testimonial-card::before { content: '"'; position: absolute; top: 10px; right: 25px; font-size: 5rem; color: var(--primary); opacity: 0.15; line-height: 1; font-family: serif; }
-        .testimonial-card:hover { transform: translateY(-5px); border-color: var(--primary); }
-        .testimonial-stars { color: var(--primary); font-size: 1.2rem; margin-bottom: 18px; }
-        .testimonial-text { color: var(--text); margin-bottom: 22px; font-size: 0.95rem; line-height: 1.7; position: relative; z-index: 1; }
-        .testimonial-author { display: flex; align-items: center; gap: 14px; }
-        .testimonial-avatar { width: 48px; height: 48px; border-radius: 50%; background: var(--gradient-1); display: flex; align-items: center; justify-content: center; font-weight: 800; color: #000; font-size: 1.1rem; }
-        .testimonial-name { font-weight: 700; }
-        .testimonial-role { color: var(--text-muted); font-size: 0.85rem; }
-        
-        /* Footer */
-        footer { padding: 60px 5% 30px; background: var(--bg-darker); border-top: 1px solid var(--border); }
-        .footer-content { max-width: 1200px; margin: 0 auto; display: grid; grid-template-columns: 2fr 1fr 1fr 1fr; gap: 40px; margin-bottom: 40px; }
-        .footer-brand p { color: var(--text-muted); margin-top: 18px; font-size: 0.95rem; line-height: 1.7; }
-        .footer-column h4 { margin-bottom: 20px; font-size: 1.05rem; font-weight: 700; color: var(--primary); }
-        .footer-column ul { list-style: none; }
-        .footer-column ul li { margin-bottom: 12px; }
-        .footer-column ul li a { color: var(--text-muted); text-decoration: none; transition: all 0.3s; font-size: 0.95rem; }
-        .footer-column ul li a:hover { color: var(--primary); padding-left: 5px; }
-        .social-links { display: flex; gap: 12px; margin-top: 22px; }
-        .social-link { width: 42px; height: 42px; border-radius: 50%; background: var(--bg-card); border: 1px solid var(--border); display: flex; align-items: center; justify-content: center; color: var(--text); text-decoration: none; transition: all 0.3s; }
-        .social-link:hover { background: var(--gradient-1); color: #000; transform: translateY(-3px); border-color: transparent; }
-        .footer-bottom { text-align: center; padding-top: 30px; border-top: 1px solid var(--border); color: var(--text-muted); font-size: 0.9rem; }
-        
-        @keyframes fadeInUp { from { opacity: 0; transform: translateY(30px); } to { opacity: 1; transform: translateY(0); } }
-        @keyframes fadeIn { from { opacity: 0; } to { opacity: 1; } }
-        .fade-in { opacity: 0; transform: translateY(30px); transition: all 0.8s ease; }
-        .fade-in.visible { opacity: 1; transform: translateY(0); }
-
-        /* Edit Links Button */
-        .edit-links-btn {
-            margin-top: 28px; padding: 12px 26px; background: rgba(255, 255, 255, 0.06);
-            border: 1px dashed rgba(255, 184, 0, 0.4); border-radius: 50px;
-            color: var(--primary); font-weight: 600; font-size: 0.9rem;
-            cursor: pointer; transition: all 0.3s; font-family: 'Poppins', sans-serif;
-        }
-        .edit-links-btn:hover { background: rgba(255, 184, 0, 0.12); border-style: solid; transform: translateY(-2px); }
-
-        /* Links Modal */
-        .links-modal {
-            display: none; position: fixed; top: 0; left: 0; width: 100%; height: 100%;
-            background: rgba(0, 0, 0, 0.85); backdrop-filter: blur(10px);
-            z-index: 10000; align-items: center; justify-content: center;
-            padding: 20px; animation: fadeIn 0.3s ease;
-        }
-        .links-modal.show { display: flex; }
-        .links-modal-content {
-            background: linear-gradient(145deg, var(--bg-card), var(--bg-card-2));
-            border: 1px solid var(--primary); border-radius: 24px;
-            padding: 35px 30px; max-width: 520px; width: 100%;
-            max-height: 90vh; overflow-y: auto;
-            box-shadow: 0 30px 80px rgba(255, 184, 0, 0.3);
-            animation: fadeInUp 0.4s ease;
-        }
-        .links-modal-header { display: flex; justify-content: space-between; align-items: center; margin-bottom: 8px; }
-        .links-modal-header h3 { color: var(--primary); font-size: 1.3rem; font-weight: 800; }
-        .links-modal-close {
-            background: rgba(255, 255, 255, 0.08); border: none; color: var(--text);
-            width: 36px; height: 36px; border-radius: 50%; cursor: pointer;
-            font-size: 1.1rem; transition: all 0.3s;
-        }
-        .links-modal-close:hover { background: var(--secondary); color: #fff; }
-        .links-modal-desc { color: var(--text-muted); font-size: 0.88rem; margin-bottom: 22px; line-height: 1.6; }
-        .links-form { display: flex; flex-direction: column; gap: 14px; margin-bottom: 22px; }
-        .link-field { display: flex; flex-direction: column; gap: 6px; }
-        .link-field label { color: var(--text); font-size: 0.85rem; font-weight: 600; }
-        .link-field input {
-            background: rgba(0, 0, 0, 0.4); border: 1px solid var(--border);
-            border-radius: 12px; padding: 12px 14px; color: var(--text);
-            font-family: 'Poppins', sans-serif; font-size: 0.9rem;
-            transition: all 0.3s; outline: none;
-        }
-        .link-field input:focus { border-color: var(--primary); box-shadow: 0 0 0 3px rgba(255, 184, 0, 0.15); }
-        .link-field input::placeholder { color: rgba(176, 176, 176, 0.5); font-size: 0.82rem; }
-        .links-modal-actions { display: flex; gap: 10px; flex-wrap: wrap; }
-        .links-btn {
-            flex: 1; min-width: 140px; padding: 12px 20px; border-radius: 12px;
-            font-weight: 700; font-size: 0.9rem; cursor: pointer; border: none;
-            font-family: 'Poppins', sans-serif; transition: all 0.3s;
-        }
-        .links-btn-save { background: var(--gradient-1); color: #000; }
-        .links-btn-save:hover { transform: translateY(-2px); box-shadow: 0 10px 25px rgba(255, 184, 0, 0.4); }
-        .links-btn-reset { background: rgba(255, 61, 0, 0.15); color: var(--secondary); border: 1px solid rgba(255, 61, 0, 0.3); }
-        .links-btn-reset:hover { background: rgba(255, 61, 0, 0.25); }
-        .links-success {
-            display: none; margin-top: 16px; padding: 12px; text-align: center;
-            background: rgba(0, 229, 255, 0.1); border: 1px solid var(--accent);
-            color: var(--accent); border-radius: 10px; font-weight: 600; font-size: 0.9rem;
-        }
-        .links-success.show { display: block; animation: fadeInUp 0.4s ease; }
-
-        @media (max-width: 568px) {
-            .links-modal-content { padding: 25px 20px; }
-            .links-modal-header h3 { font-size: 1.1rem; }
-            .download-buttons { gap: 12px; }
-        }
-
-        /* My Apps Section */
-        .myapps { padding: 80px 5%; max-width: 1200px; margin: 0 auto; position: relative; }
+        /* Apps Section */
+        .myapps { padding: 60px 5% 100px; max-width: 1400px; margin: 0 auto; position: relative; }
         .section-header { text-align: center; margin-bottom: 50px; }
         .section-badge {
             display: inline-block; padding: 8px 18px; background: rgba(255, 184, 0, 0.1);
@@ -492,7 +285,7 @@
         }
         .section-header h2 { font-size: clamp(2rem, 4vw, 2.8rem); font-weight: 800; margin-bottom: 14px; }
         .section-header p { color: var(--text-muted); font-size: 1.05rem; max-width: 600px; margin: 0 auto; }
-
+        
         .admin-login-btn {
             margin-top: 22px; padding: 10px 24px; background: rgba(0, 229, 255, 0.08);
             border: 1px dashed rgba(0, 229, 255, 0.4); border-radius: 50px;
@@ -500,12 +293,27 @@
             cursor: pointer; transition: all 0.3s; font-family: 'Poppins', sans-serif;
         }
         .admin-login-btn:hover { background: rgba(0, 229, 255, 0.15); border-style: solid; }
-
+        
+        .filter-bar {
+            display: flex; gap: 10px; flex-wrap: wrap;
+            justify-content: center; margin-bottom: 30px;
+        }
+        .filter-btn {
+            padding: 8px 18px; background: rgba(255, 255, 255, 0.05);
+            border: 1px solid var(--border); border-radius: 50px;
+            color: var(--text-muted); font-size: 0.85rem; font-weight: 600;
+            cursor: pointer; transition: all 0.3s; font-family: 'Poppins', sans-serif;
+        }
+        .filter-btn:hover { background: rgba(255, 184, 0, 0.1); color: var(--primary); }
+        .filter-btn.active {
+            background: var(--gradient-1); color: #000; border-color: transparent;
+        }
+        
         .apps-grid {
             display: grid; grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
             gap: 22px;
         }
-
+        
         .app-card {
             background: linear-gradient(145deg, var(--bg-card), var(--bg-card-2));
             border: 1px solid var(--border); border-radius: 20px; padding: 24px;
@@ -519,37 +327,139 @@
         }
         .app-card:hover { transform: translateY(-6px); border-color: var(--primary); box-shadow: 0 20px 40px rgba(255, 184, 0, 0.2); }
         .app-card:hover::before { transform: scaleX(1); }
-
+        
+        .app-card.premium {
+            border-color: rgba(255, 215, 0, 0.4);
+        }
+        .app-card.premium::after {
+            content: '👑';
+            position: absolute;
+            top: 14px;
+            right: 14px;
+            font-size: 1.4rem;
+            filter: drop-shadow(0 0 8px rgba(255, 215, 0, 0.6));
+            animation: crownPulse 2s infinite;
+        }
+        @keyframes crownPulse {
+            0%, 100% { transform: scale(1) rotate(0deg); }
+            50% { transform: scale(1.1) rotate(5deg); }
+        }
+        
         .app-icon-large {
             font-size: 3.5rem; text-align: center; margin-bottom: 14px;
             filter: drop-shadow(0 5px 15px rgba(255, 184, 0, 0.3));
+            width: 90px;
+            height: 90px;
+            margin-left: auto;
+            margin-right: auto;
+            display: flex;
+            align-items: center;
+            justify-content: center;
         }
-        .app-title { font-size: 1.2rem; font-weight: 700; margin-bottom: 8px; color: var(--text); }
-        .app-desc { color: var(--text-muted); font-size: 0.9rem; line-height: 1.5; margin-bottom: 14px; flex-grow: 1; }
-        .app-meta { display: flex; gap: 10px; flex-wrap: wrap; margin-bottom: 16px; }
+        .app-icon-large svg {
+            width: 100%;
+            height: 100%;
+            border-radius: 22px;
+            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.4);
+            transition: transform 0.3s;
+        }
+        .app-card:hover .app-icon-large svg {
+            transform: scale(1.08) rotate(-2deg);
+        }
+        .app-title { font-size: 1.15rem; font-weight: 700; margin-bottom: 8px; color: var(--text); }
+        .app-desc { color: var(--text-muted); font-size: 0.88rem; line-height: 1.5; margin-bottom: 14px; flex-grow: 1; }
+        .app-meta { display: flex; gap: 8px; flex-wrap: wrap; margin-bottom: 16px; }
         .app-tag {
             padding: 4px 10px; background: rgba(255, 184, 0, 0.1); border: 1px solid var(--border);
-            border-radius: 20px; font-size: 0.72rem; color: var(--primary); font-weight: 600;
+            border-radius: 20px; font-size: 0.7rem; color: var(--primary); font-weight: 600;
         }
         .app-tag.size { background: rgba(0, 229, 255, 0.1); color: var(--accent); border-color: rgba(0, 229, 255, 0.2); }
+        .app-tag.vip { background: rgba(255, 215, 0, 0.15); color: #FFD700; border-color: rgba(255, 215, 0, 0.3); }
         .app-downloads { font-size: 0.78rem; color: var(--text-muted); margin-bottom: 12px; }
-
+        
+        /* Download Button with Progress */
         .app-download-btn {
             display: block; padding: 12px; text-align: center;
             background: var(--gradient-1); color: #000; border-radius: 12px;
             text-decoration: none; font-weight: 700; font-size: 0.95rem;
             transition: all 0.3s; border: none; cursor: pointer;
             font-family: 'Poppins', sans-serif;
+            position: relative;
+            overflow: hidden;
         }
         .app-download-btn:hover { transform: scale(1.03); box-shadow: 0 8px 20px rgba(255, 184, 0, 0.4); }
+        
+        .app-download-btn.downloading {
+            background: var(--bg-card-2);
+            color: var(--text);
+            cursor: progress;
+            transform: none !important;
+            box-shadow: none !important;
+        }
+        .app-download-btn.downloading::before {
+            content: '';
+            position: absolute;
+            top: 0; left: 0; bottom: 0;
+            background: var(--gradient-1);
+            transition: width 0.2s linear;
+            z-index: 0;
+        }
+        .app-download-btn .btn-content {
+            position: relative;
+            z-index: 1;
+        }
+        .app-download-btn.fixed {
+            background: var(--success);
+            color: #000;
+            cursor: default;
+        }
+        .app-download-btn.fixed:hover { transform: none; box-shadow: 0 0 15px rgba(0, 230, 118, 0.5); }
+        
         .app-download-btn.disabled { background: rgba(255, 255, 255, 0.1); color: var(--text-muted); cursor: not-allowed; }
         .app-download-btn.disabled:hover { transform: none; box-shadow: none; }
-
+        
         .empty-apps { text-align: center; padding: 60px 20px; }
         .empty-icon { font-size: 4rem; margin-bottom: 16px; opacity: 0.5; }
         .empty-apps h3 { color: var(--text); margin-bottom: 8px; }
         .empty-apps p { color: var(--text-muted); }
-
+        
+        .no-results { text-align: center; padding: 40px 20px; color: var(--text-muted); display: none; }
+        .no-results.show { display: block; }
+        .no-results .empty-icon { font-size: 3rem; }
+        
+        /* Premium Banner */
+        .premium-banner {
+            max-width: 950px;
+            margin: 0 auto 50px;
+            background: linear-gradient(135deg, rgba(255, 215, 0, 0.12), rgba(255, 140, 0, 0.08));
+            border: 1px solid rgba(255, 215, 0, 0.3);
+            border-radius: 24px;
+            padding: 28px 30px;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+        }
+        .premium-banner::before {
+            content: '';
+            position: absolute;
+            top: -50%; left: -50%;
+            width: 200%; height: 200%;
+            background: radial-gradient(circle, rgba(255, 215, 0, 0.08) 0%, transparent 60%);
+            animation: rotate 20s linear infinite;
+        }
+        @keyframes rotate { from { transform: rotate(0deg); } to { transform: rotate(360deg); } }
+        .premium-banner-content { position: relative; z-index: 1; }
+        .premium-banner h3 {
+            font-size: 1.4rem;
+            font-weight: 800;
+            background: var(--gold-gradient);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            margin-bottom: 8px;
+        }
+        .premium-banner p { color: var(--text-muted); font-size: 0.95rem; }
+        
         /* Admin Panel */
         .admin-modal {
             display: none; position: fixed; top: 0; left: 0; width: 100%; height: 100%;
@@ -572,7 +482,7 @@
         .admin-modal-actions { display: flex; gap: 10px; flex-wrap: wrap; margin-bottom: 14px; }
         .admin-hint { color: var(--text-muted); font-size: 0.8rem; text-align: center; margin-top: 10px; }
         .admin-hint strong { color: var(--primary); }
-
+        
         .admin-apps-list { margin-top: 22px; padding-top: 22px; border-top: 1px solid var(--border); }
         .admin-apps-list h4 { color: var(--text); margin-bottom: 14px; font-size: 1rem; }
         .admin-app-item {
@@ -581,6 +491,7 @@
             border-radius: 12px; margin-bottom: 10px;
         }
         .admin-app-icon { font-size: 2rem; }
+        .admin-app-icon svg { width: 48px; height: 48px; border-radius: 10px; }
         .admin-app-info { flex-grow: 1; min-width: 0; }
         .admin-app-title { font-weight: 700; color: var(--text); font-size: 0.95rem; word-break: break-word; }
         .admin-app-link { font-size: 0.75rem; color: var(--text-muted); word-break: break-all; }
@@ -592,36 +503,104 @@
         }
         .admin-app-btn:hover { background: var(--primary); color: #000; }
         .admin-app-btn.delete:hover { background: var(--secondary); color: #fff; }
-
+        
+        .link-field { display: flex; flex-direction: column; gap: 6px; margin-bottom: 12px; }
+        .link-field label { color: var(--text); font-size: 0.85rem; font-weight: 600; }
+        .link-field input, .link-field select, .link-field textarea {
+            background: rgba(0, 0, 0, 0.4); border: 1px solid var(--border);
+            border-radius: 12px; padding: 12px 14px; color: var(--text);
+            font-family: 'Poppins', sans-serif; font-size: 0.9rem;
+            transition: all 0.3s; outline: none;
+        }
+        .link-field input:focus, .link-field select:focus, .link-field textarea:focus {
+            border-color: var(--accent); box-shadow: 0 0 0 3px rgba(0, 229, 255, 0.15);
+        }
+        .link-field input::placeholder, .link-field textarea::placeholder { color: rgba(176, 176, 176, 0.5); font-size: 0.82rem; }
+        
+        .links-modal-actions { display: flex; gap: 10px; flex-wrap: wrap; }
+        .links-btn {
+            flex: 1; min-width: 140px; padding: 12px 20px; border-radius: 12px;
+            font-weight: 700; font-size: 0.9rem; cursor: pointer; border: none;
+            font-family: 'Poppins', sans-serif; transition: all 0.3s;
+        }
+        .links-btn-save { background: var(--gradient-1); color: #000; }
+        .links-btn-save:hover { transform: translateY(-2px); box-shadow: 0 10px 25px rgba(255, 184, 0, 0.4); }
+        .links-btn-reset { background: rgba(255, 61, 0, 0.15); color: var(--secondary); border: 1px solid rgba(255, 61, 0, 0.3); }
+        .links-btn-reset:hover { background: rgba(255, 61, 0, 0.25); }
+        .links-btn-accent { background: var(--accent); color: #000; }
+        .links-btn-accent:hover { transform: translateY(-2px); box-shadow: 0 10px 25px rgba(0, 229, 255, 0.4); }
+        
+        .links-modal-header { display: flex; justify-content: space-between; align-items: center; margin-bottom: 8px; }
+        .links-modal-close {
+            background: rgba(255, 255, 255, 0.08); border: none; color: var(--text);
+            width: 36px; height: 36px; border-radius: 50%; cursor: pointer;
+            font-size: 1.1rem; transition: all 0.3s;
+        }
+        .links-modal-close:hover { background: var(--secondary); color: #fff; }
+        .links-modal-desc { color: var(--text-muted); font-size: 0.88rem; margin-bottom: 22px; line-height: 1.6; }
+        
         .admin-success {
             display: none; margin-top: 14px; padding: 10px; text-align: center;
             background: rgba(0, 229, 255, 0.1); border: 1px solid var(--accent);
             color: var(--accent); border-radius: 10px; font-weight: 600; font-size: 0.85rem;
         }
         .admin-success.show { display: block; animation: fadeInUp 0.4s ease; }
-
-        @media (max-width: 568px) {
-            .admin-modal-content { padding: 22px 18px; }
-            .admin-modal-content h3 { font-size: 1.15rem; }
-            .apps-grid { grid-template-columns: 1fr; }
+        
+        @keyframes fadeInUp { from { opacity: 0; transform: translateY(30px); } to { opacity: 1; transform: translateY(0); } }
+        @keyframes fadeIn { from { opacity: 0; } to { opacity: 1; } }
+        .fade-in { opacity: 0; transform: translateY(30px); transition: all 0.8s ease; }
+        .fade-in.visible { opacity: 1; transform: translateY(0); }
+        
+        /* Footer */
+        footer { padding: 50px 5% 30px; background: var(--bg-darker); border-top: 1px solid var(--border); }
+        .footer-content { max-width: 1200px; margin: 0 auto; display: grid; grid-template-columns: 2fr 1fr 1fr 1fr; gap: 40px; margin-bottom: 30px; }
+        .footer-brand p { color: var(--text-muted); margin-top: 18px; font-size: 0.9rem; line-height: 1.7; }
+        .footer-column h4 { margin-bottom: 20px; font-size: 1rem; font-weight: 700; color: var(--primary); }
+        .footer-column ul { list-style: none; }
+        .footer-column ul li { margin-bottom: 10px; }
+        .footer-column ul li a { color: var(--text-muted); text-decoration: none; transition: all 0.3s; font-size: 0.9rem; }
+        .footer-column ul li a:hover { color: var(--primary); padding-left: 5px; }
+        .social-links { display: flex; gap: 12px; margin-top: 18px; }
+        .social-link { width: 38px; height: 38px; border-radius: 50%; background: var(--bg-card); border: 1px solid var(--border); display: flex; align-items: center; justify-content: center; color: var(--text); text-decoration: none; transition: all 0.3s; }
+        .social-link:hover { background: var(--gradient-1); color: #000; transform: translateY(-3px); border-color: transparent; }
+        .footer-bottom { text-align: center; padding-top: 25px; border-top: 1px solid var(--border); color: var(--text-muted); font-size: 0.88rem; }
+        .footer-bottom .vip-text {
+            display: inline-block;
+            margin-top: 8px;
+            padding: 6px 16px;
+            background: var(--gold-gradient);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            font-weight: 800;
+            font-size: 1rem;
+            letter-spacing: 1px;
         }
         
         @media (max-width: 968px) {
-            .hero { flex-direction: column; text-align: center; padding-top: 120px; }
-            .hero-buttons { justify-content: center; }
-            .hero-stats { justify-content: center; }
-            .floating-card { display: none; }
+            nav { padding: 12px 4%; gap: 10px; }
+            .search-container { order: 3; max-width: 100%; flex-basis: 100%; margin-top: 8px; }
             .nav-links { display: none; }
             .mobile-menu { display: block; }
             .footer-content { grid-template-columns: 1fr 1fr; }
-            .stat { text-align: center; }
+            .nav-links.open { 
+                display: flex; 
+                position: absolute; 
+                top: 100%; right: 0; left: 0; 
+                flex-direction: column; 
+                background: rgba(10, 10, 10, 0.98); 
+                padding: 20px; 
+                gap: 15px; 
+                border-top: 1px solid var(--border); 
+            }
         }
         
         @media (max-width: 568px) {
             .footer-content { grid-template-columns: 1fr; }
-            .hero-stats { flex-direction: column; gap: 20px; }
-            .phone-mockup { width: 250px; height: 500px; }
-            .mood-emoji { font-size: 6rem; }
+            .hero-stats { gap: 20px; }
+            .admin-modal-content { padding: 22px 18px; }
+            .admin-modal-content h3 { font-size: 1.15rem; }
+            .apps-grid { grid-template-columns: 1fr; }
         }
     </style>
     
@@ -629,53 +608,33 @@
     <script type="application/ld+json">
     {
         "@context": "https://schema.org",
-        "@type": "MobileApplication",
-        "name": "The Black Tiger",
-        "operatingSystem": "ANDROID, IOS, WEB",
-        "applicationCategory": "LifestyleApplication",
-        "description": "Express your mood with the power of a tiger",
-        "offers": {
-            "@type": "Offer",
-            "price": "0",
-            "priceCurrency": "USD"
-        },
-        "aggregateRating": {
-            "@type": "AggregateRating",
-            "ratingValue": "4.8",
-            "ratingCount": "5000"
-        }
+        "@type": "WebSite",
+        "name": "All in One Mod APK",
+        "description": "Download premium unlocked & VIP modded apps for free",
+        "url": "https://allinonemodapk.app"
     }
     </script>
 </head>
 <body>
     <div class="bg-animation"></div>
     
-    <!-- Install Banner -->
-    <div class="install-banner" id="installBanner">
-        <span class="install-banner-icon">🐯</span>
-        <div class="install-banner-text">
-            <strong>Install The Black Tiger</strong>
-            <small>Add to home screen for quick access</small>
-        </div>
-        <button class="install-banner-btn" id="installBtn">Install</button>
-        <button class="install-banner-close" id="closeBanner">✕</button>
-    </div>
-    
-    <!-- Navigation -->
+    <!-- Navigation with Search -->
     <nav>
         <div class="logo">
-            <span class="logo-icon">🐯</span>
-            <span>The Black Tiger</span>
+            <span class="logo-icon">⚡</span>
+            <span>All in One Mod APK</span>
         </div>
-        <ul class="nav-links">
+        <div class="search-container">
+            <span class="search-icon">🔍</span>
+            <input type="text" class="search-input" id="searchInput" placeholder="Search modded apps... (e.g. CapCut, Lucky Patcher)" autocomplete="off">
+            <button class="search-clear" id="searchClear" title="Clear search">✕</button>
+        </div>
+        <ul class="nav-links" id="navLinks">
             <li><a href="#home">Home</a></li>
-            <li><a href="#features">Features</a></li>
-            <li><a href="#screenshots">Preview</a></li>
-            <li><a href="#reviews">Reviews</a></li>
-            <li><a href="#myapps">My Apps</a></li>
-            <li><a href="#download">Download</a></li>
+            <li><a href="#myapps">Apps</a></li>
+            <li><a href="#admin" id="adminNavLink">Admin</a></li>
         </ul>
-        <button class="mobile-menu">☰</button>
+        <button class="mobile-menu" id="mobileMenu">☰</button>
     </nav>
     
     <!-- Hero -->
@@ -683,205 +642,81 @@
         <div class="hero-content">
             <span class="badge">
                 <span class="badge-dot"></span>
-                Now Available Worldwide
+                Premium Unlocked • VIP Access • 100% Free
             </span>
-            <h1>Unleash Your <span class="gradient-text">Inner Tiger</span></h1>
-            <p class="subtitle">The Black Tiger is the ultimate mood expression app. Bold, powerful, and beautifully crafted. Express your feelings like a true tiger - fearless and authentic.</p>
+            <h1>All in One <span class="gradient-text">Mod APK</span> Hub</h1>
+            <p class="subtitle">Sab kuch ek jagah! Premium unlocked apps, VIP modded games, aur tools jo aapko kahin aur nahi milenge. Direct download, koi signup nahi, koi ads nahi.</p>
             <div class="hero-buttons">
-                <a href="#download" class="btn btn-primary">
+                <a href="#myapps" class="btn btn-primary">
                     <span>⬇️</span>
-                    <span>Download Free</span>
+                    <span>Browse All Apps</span>
                 </a>
-                <a href="#features" class="btn btn-secondary">
-                    <span>📖</span>
-                    <span>Learn More</span>
+                <a href="#myapps" class="btn btn-secondary">
+                    <span>🔥</span>
+                    <span>VIP Mods</span>
                 </a>
             </div>
             <div class="hero-stats">
                 <div class="stat">
-                    <div class="stat-number">50K+</div>
-                    <div class="stat-label">Downloads</div>
+                    <div class="stat-number" id="totalAppsStat">15+</div>
+                    <div class="stat-label">Modded Apps</div>
                 </div>
                 <div class="stat">
-                    <div class="stat-number">4.8★</div>
-                    <div class="stat-label">Rating</div>
+                    <div class="stat-number">100%</div>
+                    <div class="stat-label">Premium Unlocked</div>
                 </div>
                 <div class="stat">
-                    <div class="stat-number">100+</div>
-                    <div class="stat-label">Moods</div>
-                </div>
-            </div>
-        </div>
-        <div class="hero-visual">
-            <div class="floating-card card-1">
-                <span class="floating-card-icon">⚡</span>
-                <span class="floating-card-text">Super Fast</span>
-            </div>
-            <div class="floating-card card-2">
-                <span class="floating-card-icon">🎨</span>
-                <span class="floating-card-text">100+ Stickers</span>
-            </div>
-            <div class="phone-mockup">
-                <div class="phone-screen">
-                    <div class="mood-emoji">😎</div>
-                    <div class="mood-text">Cool & Confident</div>
-                    <div class="mood-subtitle">Today's Mood</div>
+                    <div class="stat-number">VIP</div>
+                    <div class="stat-label">All Features</div>
                 </div>
             </div>
         </div>
     </section>
     
-    <!-- Features -->
-    <section class="features" id="features">
-        <div class="section-header fade-in">
-            <span class="section-tag">Features</span>
-            <h2>Why Choose <span class="accent">The Black Tiger?</span></h2>
-            <p>Discover the powerful features that make our app the king of mood expression</p>
-        </div>
-        <div class="features-grid">
-            <div class="feature-card fade-in">
-                <div class="feature-icon">🎭</div>
-                <h3>100+ Moods</h3>
-                <p>Choose from a wide range of moods - happy, sad, angry, loving, and many more.</p>
-            </div>
-            <div class="feature-card fade-in">
-                <div class="feature-icon">🎨</div>
-                <h3>Stunning Design</h3>
-                <p>Modern and beautiful interface with smooth animations and premium feel.</p>
-            </div>
-            <div class="feature-card fade-in">
-                <div class="feature-icon">📤</div>
-                <h3>Easy Sharing</h3>
-                <p>Share your moods with friends on social media with just a single tap.</p>
-            </div>
-            <div class="feature-card fade-in">
-                <div class="feature-icon">🔒</div>
-                <h3>Secure & Private</h3>
-                <p>Your data is completely safe and private with end-to-end encryption.</p>
-            </div>
-            <div class="feature-card fade-in">
-                <div class="feature-icon">⚡</div>
-                <h3>Lightning Fast</h3>
-                <p>Super fast and lightweight app that takes minimal space on your device.</p>
-            </div>
-            <div class="feature-card fade-in">
-                <div class="feature-icon">🌙</div>
-                <h3>Dark Mode</h3>
-                <p>Eye-friendly dark theme support for comfortable use anytime.</p>
-            </div>
-        </div>
-    </section>
-    
-    <!-- Screenshots -->
-    <section class="screenshots" id="screenshots">
-        <div class="section-header fade-in">
-            <span class="section-tag">Preview</span>
-            <h2>Explore the <span class="accent">App Preview</span></h2>
-            <p>Take a look at the stunning visuals inside our app</p>
-        </div>
-        <div class="screenshots-grid">
-            <div class="screenshot-item">
-                <div class="screenshot-emoji">😄</div>
-                <div class="screenshot-title">Happy Mood</div>
-                <div class="screenshot-desc">Express your joy</div>
-            </div>
-            <div class="screenshot-item">
-                <div class="screenshot-emoji">😢</div>
-                <div class="screenshot-title">Sad Mood</div>
-                <div class="screenshot-desc">Share your feelings</div>
-            </div>
-            <div class="screenshot-item">
-                <div class="screenshot-emoji">😡</div>
-                <div class="screenshot-title">Angry Mood</div>
-                <div class="screenshot-desc">Show your power</div>
-            </div>
-            <div class="screenshot-item">
-                <div class="screenshot-emoji">😍</div>
-                <div class="screenshot-title">Love Mood</div>
-                <div class="screenshot-desc">Express your love</div>
-            </div>
-            <div class="screenshot-item">
-                <div class="screenshot-emoji">🤔</div>
-                <div class="screenshot-title">Thinking</div>
-                <div class="screenshot-desc">Stay thoughtful</div>
-            </div>
-            <div class="screenshot-item">
-                <div class="screenshot-emoji">😴</div>
-                <div class="screenshot-title">Sleepy</div>
-                <div class="screenshot-desc">Time to rest</div>
-            </div>
-        </div>
-    </section>
-    
-    <!-- Testimonials -->
-    <section class="testimonials" id="reviews">
-        <div class="section-header fade-in">
-            <span class="section-tag">Testimonials</span>
-            <h2>What Our <span class="accent">Users Say</span></h2>
-            <p>Real feedback from our amazing community</p>
-        </div>
-        <div class="testimonials-grid">
-            <div class="testimonial-card fade-in">
-                <div class="testimonial-stars">★★★★★</div>
-                <p class="testimonial-text">"This app is absolutely amazing! The black and gold theme gives it such a premium feel. I use it every day to express my mood."</p>
-                <div class="testimonial-author">
-                    <div class="testimonial-avatar">A</div>
-                    <div>
-                        <div class="testimonial-name">Alex Johnson</div>
-                        <div class="testimonial-role">Premium User</div>
-                    </div>
-                </div>
-            </div>
-            <div class="testimonial-card fade-in">
-                <div class="testimonial-stars">★★★★★</div>
-                <p class="testimonial-text">"The design is fierce and bold - just like a tiger! My friends are so impressed. Best mood app I've ever used."</p>
-                <div class="testimonial-author">
-                    <div class="testimonial-avatar">S</div>
-                    <div>
-                        <div class="testimonial-name">Sarah Williams</div>
-                        <div class="testimonial-role">Daily User</div>
-                    </div>
-                </div>
-            </div>
-            <div class="testimonial-card fade-in">
-                <div class="testimonial-stars">★★★★★</div>
-                <p class="testimonial-text">"Simple, fast, and beautiful. The animations are smooth and the experience is just perfect. Thank you!"</p>
-                <div class="testimonial-author">
-                    <div class="testimonial-avatar">M</div>
-                    <div>
-                        <div class="testimonial-name">Mike Chen</div>
-                        <div class="testimonial-role">Beta Tester</div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-    
-    <!-- My Apps / Modded Apps Library -->
+    <!-- Apps Section -->
     <section class="myapps" id="myapps">
         <div class="section-header fade-in">
-            <span class="section-badge">📱 My Modded Apps Collection</span>
-            <h2>Download All My <span class="accent">Modded Apps</span> 🔥</h2>
-            <p>Yahan mere tamam modded/premium apps hain. Neeche apni pasand ki app ka download button click karein.</p>
-            <button class="admin-login-btn" id="adminLoginBtn">🔐 Admin Panel</button>
+            <span class="section-badge">📱 Premium Modded Apps Collection</span>
+            <h2>Download All <span class="accent" style="background: var(--gold-gradient); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text;">Modded Apps</span> 🔥</h2>
+            <p>Premium Unlocked aur VIP versions. Neeche search karein ya apni pasand ki app ka download button dabayein.</p>
+            <button class="admin-login-btn" id="adminLoginBtn">🔐 Admin Panel - Add New App</button>
+        </div>
+        
+        <!-- Premium Banner -->
+        <div class="premium-banner fade-in">
+            <div class="premium-banner-content">
+                <h3>👑 Premium Unlock • VIP Access 👑</h3>
+                <p>Saari apps premium unlocked aur VIP features ke saath available hain. Koi subscription ki zaroorat nahi!</p>
+            </div>
+        </div>
+        
+        <!-- Filter Bar -->
+        <div class="filter-bar">
+            <button class="filter-btn active" data-filter="all">🌟 All Apps</button>
+            <button class="filter-btn" data-filter="games">🎮 Games</button>
+            <button class="filter-btn" data-filter="tools">🛠️ Tools</button>
+            <button class="filter-btn" data-filter="video">🎬 Video</button>
+            <button class="filter-btn" data-filter="photo">📸 Photo</button>
+            <button class="filter-btn" data-filter="ai">🤖 AI</button>
+            <button class="filter-btn" data-filter="other">📦 Other</button>
         </div>
 
         <div class="apps-grid" id="appsGrid">
-            <!-- Apps will be loaded here dynamically -->
+            <!-- Apps will be rendered by JavaScript -->
         </div>
-
-        <div class="empty-apps" id="emptyApps" style="display:none;">
-            <div class="empty-icon">📦</div>
-            <h3>Abhi koi app add nahi hui</h3>
-            <p>Admin panel se apni modded apps add karein.</p>
+        
+        <div class="no-results" id="noResults">
+            <div class="empty-icon">🔍</div>
+            <h3 style="color: var(--text); margin-bottom: 8px;">Koi app nahi mili</h3>
+            <p>Apna search term change karke dobara try karein.</p>
         </div>
     </section>
-
+    
     <!-- Admin Login Modal -->
     <div class="admin-modal" id="adminLoginModal">
         <div class="admin-modal-content">
             <h3>🔐 Admin Login</h3>
-            <p>Sirf admin hi apps add/edit kar sakta hai.</p>
+            <p>Sirf admin hi nayi apps add kar sakta hai. Password enter karein.</p>
             <div class="link-field">
                 <label>Password</label>
                 <input type="password" id="adminPassword" placeholder="Enter admin password">
@@ -901,7 +736,7 @@
                 <h3>⚙️ Admin Panel - Manage Your Apps</h3>
                 <button class="links-modal-close" id="closeAdminPanel">✕</button>
             </div>
-            <p class="links-modal-desc">Yahan se apni modded apps add karein. Title, description, icon emoji, aur download link daalein.</p>
+            <p class="links-modal-desc">Yahan se apni modded apps add karein. Title, description, icon emoji, aur download link daalein. New app add karne ke baad woh automatic grid me show hogi.</p>
 
             <div class="admin-form">
                 <div class="link-field">
@@ -917,24 +752,29 @@
                     <input type="text" id="appIcon" placeholder="🎵" maxlength="3">
                 </div>
                 <div class="link-field">
-                    <label>🔗 Download Link (GitHub/Mediafire/etc.)</label>
-                    <input type="url" id="appLink" placeholder="https://github.com/.../app.apk">
+                    <label>🔗 Download Link (Google Drive / Mediafire / GitHub / etc.)</label>
+                    <input type="url" id="appLink" placeholder="https://drive.google.com/.../app.apk">
                 </div>
                 <div class="link-field">
-                    <label>📂 Category (optional)</label>
-                    <select id="appCategory" style="background:rgba(0,0,0,0.4);border:1px solid var(--border);border-radius:12px;padding:12px 14px;color:var(--text);font-family:'Poppins',sans-serif;font-size:0.9rem;">
-                        <option value="general">General</option>
-                        <option value="music">🎵 Music</option>
-                        <option value="video">🎬 Video</option>
-                        <option value="social">💬 Social</option>
+                    <label>📂 Category</label>
+                    <select id="appCategory">
+                        <option value="other">📦 Other</option>
                         <option value="games">🎮 Games</option>
                         <option value="tools">🛠️ Tools</option>
+                        <option value="video">🎬 Video</option>
                         <option value="photo">📸 Photo</option>
+                        <option value="ai">🤖 AI</option>
                     </select>
                 </div>
                 <div class="link-field">
                     <label>📦 File Size (optional)</label>
                     <input type="text" id="appSize" placeholder="e.g., 45 MB">
+                </div>
+                <div class="link-field">
+                    <label style="display: flex; align-items: center; gap: 8px; cursor: pointer;">
+                        <input type="checkbox" id="appVip" style="width: auto; margin: 0;">
+                        <span>👑 Mark as VIP / Premium</span>
+                    </label>
                 </div>
             </div>
 
@@ -949,88 +789,9 @@
             </div>
 
             <div class="links-modal-actions" style="margin-top:18px;">
-                <button class="links-btn links-btn-save" id="exportAppsBtn">📤 Export Apps (JSON)</button>
+                <button class="links-btn links-btn-accent" id="exportAppsBtn">📤 Export Apps (JSON)</button>
                 <button class="links-btn links-btn-reset" id="logoutAdminBtn">🚪 Logout</button>
             </div>
-        </div>
-    </div>
-
-    <!-- Download -->
-    <section class="download" id="download">
-        <div class="download-card fade-in">
-            <div class="download-content">
-                <h2>Download <span class="accent">The Black Tiger</span> 🚀</h2>
-                <p>Get the most powerful mood expression app now. Unleash your inner tiger and express yourself like never before. 100% Free!</p>
-                <div class="download-buttons">
-                    <a href="#" class="download-btn" id="playStoreBtn" target="_blank" rel="noopener">
-                        <div class="download-btn-icon">🤖</div>
-                        <div class="download-btn-text">
-                            <small>Get it on</small>
-                            <strong>Google Play</strong>
-                        </div>
-                    </a>
-                    <a href="#" class="download-btn" id="appStoreBtn" target="_blank" rel="noopener">
-                        <div class="download-btn-icon">🍎</div>
-                        <div class="download-btn-text">
-                            <small>Download on</small>
-                            <strong>App Store</strong>
-                        </div>
-                    </a>
-                    <a href="#" class="download-btn" id="apkBtn" target="_blank" rel="noopener">
-                        <div class="download-btn-icon">📦</div>
-                        <div class="download-btn-text">
-                            <small>Direct Download</small>
-                            <strong>APK File</strong>
-                        </div>
-                    </a>
-                    <a href="#" class="download-btn" id="githubBtn" target="_blank" rel="noopener">
-                        <div class="download-btn-icon">🐙</div>
-                        <div class="download-btn-text">
-                            <small>View on</small>
-                            <strong>GitHub</strong>
-                        </div>
-                    </a>
-                </div>
-                <button class="edit-links-btn" id="editLinksBtn">⚙️ Set / Change Your Links</button>
-            </div>
-        </div>
-    </section>
-
-    <!-- Links Editor Modal -->
-    <div class="links-modal" id="linksModal">
-        <div class="links-modal-content">
-            <div class="links-modal-header">
-                <h3>🔗 Set Your Download Links</h3>
-                <button class="links-modal-close" id="closeLinksModal">✕</button>
-            </div>
-            <p class="links-modal-desc">Yahan apne download links paste karein (GitHub, Play Store, APK, etc.). Links browser ke local storage me save ho jayenge.</p>
-            <div class="links-form">
-                <div class="link-field">
-                    <label>🤖 Google Play Link</label>
-                    <input type="url" id="inputPlayStore" placeholder="https://play.google.com/store/apps/details?id=...">
-                </div>
-                <div class="link-field">
-                    <label>🍎 App Store Link</label>
-                    <input type="url" id="inputAppStore" placeholder="https://apps.apple.com/app/...">
-                </div>
-                <div class="link-field">
-                    <label>📦 APK Direct Download Link</label>
-                    <input type="url" id="inputApk" placeholder="https://github.com/.../app.apk">
-                </div>
-                <div class="link-field">
-                    <label>🐙 GitHub Repository / Release Link</label>
-                    <input type="url" id="inputGithub" placeholder="https://github.com/username/repo/releases">
-                </div>
-                <div class="link-field">
-                    <label>🌐 Custom Website (optional)</label>
-                    <input type="url" id="inputCustom" placeholder="https://yourwebsite.com">
-                </div>
-            </div>
-            <div class="links-modal-actions">
-                <button class="links-btn links-btn-save" id="saveLinksBtn">💾 Save Links</button>
-                <button class="links-btn links-btn-reset" id="resetLinksBtn">🗑️ Reset All</button>
-            </div>
-            <div class="links-success" id="linksSuccess">✅ Links saved successfully! Ab buttons kaam karenge.</div>
         </div>
     </div>
     
@@ -1039,10 +800,10 @@
         <div class="footer-content">
             <div class="footer-brand">
                 <div class="logo">
-                    <span class="logo-icon">🐯</span>
-                    <span>The Black Tiger</span>
+                    <span class="logo-icon">⚡</span>
+                    <span>All in One Mod APK</span>
                 </div>
-                <p>The ultimate mood expression app. Bold, beautiful, and powerful - designed for those who dare to be different.</p>
+                <p>Sab kuch ek jagah. Premium unlock aur VIP access ke saath. Direct download, no signup, no surveys, koi paise nahi.</p>
                 <div class="social-links">
                     <a href="#" class="social-link">📘</a>
                     <a href="#" class="social-link">🐦</a>
@@ -1051,21 +812,12 @@
                 </div>
             </div>
             <div class="footer-column">
-                <h4>App</h4>
+                <h4>Apps</h4>
                 <ul>
-                    <li><a href="#features">Features</a></li>
-                    <li><a href="#download">Download</a></li>
-                    <li><a href="#screenshots">Preview</a></li>
-                    <li><a href="#reviews">Reviews</a></li>
-                </ul>
-            </div>
-            <div class="footer-column">
-                <h4>Company</h4>
-                <ul>
-                    <li><a href="#">About Us</a></li>
-                    <li><a href="#">Contact</a></li>
-                    <li><a href="#">Careers</a></li>
-                    <li><a href="#">Blog</a></li>
+                    <li><a href="#myapps">All Apps</a></li>
+                    <li><a href="#myapps">Games</a></li>
+                    <li><a href="#myapps">Tools</a></li>
+                    <li><a href="#myapps">Video</a></li>
                 </ul>
             </div>
             <div class="footer-column">
@@ -1073,61 +825,594 @@
                 <ul>
                     <li><a href="#">Help Center</a></li>
                     <li><a href="#">FAQ</a></li>
+                    <li><a href="#">Contact</a></li>
+                    <li><a href="#">Report Issue</a></li>
+                </ul>
+            </div>
+            <div class="footer-column">
+                <h4>Legal</h4>
+                <ul>
                     <li><a href="#">Privacy Policy</a></li>
                     <li><a href="#">Terms</a></li>
+                    <li><a href="#">DMCA</a></li>
+                    <li><a href="#">Disclaimer</a></li>
                 </ul>
             </div>
         </div>
         <div class="footer-bottom">
-            <p>© 2026 The Black Tiger. All Rights Reserved. Made with 🖤 and 🔥</p>
+            <p>© 2026 All in One Mod APK. All Rights Reserved.</p>
+            <div class="vip-text">👑 Premium Unlock • VIP Access 👑</div>
         </div>
     </footer>
     
     <script>
-        // Register Service Worker for PWA
-        if ('serviceWorker' in navigator) {
-            window.addEventListener('load', () => {
-                navigator.serviceWorker.register('sw.js')
-                    .then(reg => console.log('Service Worker registered'))
-                    .catch(err => console.log('Service Worker registration failed'));
-            });
+        // ============================================
+        // DEFAULT APPS (Loaded from your provided links)
+        // ============================================
+        const DEFAULT_APPS = [
+            {
+                id: 'game_guardian',
+                title: 'Game Guardian No Root',
+                icon: 'game_guardian',
+                desc: 'Powerful game cheat & killer tool. Search & modify game memory values, speed hack, damage multiplier & more. No root required.',
+                category: 'games',
+                size: '18 MB',
+                link: 'https://drive.google.com/file/d/19e4duXv7BYzh9DZ1mKFFubfZrRSX7PuZ/view?usp=drivesdk',
+                vip: true
+            },
+            {
+                id: 'movie_box',
+                title: 'Movie Box',
+                icon: 'movie_box',
+                desc: 'Watch unlimited movies & TV shows in HD quality. No subscription, no ads. Premium unlocked version with latest releases.',
+                category: 'video',
+                size: '32 MB',
+                link: 'https://drive.google.com/file/d/1vnU3UkmMnJDsPAyD2HUj_uofoDlXZ6o1/view?usp=drivesdk',
+                vip: true
+            },
+            {
+                id: 'shellmind_ai',
+                title: 'ShellMind AI',
+                icon: 'shellmind_ai',
+                desc: 'Advanced AI assistant app with premium features unlocked. Get answers, generate content, and much more with no limits.',
+                category: 'ai',
+                size: '45 MB',
+                link: 'https://drive.google.com/file/d/1Fxnt5do9GOS0j3B8giq-VSdS-agBTZfk/view?usp=drivesdk',
+                vip: true
+            },
+            {
+                id: 'nitflix',
+                title: 'Nitflix Premium',
+                icon: 'nitflix',
+                desc: 'Premium streaming app with all features unlocked. Watch thousands of movies, shows, and exclusive content for free.',
+                category: 'video',
+                size: '28 MB',
+                link: 'https://drive.google.com/file/d/14A9A0aTKQhv7vd7mMDoPYnomE6Yazruy/view?usp=drivesdk',
+                vip: true
+            },
+            {
+                id: 'current_activity',
+                title: 'Current Activity+',
+                icon: 'current_activity',
+                desc: 'Track all activities on your device. Monitor apps, network usage, battery consumption with premium features unlocked.',
+                category: 'tools',
+                size: '12 MB',
+                link: 'https://drive.google.com/file/d/1q-697SCgeC8mwJoLi0vRwyzclWZ5C91X/view?usp=drivesdk',
+                vip: false
+            },
+            {
+                id: 'current_activity_v2',
+                title: 'Current Activity',
+                icon: 'current_activity',
+                desc: 'Activity monitor with detailed insights. Premium version with no ads and all advanced features enabled.',
+                category: 'tools',
+                size: '10 MB',
+                link: 'https://drive.google.com/file/d/17T4kNtG9dCZJa7c0NTAn1_vtyu-rGBMd/view?usp=drivesdk',
+                vip: false
+            },
+            {
+                id: 'capcut',
+                title: 'CapCut Premium',
+                icon: 'capcut',
+                desc: 'Professional video editor with all premium features unlocked. No watermark, all effects, transitions, and filters free.',
+                category: 'photo',
+                size: '85 MB',
+                link: 'https://drive.google.com/file/d/1_s9KZZpPUzuzrJWP-HMjGNtUwWm2tk16/view?usp=drivesdk',
+                vip: true
+            },
+            {
+                id: 'vphonegaga',
+                title: 'VPhoneGaGa VIP',
+                icon: 'vphonegaga',
+                desc: 'Virtual phone app with VIP features. Run multiple instances, no root required. Premium unlocked version.',
+                category: 'tools',
+                size: '65 MB',
+                link: 'https://www.mediafire.com/file/hnrwfu7bbp79sq3/VPhoneGaGa-Vip-No-Root.7z/file?dkey=0zn5erxwizo&r=1461',
+                vip: true
+            },
+            {
+                id: 'lulubox',
+                title: 'LuluBox VIP',
+                icon: 'lulubox',
+                desc: 'Game skin injector & mod tool. Unlock all skins in your favorite games for free. VIP features enabled.',
+                category: 'games',
+                size: '15 MB',
+                link: 'https://www.mediafire.com/file/fnau18g5yh0am1z/Lulubox-Super-No-Root.7z/file?dkey=3dx4b2jqvej&r=1414',
+                vip: true
+            },
+            {
+                id: 'zarchiver',
+                title: 'ZArchiver Pro',
+                icon: 'zarchiver',
+                desc: 'Powerful archive manager for Android. Create, extract, and manage ZIP, RAR, 7z, TAR and more. Pro version unlocked.',
+                category: 'tools',
+                size: '8 MB',
+                link: 'https://www.mediafire.com/file/076s937kpfn9t6t/Zarchiver-Pro-No-Root.7z/file?dkey=8g0dr8hdb4q&r=1285',
+                vip: true
+            },
+            {
+                id: 'ax_manager',
+                title: 'AX Manager VIP',
+                icon: 'ax_manager',
+                desc: 'Advanced system management tool with VIP features. Control apps, permissions, and optimize your device.',
+                category: 'tools',
+                size: '20 MB',
+                link: 'https://www.mediafire.com/file/kw404c9cwcawrpk/AXManager.7z/file?dkey=eb4puhuyzyz&r=1743',
+                vip: true
+            },
+            {
+                id: 'lucky_patcher',
+                title: 'Lucky Patcher No Root',
+                icon: 'lucky_patcher',
+                desc: 'Remove ads, bypass license verification, modify in-app purchases & permissions. The most popular modding tool.',
+                category: 'tools',
+                size: '12 MB',
+                link: 'https://www.mediafire.com/file/mavqx35uzfr2bjp/Lucky-Patcher-No-Root.7z/file?dkey=qmxxk0sa677&r=558',
+                vip: true
+            },
+            {
+                id: 'hack_app_data',
+                title: 'Hack App Data Pro',
+                icon: 'hack_app_data',
+                desc: 'Modify app data and game values without root. Pro version with all features unlocked. Works on most apps.',
+                category: 'tools',
+                size: '9 MB',
+                link: 'https://www.mediafire.com/file/5z2d9as5asg7xtd/Hack_App_Data_Pro.7z/file?dkey=y6wy84nxzpz&r=1216',
+                vip: true
+            },
+            {
+                id: 'cheat_engine',
+                title: 'Cheat Engine No Root',
+                icon: 'cheat_engine',
+                desc: 'Memory scanner & cheat tool for Android games. Modify values, speed hack, and unlock premium features.',
+                category: 'games',
+                size: '14 MB',
+                link: 'https://www.mediafire.com/file/hpv95p5sln2ca4m/CheatEngine_No_Root.7z/file?dkey=t6zoadgkrwm&r=864',
+                vip: true
+            },
+            {
+                id: 'mt_manager',
+                title: 'MT Manager Lifetime VIP',
+                icon: 'mt_manager',
+                desc: 'Most powerful APK editor & file manager. Edit APKs, manage files, decode resources & more. Lifetime VIP unlocked.',
+                category: 'tools',
+                size: '25 MB',
+                link: 'https://www.mediafire.com/file/uv4px8ej8ybug2r/MT_MANAGER_Lifetime_VIP.7z/file?dkey=lubkf1js4dl&r=1008',
+                vip: true
+            },
+            {
+                id: 'antisplit_m',
+                title: 'AntiSplit M',
+                icon: 'antisplit_m',
+                desc: 'Merge split APKs (APKS, XAPK) into a single installable APK. Premium version with no ads and all features.',
+                category: 'tools',
+                size: '6 MB',
+                link: 'https://www.mediafire.com/file/d4wgo7zojzakffn/AntiSplit_M.7z/file?dkey=0rjshixfsos&r=248',
+                vip: false
+            }
+        ];
+
+        // ============================================
+        // STATE & STORAGE
+        // ============================================
+        const ADMIN_PASSWORD = 'tiger2024';
+        const STORAGE_KEYS = {
+            APPS: 'allinone_apps',
+            DOWNLOADS: 'allinone_downloads',
+            ADMIN_AUTH: 'allinone_admin'
+        };
+        
+        let isAdminLoggedIn = sessionStorage.getItem(STORAGE_KEYS.ADMIN_AUTH) === 'true';
+        let editingAppId = null;
+        let currentFilter = 'all';
+        let currentSearch = '';
+
+        // ============================================
+        // UTILITY FUNCTIONS
+        // ============================================
+        function escapeHtml(s) {
+            if (s === null || s === undefined) return '';
+            return String(s)
+                .replace(/&/g, '&amp;')
+                .replace(/</g, '&lt;')
+                .replace(/>/g, '&gt;')
+                .replace(/"/g, '&quot;')
+                .replace(/'/g, '&#39;');
+        }
+
+        // ============================================
+        // APP ICONS (Real app-style SVG logos)
+        // ============================================
+        function getAppIcon(iconId) {
+            const icons = {
+                game_guardian: `<svg viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
+                    <defs><linearGradient id="gg" x1="0%" y1="0%" x2="100%" y2="100%"><stop offset="0%" stop-color="#1A1A2E"/><stop offset="100%" stop-color="#16213E"/></linearGradient></defs>
+                    <rect width="100" height="100" rx="20" fill="url(#gg)"/>
+                    <path d="M30 25 L50 50 L30 75 M55 25 L75 50 L55 75" stroke="#00FF88" stroke-width="6" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
+                    <circle cx="50" cy="50" r="8" fill="#00FF88" opacity="0.3"/>
+                </svg>`,
+                movie_box: `<svg viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
+                    <defs><linearGradient id="mb" x1="0%" y1="0%" x2="100%" y2="100%"><stop offset="0%" stop-color="#E50914"/><stop offset="100%" stop-color="#831010"/></linearGradient></defs>
+                    <rect width="100" height="100" rx="18" fill="url(#mb)"/>
+                    <rect x="20" y="30" width="60" height="40" rx="4" fill="none" stroke="white" stroke-width="3"/>
+                    <polygon points="42,40 42,60 62,50" fill="white"/>
+                </svg>`,
+                shellmind_ai: `<svg viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
+                    <defs><linearGradient id="sm" x1="0%" y1="0%" x2="100%" y2="100%"><stop offset="0%" stop-color="#6C3BFF"/><stop offset="100%" stop-color="#2D1B69"/></linearGradient></defs>
+                    <rect width="100" height="100" rx="20" fill="url(#sm)"/>
+                    <circle cx="50" cy="50" r="20" fill="none" stroke="#00D4FF" stroke-width="3"/>
+                    <circle cx="50" cy="50" r="6" fill="#00D4FF"/>
+                    <circle cx="50" cy="20" r="3" fill="#00D4FF"/>
+                    <circle cx="50" cy="80" r="3" fill="#00D4FF"/>
+                    <circle cx="20" cy="50" r="3" fill="#00D4FF"/>
+                    <circle cx="80" cy="50" r="3" fill="#00D4FF"/>
+                    <text x="50" y="55" text-anchor="middle" fill="white" font-family="Arial" font-size="14" font-weight="bold">AI</text>
+                </svg>`,
+                nitflix: `<svg viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
+                    <defs><linearGradient id="nf" x1="0%" y1="0%" x2="0%" y2="100%"><stop offset="0%" stop-color="#E50914"/><stop offset="100%" stop-color="#B20710"/></linearGradient></defs>
+                    <rect width="100" height="100" rx="4" fill="url(#nf)"/>
+                    <text x="50" y="68" text-anchor="middle" fill="white" font-family="Arial Black, sans-serif" font-size="50" font-weight="900" font-style="italic">N</text>
+                </svg>`,
+                current_activity: `<svg viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
+                    <defs><linearGradient id="ca" x1="0%" y1="0%" x2="100%" y2="100%"><stop offset="0%" stop-color="#2196F3"/><stop offset="100%" stop-color="#0D47A1"/></linearGradient></defs>
+                    <rect width="100" height="100" rx="20" fill="url(#ca)"/>
+                    <rect x="20" y="60" width="10" height="20" rx="2" fill="white"/>
+                    <rect x="35" y="50" width="10" height="30" rx="2" fill="white"/>
+                    <rect x="50" y="35" width="10" height="45" rx="2" fill="white"/>
+                    <rect x="65" y="45" width="10" height="35" rx="2" fill="white"/>
+                    <path d="M20 25 L35 15 L50 20 L70 10" stroke="white" stroke-width="3" fill="none" stroke-linecap="round"/>
+                    <circle cx="70" cy="10" r="4" fill="white"/>
+                </svg>`,
+                capcut: `<svg viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
+                    <defs><linearGradient id="cc" x1="0%" y1="0%" x2="100%" y2="100%"><stop offset="0%" stop-color="#000000"/><stop offset="50%" stop-color="#1A1A1A"/><stop offset="100%" stop-color="#2D2D2D"/></linearGradient></defs>
+                    <rect width="100" height="100" rx="22" fill="url(#cc)"/>
+                    <path d="M25 25 L25 75 M25 25 L60 25 M25 75 L60 75" stroke="white" stroke-width="8" stroke-linecap="round" fill="none"/>
+                    <circle cx="70" cy="50" r="12" fill="none" stroke="white" stroke-width="5"/>
+                    <line x1="78" y1="58" x2="85" y2="65" stroke="white" stroke-width="5" stroke-linecap="round"/>
+                </svg>`,
+                vphonegaga: `<svg viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
+                    <defs><linearGradient id="vp" x1="0%" y1="0%" x2="100%" y2="100%"><stop offset="0%" stop-color="#FF6B35"/><stop offset="100%" stop-color="#C13D00"/></linearGradient></defs>
+                    <rect width="100" height="100" rx="20" fill="url(#vp)"/>
+                    <rect x="32" y="20" width="36" height="60" rx="6" fill="#1A1A1A" stroke="white" stroke-width="2"/>
+                    <rect x="36" y="28" width="28" height="38" rx="2" fill="#4A90E2"/>
+                    <circle cx="50" cy="73" r="2" fill="white"/>
+                    <path d="M65 35 L75 30 L80 40 L70 45 Z" fill="#FFD700" stroke="white" stroke-width="1.5"/>
+                </svg>`,
+                lulubox: `<svg viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
+                    <defs><linearGradient id="lb" x1="0%" y1="0%" x2="100%" y2="100%"><stop offset="0%" stop-color="#9C27B0"/><stop offset="50%" stop-color="#E91E63"/><stop offset="100%" stop-color="#FF5722"/></linearGradient></defs>
+                    <rect width="100" height="100" rx="20" fill="url(#lb)"/>
+                    <rect x="20" y="20" width="60" height="60" rx="10" fill="none" stroke="white" stroke-width="3"/>
+                    <rect x="20" y="20" width="60" height="60" rx="10" fill="none" stroke="white" stroke-width="2" stroke-dasharray="5,5"/>
+                    <path d="M40 35 L50 25 L60 35 M50 25 L50 75" stroke="white" stroke-width="3" fill="none" stroke-linecap="round"/>
+                </svg>`,
+                zarchiver: `<svg viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
+                    <defs><linearGradient id="za" x1="0%" y1="0%" x2="100%" y2="100%"><stop offset="0%" stop-color="#1E88E5"/><stop offset="100%" stop-color="#0D47A1"/></linearGradient></defs>
+                    <rect width="100" height="100" rx="20" fill="url(#za)"/>
+                    <rect x="25" y="20" width="50" height="60" rx="4" fill="white"/>
+                    <path d="M30 35 L45 35 M30 45 L55 45 M30 55 L50 55 M30 65 L45 65" stroke="#1E88E5" stroke-width="2.5" stroke-linecap="round"/>
+                    <rect x="55" y="55" width="20" height="20" rx="2" fill="#FF9800" stroke="white" stroke-width="2"/>
+                    <text x="65" y="71" text-anchor="middle" fill="white" font-family="Arial Black" font-size="14" font-weight="900">Z</text>
+                </svg>`,
+                ax_manager: `<svg viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
+                    <defs><linearGradient id="ax" x1="0%" y1="0%" x2="100%" y2="100%"><stop offset="0%" stop-color="#37474F"/><stop offset="100%" stop-color="#000000"/></linearGradient></defs>
+                    <rect width="100" height="100" rx="20" fill="url(#ax)"/>
+                    <circle cx="50" cy="50" r="25" fill="none" stroke="#00E5FF" stroke-width="3"/>
+                    <path d="M50 25 L50 35 M50 65 L50 75 M25 50 L35 50 M65 50 L75 50" stroke="#00E5FF" stroke-width="3" stroke-linecap="round"/>
+                    <text x="50" y="58" text-anchor="middle" fill="#00E5FF" font-family="Arial Black" font-size="18" font-weight="900">AX</text>
+                </svg>`,
+                lucky_patcher: `<svg viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
+                    <defs><linearGradient id="lp" x1="0%" y1="0%" x2="100%" y2="100%"><stop offset="0%" stop-color="#4CAF50"/><stop offset="100%" stop-color="#1B5E20"/></linearGradient></defs>
+                    <rect width="100" height="100" rx="20" fill="url(#lp)"/>
+                    <path d="M50 20 C30 30 25 45 30 55 C35 65 45 70 50 75 C55 70 65 65 70 55 C75 45 70 30 50 20 Z" fill="white"/>
+                    <path d="M50 25 C40 30 35 40 38 50 L50 50 Z" fill="#FFEB3B"/>
+                    <path d="M50 25 C60 30 65 40 62 50 L50 50 Z" fill="#4CAF50"/>
+                    <path d="M50 50 L38 50 C40 60 45 65 50 75 L50 50 Z" fill="#F44336"/>
+                    <path d="M50 50 L62 50 C60 60 55 65 50 75 L50 50 Z" fill="#2196F3"/>
+                </svg>`,
+                hack_app_data: `<svg viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
+                    <defs><linearGradient id="hd" x1="0%" y1="0%" x2="100%" y2="100%"><stop offset="0%" stop-color="#FF5722"/><stop offset="100%" stop-color="#BF360C"/></linearGradient></defs>
+                    <rect width="100" height="100" rx="20" fill="url(#hd)"/>
+                    <rect x="25" y="35" width="50" height="40" rx="3" fill="none" stroke="white" stroke-width="3"/>
+                    <ellipse cx="50" cy="35" rx="25" ry="8" fill="none" stroke="white" stroke-width="3"/>
+                    <line x1="25" y1="50" x2="75" y2="50" stroke="white" stroke-width="2"/>
+                    <line x1="25" y1="60" x2="75" y2="60" stroke="white" stroke-width="2"/>
+                    <text x="50" y="85" text-anchor="middle" fill="white" font-family="Arial Black" font-size="10" font-weight="900">HACK</text>
+                </svg>`,
+                cheat_engine: `<svg viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
+                    <defs><linearGradient id="ce" x1="0%" y1="0%" x2="100%" y2="100%"><stop offset="0%" stop-color="#000000"/><stop offset="100%" stop-color="#1A1A1A"/></linearGradient></defs>
+                    <rect width="100" height="100" rx="20" fill="url(#ce)"/>
+                    <circle cx="50" cy="50" r="28" fill="none" stroke="#00FF00" stroke-width="3"/>
+                    <circle cx="50" cy="50" r="20" fill="none" stroke="#00FF00" stroke-width="2"/>
+                    <circle cx="50" cy="50" r="12" fill="none" stroke="#00FF00" stroke-width="2"/>
+                    <circle cx="50" cy="50" r="4" fill="#00FF00"/>
+                    <line x1="50" y1="50" x2="72" y2="28" stroke="#00FF00" stroke-width="3" stroke-linecap="round"/>
+                    <line x1="50" y1="50" x2="28" y2="50" stroke="#00FF00" stroke-width="2" stroke-linecap="round"/>
+                </svg>`,
+                mt_manager: `<svg viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
+                    <defs><linearGradient id="mt" x1="0%" y1="0%" x2="100%" y2="100%"><stop offset="0%" stop-color="#FF9800"/><stop offset="100%" stop-color="#E65100"/></linearGradient></defs>
+                    <rect width="100" height="100" rx="20" fill="url(#mt)"/>
+                    <rect x="20" y="20" width="60" height="60" rx="4" fill="#FFFFFF" opacity="0.95"/>
+                    <path d="M20 30 L80 30" stroke="#FF9800" stroke-width="2"/>
+                    <text x="50" y="58" text-anchor="middle" fill="#FF9800" font-family="Arial Black" font-size="22" font-weight="900">MT</text>
+                    <text x="50" y="74" text-anchor="middle" fill="#FF9800" font-family="Arial" font-size="9" font-weight="700">MANAGER</text>
+                </svg>`,
+                antisplit_m: `<svg viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
+                    <defs><linearGradient id="as" x1="0%" y1="0%" x2="100%" y2="100%"><stop offset="0%" stop-color="#3F51B5"/><stop offset="100%" stop-color="#1A237E"/></linearGradient></defs>
+                    <rect width="100" height="100" rx="20" fill="url(#as)"/>
+                    <rect x="25" y="25" width="22" height="50" rx="3" fill="white" opacity="0.9"/>
+                    <rect x="53" y="25" width="22" height="50" rx="3" fill="white" opacity="0.9"/>
+                    <path d="M50 35 L50 65" stroke="#3F51B5" stroke-width="3" stroke-dasharray="3,3"/>
+                    <path d="M47 45 L50 50 L53 45" fill="#3F51B5"/>
+                </svg>`
+            };
+            
+            // If icon is an emoji (user-added from admin), use it directly
+            if (!icons[iconId] && iconId && iconId.length <= 3) {
+                return `<div style="font-size:3.5rem;text-align:center;">${escapeHtml(iconId)}</div>`;
+            }
+            
+            // If icon is a custom SVG string, return it
+            if (iconId && iconId.startsWith('<svg')) {
+                return iconId;
+            }
+            
+            // If not found, return a generic icon
+            if (!icons[iconId]) {
+                return `<svg viewBox="0 0 100 100"><rect width="100" height="100" rx="20" fill="#1A1A1A"/><text x="50" y="65" text-anchor="middle" fill="white" font-size="40">📱</text></svg>`;
+            }
+            
+            return icons[iconId];
+        }
+
+        function getCategoryEmoji(cat) {
+            const map = { games: '🎮', tools: '🛠️', video: '🎬', photo: '📸', ai: '🤖', other: '📦' };
+            return map[cat] || '📦';
+        }
+
+        function getApps() {
+            const stored = localStorage.getItem(STORAGE_KEYS.APPS);
+            if (!stored) return DEFAULT_APPS;
+            try {
+                const apps = JSON.parse(stored);
+                // Migration: detect if any app still has emoji icons (old format) and replace with default
+                const emojiApps = apps.filter(a => a.icon && !a.icon.startsWith('<svg') && a.icon.length <= 3 && !DEFAULT_APPS.find(d => d.id === a.icon));
+                if (emojiApps.length > 0) {
+                    // User has old data with emojis - return defaults with their custom links preserved
+                    return DEFAULT_APPS;
+                }
+                return apps;
+            } catch (e) {
+                return DEFAULT_APPS;
+            }
         }
         
-        // PWA Install Prompt
-        let deferredPrompt;
-        const installBanner = document.getElementById('installBanner');
-        const installBtn = document.getElementById('installBtn');
-        const closeBanner = document.getElementById('closeBanner');
+        function saveApps(apps) {
+            localStorage.setItem(STORAGE_KEYS.APPS, JSON.stringify(apps));
+        }
         
-        window.addEventListener('beforeinstallprompt', (e) => {
-            e.preventDefault();
-            deferredPrompt = e;
-            // Show install banner after 3 seconds
-            setTimeout(() => {
-                if (!localStorage.getItem('installBannerClosed')) {
-                    installBanner.classList.add('show');
-                }
-            }, 3000);
-        });
+        function getDownloads() {
+            return JSON.parse(localStorage.getItem(STORAGE_KEYS.DOWNLOADS) || '{}');
+        }
         
-        installBtn.addEventListener('click', async () => {
-            if (deferredPrompt) {
-                deferredPrompt.prompt();
-                const { outcome } = await deferredPrompt.userChoice;
-                if (outcome === 'accepted') {
-                    console.log('User installed the app');
-                }
-                deferredPrompt = null;
-                installBanner.classList.remove('show');
+        function saveDownloads(downloads) {
+            localStorage.setItem(STORAGE_KEYS.DOWNLOADS, JSON.stringify(downloads));
+        }
+        
+        function incrementDownload(appId) {
+            const downloads = getDownloads();
+            downloads[appId] = (downloads[appId] || 0) + 1;
+            saveDownloads(downloads);
+        }
+
+        // ============================================
+        // RENDER APPS GRID
+        // ============================================
+        function renderApps() {
+            const apps = getApps();
+            const downloads = getDownloads();
+            const appsGrid = document.getElementById('appsGrid');
+            const noResults = document.getElementById('noResults');
+            
+            // Filter apps based on search and category
+            const filtered = apps.filter(app => {
+                const matchesFilter = currentFilter === 'all' || app.category === currentFilter;
+                const matchesSearch = !currentSearch || 
+                    app.title.toLowerCase().includes(currentSearch.toLowerCase()) ||
+                    (app.desc && app.desc.toLowerCase().includes(currentSearch.toLowerCase())) ||
+                    app.category.toLowerCase().includes(currentSearch.toLowerCase());
+                return matchesFilter && matchesSearch;
+            });
+            
+            appsGrid.innerHTML = '';
+            
+            if (filtered.length === 0) {
+                noResults.classList.add('show');
+                appsGrid.style.display = 'none';
+            } else {
+                noResults.classList.remove('show');
+                appsGrid.style.display = 'grid';
             }
+            
+            filtered.forEach(app => {
+                const dCount = downloads[app.id] || 0;
+                const card = document.createElement('div');
+                card.className = 'app-card fade-in' + (app.vip ? ' premium' : '');
+                
+                const sizeTag = app.size ? `<span class="app-tag size">📦 ${escapeHtml(app.size)}</span>` : '';
+                const catTag = app.category ? `<span class="app-tag">${getCategoryEmoji(app.category)} ${escapeHtml(app.category)}</span>` : '';
+                const vipTag = app.vip ? '<span class="app-tag vip">👑 VIP</span>' : '';
+                
+                card.innerHTML = `
+                    <div class="app-icon-large">${getAppIcon(app.icon)}</div>
+                    <div class="app-title">${escapeHtml(app.title)}</div>
+                    <div class="app-desc">${escapeHtml(app.desc || 'Modded app')}</div>
+                    <div class="app-meta">${vipTag}${catTag}${sizeTag}</div>
+                    <div class="app-downloads">⬇️ ${dCount} downloads</div>
+                    <button class="app-download-btn" data-app-id="${app.id}" data-app-link="${escapeHtml(app.link || '')}">
+                        <span class="btn-content">⬇️ Download Now</span>
+                    </button>
+                `;
+                appsGrid.appendChild(card);
+            });
+            
+            // Attach download handlers
+            appsGrid.querySelectorAll('.app-download-btn').forEach(btn => {
+                btn.addEventListener('click', handleDownloadClick);
+            });
+            
+            // Update hero stat
+            const statEl = document.getElementById('totalAppsStat');
+            if (statEl) statEl.textContent = apps.length + '+';
+            
+            // Re-observe for scroll animation
+            document.querySelectorAll('.fade-in').forEach(el => observer.observe(el));
+        }
+
+        // ============================================
+        // DOWNLOAD WITH PROGRESS SIMULATION
+        // ============================================
+        function handleDownloadClick(e) {
+            const btn = e.currentTarget;
+            const appId = btn.dataset.appId;
+            const appLink = btn.dataset.appLink;
+            const contentSpan = btn.querySelector('.btn-content');
+            
+            if (!appLink || appLink.trim() === '' || appLink === '#') {
+                alert('⚠️ Download link abhi set nahi hai. Admin panel me jaake link add karein.');
+                return;
+            }
+            
+            // If already downloading or finished, ignore
+            if (btn.classList.contains('downloading') || btn.classList.contains('fixed')) {
+                return;
+            }
+            
+            // Start download simulation
+            btn.classList.add('downloading');
+            btn.style.position = 'relative';
+            
+            // Create progress bar overlay
+            const progressBar = document.createElement('div');
+            progressBar.style.cssText = `
+                position: absolute;
+                top: 0; left: 0; bottom: 0;
+                width: 0%;
+                background: var(--gradient-1);
+                transition: width 0.2s linear;
+                z-index: 0;
+            `;
+            btn.appendChild(progressBar);
+            
+            let percent = 0;
+            const totalTime = 3500 + Math.random() * 2000; // 3.5-5.5 seconds
+            const interval = 80; // update every 80ms
+            const increment = (interval / totalTime) * 100;
+            
+            contentSpan.textContent = '⏳ Downloading... 0%';
+            
+            const timer = setInterval(() => {
+                percent += increment;
+                if (percent >= 100) {
+                    percent = 100;
+                    clearInterval(timer);
+                    
+                    // Show "Fixed" state
+                    btn.classList.remove('downloading');
+                    btn.classList.add('fixed');
+                    progressBar.style.width = '100%';
+                    contentSpan.textContent = '✅ Fixed - Tap to Open';
+                    btn.style.cursor = 'pointer';
+                    
+                    // Increment download count
+                    incrementDownload(appId);
+                    
+                    // Open the actual link in a new tab
+                    setTimeout(() => {
+                        window.open(appLink, '_blank', 'noopener,noreferrer');
+                    }, 500);
+                    
+                    // After 4 seconds, reset button
+                    setTimeout(() => {
+                        btn.classList.remove('fixed');
+                        contentSpan.textContent = '⬇️ Download Now';
+                        btn.style.cursor = 'pointer';
+                        progressBar.remove();
+                        // Update count
+                        renderApps();
+                    }, 4000);
+                } else {
+                    progressBar.style.width = percent + '%';
+                    contentSpan.textContent = `⏳ Downloading... ${Math.floor(percent)}%`;
+                }
+            }, interval);
+        }
+
+        // ============================================
+        // SEARCH FUNCTIONALITY
+        // ============================================
+        const searchInput = document.getElementById('searchInput');
+        const searchClear = document.getElementById('searchClear');
+        
+        searchInput.addEventListener('input', (e) => {
+            currentSearch = e.target.value.trim();
+            if (currentSearch) {
+                searchClear.classList.add('show');
+            } else {
+                searchClear.classList.remove('show');
+            }
+            renderApps();
         });
         
-        closeBanner.addEventListener('click', () => {
-            installBanner.classList.remove('show');
-            localStorage.setItem('installBannerClosed', 'true');
+        searchClear.addEventListener('click', () => {
+            searchInput.value = '';
+            currentSearch = '';
+            searchClear.classList.remove('show');
+            renderApps();
+            searchInput.focus();
         });
-        
-        // Scroll animations
+
+        // ============================================
+        // FILTER FUNCTIONALITY
+        // ============================================
+        document.querySelectorAll('.filter-btn').forEach(btn => {
+            btn.addEventListener('click', () => {
+                document.querySelectorAll('.filter-btn').forEach(b => b.classList.remove('active'));
+                btn.classList.add('active');
+                currentFilter = btn.dataset.filter;
+                renderApps();
+            });
+        });
+
+        // ============================================
+        // MOBILE MENU
+        // ============================================
+        document.getElementById('mobileMenu').addEventListener('click', () => {
+            document.getElementById('navLinks').classList.toggle('open');
+        });
+
+        // ============================================
+        // SCROLL ANIMATIONS
+        // ============================================
         const observer = new IntersectionObserver((entries) => {
             entries.forEach(entry => {
                 if (entry.isIntersecting) entry.target.classList.add('visible');
@@ -1135,217 +1420,34 @@
         }, { threshold: 0.1, rootMargin: '0px 0px -50px 0px' });
         
         document.querySelectorAll('.fade-in').forEach(el => observer.observe(el));
-        
+
         // Smooth scroll
         document.querySelectorAll('a[href^="#"]').forEach(anchor => {
             anchor.addEventListener('click', function(e) {
-                e.preventDefault();
-                const target = document.querySelector(this.getAttribute('href'));
-                if (target) target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+                const href = this.getAttribute('href');
+                if (href === '#' || !href) return;
+                const target = document.querySelector(href);
+                if (target) {
+                    e.preventDefault();
+                    target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+                    document.getElementById('navLinks').classList.remove('open');
+                }
             });
         });
-        
+
         // Navbar scroll
         window.addEventListener('scroll', () => {
             const nav = document.querySelector('nav');
-            nav.style.background = window.scrollY > 50 ? 'rgba(10, 10, 10, 0.95)' : 'rgba(10, 10, 10, 0.85)';
-        });
-        
-        // Mood cycling
-        const moods = [
-            { emoji: '😎', text: 'Cool & Confident' },
-            { emoji: '😄', text: 'Happy & Joyful' },
-            { emoji: '🤔', text: 'Deep in Thought' },
-            { emoji: '😍', text: 'Full of Love' },
-            { emoji: '😴', text: 'Sleepy Mode' },
-            { emoji: '🤩', text: 'Super Excited' },
-            { emoji: '🔥', text: 'On Fire' },
-            { emoji: '💪', text: 'Strong & Powerful' }
-        ];
-        
-        let currentMood = 0;
-        const moodEmoji = document.querySelector('.mood-emoji');
-        const moodText = document.querySelector('.mood-text');
-        
-        setInterval(() => {
-            currentMood = (currentMood + 1) % moods.length;
-            moodEmoji.style.opacity = '0';
-            moodText.style.opacity = '0';
-            setTimeout(() => {
-                moodEmoji.textContent = moods[currentMood].emoji;
-                moodText.textContent = moods[currentMood].text;
-                moodEmoji.style.opacity = '1';
-                moodText.style.opacity = '1';
-            }, 300);
-        }, 3000);
-        
-        moodEmoji.style.transition = 'opacity 0.3s';
-        moodText.style.transition = 'opacity 0.3s';
-        
-        // Mobile menu
-        const mobileMenu = document.querySelector('.mobile-menu');
-        const navLinks = document.querySelector('.nav-links');
-        
-        mobileMenu.addEventListener('click', () => {
-            if (navLinks.style.display === 'flex') {
-                navLinks.style.display = 'none';
+            if (window.scrollY > 50) {
+                nav.style.background = 'rgba(10, 10, 10, 0.98)';
             } else {
-                navLinks.style.display = 'flex';
-                navLinks.style.position = 'absolute';
-                navLinks.style.top = '100%';
-                navLinks.style.right = '0';
-                navLinks.style.left = '0';
-                navLinks.style.flexDirection = 'column';
-                navLinks.style.background = 'rgba(10, 10, 10, 0.98)';
-                navLinks.style.padding = '20px';
-                navLinks.style.gap = '15px';
-                navLinks.style.borderTop = '1px solid var(--border)';
+                nav.style.background = 'rgba(10, 10, 10, 0.92)';
             }
         });
-        
-        // Download buttons - change these URLs to your app links
-        const linksModal = document.getElementById('linksModal');
-        const editLinksBtn = document.getElementById('editLinksBtn');
-        const closeLinksModal = document.getElementById('closeLinksModal');
-        const saveLinksBtn = document.getElementById('saveLinksBtn');
-        const resetLinksBtn = document.getElementById('resetLinksBtn');
-        const linksSuccess = document.getElementById('linksSuccess');
-
-        const linkInputs = {
-            playStore: document.getElementById('inputPlayStore'),
-            appStore: document.getElementById('inputAppStore'),
-            apk: document.getElementById('inputApk'),
-            github: document.getElementById('inputGithub'),
-            custom: document.getElementById('inputCustom')
-        };
-
-        const downloadBtns = {
-            playStore: document.getElementById('playStoreBtn'),
-            appStore: document.getElementById('appStoreBtn'),
-            apk: document.getElementById('apkBtn'),
-            github: document.getElementById('githubBtn')
-        };
-
-        // Load saved links on page load
-        function loadSavedLinks() {
-            const saved = JSON.parse(localStorage.getItem('tigerDownloadLinks') || '{}');
-            linkInputs.playStore.value = saved.playStore || '';
-            linkInputs.appStore.value = saved.appStore || '';
-            linkInputs.apk.value = saved.apk || '';
-            linkInputs.github.value = saved.github || '';
-            linkInputs.custom.value = saved.custom || '';
-            applyLinksToButtons(saved);
-        }
-
-        function applyLinksToButtons(links) {
-            Object.keys(downloadBtns).forEach(key => {
-                if (links[key] && links[key].trim() !== '') {
-                    downloadBtns[key].href = links[key];
-                } else {
-                    downloadBtns[key].href = '#';
-                }
-            });
-        }
-
-        // Open modal
-        editLinksBtn.addEventListener('click', () => {
-            linksModal.classList.add('show');
-            document.body.style.overflow = 'hidden';
-        });
-
-        // Close modal
-        closeLinksModal.addEventListener('click', () => {
-            linksModal.classList.remove('show');
-            document.body.style.overflow = '';
-        });
-
-        // Close on backdrop click
-        linksModal.addEventListener('click', (e) => {
-            if (e.target === linksModal) {
-                linksModal.classList.remove('show');
-                document.body.style.overflow = '';
-            }
-        });
-
-        // Save links
-        saveLinksBtn.addEventListener('click', () => {
-            const links = {
-                playStore: linkInputs.playStore.value.trim(),
-                appStore: linkInputs.appStore.value.trim(),
-                apk: linkInputs.apk.value.trim(),
-                github: linkInputs.github.value.trim(),
-                custom: linkInputs.custom.value.trim()
-            };
-            localStorage.setItem('tigerDownloadLinks', JSON.stringify(links));
-            applyLinksToButtons(links);
-            linksSuccess.classList.add('show');
-            setTimeout(() => {
-                linksSuccess.classList.remove('show');
-                linksModal.classList.remove('show');
-                document.body.style.overflow = '';
-            }, 1500);
-        });
-
-        // Reset all
-        resetLinksBtn.addEventListener('click', () => {
-            if (confirm('Kya aap saari links reset karna chahte hain?')) {
-                localStorage.removeItem('tigerDownloadLinks');
-                Object.values(linkInputs).forEach(inp => inp.value = '');
-                Object.values(downloadBtns).forEach(btn => btn.href = '#');
-                linksSuccess.classList.add('show');
-                linksSuccess.textContent = '🗑️ All links reset!';
-                setTimeout(() => {
-                    linksSuccess.classList.remove('show');
-                    linksSuccess.textContent = '✅ Links saved successfully! Ab buttons kaam karenge.';
-                }, 1500);
-            }
-        });
-
-        // Button click handlers
-        document.getElementById('playStoreBtn').addEventListener('click', (e) => {
-            const href = e.currentTarget.href;
-            if (!href || href === '#' || href.endsWith('#')) {
-                e.preventDefault();
-                editLinksBtn.click();
-            }
-        });
-
-        document.getElementById('appStoreBtn').addEventListener('click', (e) => {
-            const href = e.currentTarget.href;
-            if (!href || href === '#' || href.endsWith('#')) {
-                e.preventDefault();
-                editLinksBtn.click();
-            }
-        });
-
-        document.getElementById('apkBtn').addEventListener('click', (e) => {
-            const href = e.currentTarget.href;
-            if (!href || href === '#' || href.endsWith('#')) {
-                e.preventDefault();
-                editLinksBtn.click();
-            }
-        });
-
-        document.getElementById('githubBtn').addEventListener('click', (e) => {
-            const href = e.currentTarget.href;
-            if (!href || href === '#' || href.endsWith('#')) {
-                e.preventDefault();
-                editLinksBtn.click();
-            }
-        });
-
-        // Load on page ready
-        loadSavedLinks();
 
         // ============================================
-        // MY APPS / MODDED APPS SYSTEM
+        // ADMIN PANEL
         // ============================================
-        const ADMIN_PASSWORD = 'tiger2024'; // Change this to your own password
-        let isAdminLoggedIn = sessionStorage.getItem('tigerAdminAuth') === 'true';
-        let editingAppId = null;
-
-        const appsGrid = document.getElementById('appsGrid');
-        const emptyApps = document.getElementById('emptyApps');
         const adminLoginBtn = document.getElementById('adminLoginBtn');
         const adminLoginModal = document.getElementById('adminLoginModal');
         const adminPanelModal = document.getElementById('adminPanelModal');
@@ -1359,85 +1461,25 @@
         const appsCountEl = document.getElementById('appsCount');
         const exportAppsBtn = document.getElementById('exportAppsBtn');
         const logoutAdminBtn = document.getElementById('logoutAdminBtn');
-
-        function getApps() {
-            return JSON.parse(localStorage.getItem('tigerMyApps') || '[]');
-        }
-        function getDownloads() {
-            return JSON.parse(localStorage.getItem('tigerAppDownloads') || '{}');
-        }
-        function saveApps(apps) {
-            localStorage.setItem('tigerMyApps', JSON.stringify(apps));
-        }
-        function incrementDownload(appId) {
-            const downloads = getDownloads();
-            downloads[appId] = (downloads[appId] || 0) + 1;
-            localStorage.setItem('tigerAppDownloads', JSON.stringify(downloads));
-        }
-        function getCategoryEmoji(cat) {
-            const map = { music: '🎵', video: '🎬', social: '💬', games: '🎮', tools: '🛠️', photo: '📸' };
-            return map[cat] || null;
-        }
-
-        function renderApps() {
-            const apps = getApps();
-            const downloads = getDownloads();
-            appsGrid.innerHTML = '';
-            if (apps.length === 0) {
-                emptyApps.style.display = 'block';
-                appsGrid.style.display = 'none';
-                return;
-            }
-            emptyApps.style.display = 'none';
-            appsGrid.style.display = 'grid';
-            apps.forEach(app => {
-                const card = document.createElement('div');
-                card.className = 'app-card fade-in';
-                const catEmoji = getCategoryEmoji(app.category);
-                const sizeTag = app.size ? `<span class="app-tag size">📦 ${escapeHtml(app.size)}</span>` : '';
-                const catTag = app.category && app.category !== 'general' ? `<span class="app-tag">${catEmoji} ${escapeHtml(app.category)}</span>` : '';
-                const dCount = downloads[app.id] || 0;
-                const hasLink = app.link && app.link.trim() !== '';
-                card.innerHTML = `
-                    <div class="app-icon-large">${escapeHtml(app.icon || '📱')}</div>
-                    <div class="app-title">${escapeHtml(app.title)}</div>
-                    <div class="app-desc">${escapeHtml(app.desc || 'Modded app')}</div>
-                    <div class="app-meta">${catTag}${sizeTag}</div>
-                    <div class="app-downloads">⬇️ ${dCount} downloads</div>
-                    ${hasLink
-                        ? `<a href="${escapeHtml(app.link)}" class="app-download-btn" target="_blank" rel="noopener" data-app-id="${app.id}">⬇️ Download Now</a>`
-                        : `<button class="app-download-btn disabled" disabled>❌ No link</button>`
-                    }
-                `;
-                appsGrid.appendChild(card);
-            });
-            // Attach click handlers for download tracking
-            appsGrid.querySelectorAll('a.app-download-btn').forEach(a => {
-                a.addEventListener('click', () => {
-                    const id = a.getAttribute('data-app-id');
-                    if (id) {
-                        incrementDownload(id);
-                        setTimeout(renderApps, 100);
-                    }
-                });
-            });
-        }
+        const adminNavLink = document.getElementById('adminNavLink');
 
         function renderAdminApps() {
             const apps = getApps();
             appsCountEl.textContent = apps.length;
             adminAppsContainer.innerHTML = '';
+            
             if (apps.length === 0) {
                 adminAppsContainer.innerHTML = '<p style="color:var(--text-muted);text-align:center;padding:20px;">Koi app nahi hai abhi. Form fill karke add karein.</p>';
                 return;
             }
+            
             apps.forEach(app => {
                 const item = document.createElement('div');
                 item.className = 'admin-app-item';
                 item.innerHTML = `
-                    <div class="admin-app-icon">${escapeHtml(app.icon || '📱')}</div>
+                    <div class="admin-app-icon" style="width:48px;height:48px;display:flex;align-items:center;justify-content:center;flex-shrink:0;">${getAppIcon(app.icon)}</div>
                     <div class="admin-app-info">
-                        <div class="admin-app-title">${escapeHtml(app.title)}</div>
+                        <div class="admin-app-title">${escapeHtml(app.title)}${app.vip ? ' 👑' : ''}</div>
                         <div class="admin-app-link">${escapeHtml(app.link || 'no link')}</div>
                     </div>
                     <div class="admin-app-actions">
@@ -1447,6 +1489,7 @@
                 `;
                 adminAppsContainer.appendChild(item);
             });
+            
             adminAppsContainer.querySelectorAll('.admin-app-btn').forEach(btn => {
                 btn.addEventListener('click', () => {
                     const id = btn.getAttribute('data-id');
@@ -1457,23 +1500,14 @@
             });
         }
 
-        function escapeHtml(s) {
-            if (s === null || s === undefined) return '';
-            return String(s)
-                .replace(/&/g, '&amp;')
-                .replace(/</g, '&lt;')
-                .replace(/>/g, '&gt;')
-                .replace(/"/g, '&quot;')
-                .replace(/'/g, '&#39;');
-        }
-
         function clearAppForm() {
             document.getElementById('appTitle').value = '';
             document.getElementById('appDesc').value = '';
             document.getElementById('appIcon').value = '';
             document.getElementById('appLink').value = '';
-            document.getElementById('appCategory').value = 'general';
+            document.getElementById('appCategory').value = 'other';
             document.getElementById('appSize').value = '';
+            document.getElementById('appVip').checked = false;
             editingAppId = null;
             addAppBtn.textContent = '➕ Add App';
         }
@@ -1486,8 +1520,9 @@
             document.getElementById('appDesc').value = app.desc || '';
             document.getElementById('appIcon').value = app.icon || '';
             document.getElementById('appLink').value = app.link || '';
-            document.getElementById('appCategory').value = app.category || 'general';
+            document.getElementById('appCategory').value = app.category || 'other';
             document.getElementById('appSize').value = app.size || '';
+            document.getElementById('appVip').checked = !!app.vip;
             editingAppId = id;
             addAppBtn.textContent = '💾 Update App';
             document.getElementById('appTitle').focus();
@@ -1495,15 +1530,13 @@
 
         function deleteApp(id) {
             if (!confirm('Kya aap ye app delete karna chahte hain?')) return;
-            let apps = getApps();
-            apps = apps.filter(a => a.id !== id);
+            const apps = getApps().filter(a => a.id !== id);
             saveApps(apps);
             renderApps();
             renderAdminApps();
         }
 
-        // Admin login button
-        adminLoginBtn.addEventListener('click', () => {
+        function openAdminPanel() {
             if (isAdminLoggedIn) {
                 adminPanelModal.classList.add('show');
                 document.body.style.overflow = 'hidden';
@@ -1513,13 +1546,21 @@
                 document.body.style.overflow = 'hidden';
                 setTimeout(() => adminPasswordInput.focus(), 200);
             }
-        });
+        }
+
+        adminLoginBtn.addEventListener('click', openAdminPanel);
+        if (adminNavLink) {
+            adminNavLink.addEventListener('click', (e) => {
+                e.preventDefault();
+                openAdminPanel();
+            });
+        }
 
         adminLoginSubmit.addEventListener('click', () => {
             const pwd = adminPasswordInput.value;
             if (pwd === ADMIN_PASSWORD) {
                 isAdminLoggedIn = true;
-                sessionStorage.setItem('tigerAdminAuth', 'true');
+                sessionStorage.setItem(STORAGE_KEYS.ADMIN_AUTH, 'true');
                 adminPasswordInput.value = '';
                 adminLoginModal.classList.remove('show');
                 adminPanelModal.classList.add('show');
@@ -1560,22 +1601,25 @@
             const link = document.getElementById('appLink').value.trim();
             if (!title) { alert('⚠️ App title zaroori hai!'); return; }
             if (!link) { alert('⚠️ Download link zaroori hai!'); return; }
+            
             const apps = getApps();
             const desc = document.getElementById('appDesc').value.trim();
             const icon = document.getElementById('appIcon').value.trim() || '📱';
             const category = document.getElementById('appCategory').value;
             const size = document.getElementById('appSize').value.trim();
+            const vip = document.getElementById('appVip').checked;
+            
             if (editingAppId) {
                 const idx = apps.findIndex(a => a.id === editingAppId);
                 if (idx >= 0) {
-                    apps[idx] = { ...apps[idx], title, desc, icon, link, category, size };
+                    apps[idx] = { ...apps[idx], title, desc, icon, link, category, size, vip };
                 }
                 editingAppId = null;
                 addAppBtn.textContent = '➕ Add App';
             } else {
                 apps.push({
                     id: 'app_' + Date.now() + '_' + Math.random().toString(36).slice(2, 8),
-                    title, desc, icon, link, category, size,
+                    title, desc, icon, link, category, size, vip,
                     createdAt: new Date().toISOString()
                 });
             }
@@ -1583,6 +1627,7 @@
             clearAppForm();
             renderApps();
             renderAdminApps();
+            alert('✅ App successfully add ho gayi!');
         });
 
         clearFormBtn.addEventListener('click', clearAppForm);
@@ -1594,7 +1639,7 @@
             const url = URL.createObjectURL(blob);
             const a = document.createElement('a');
             a.href = url;
-            a.download = 'my-apps-backup.json';
+            a.download = 'allinone-apps-backup.json';
             a.click();
             URL.revokeObjectURL(url);
         });
@@ -1602,11 +1647,22 @@
         logoutAdminBtn.addEventListener('click', () => {
             if (confirm('Logout karein?')) {
                 isAdminLoggedIn = false;
-                sessionStorage.removeItem('tigerAdminAuth');
+                sessionStorage.removeItem(STORAGE_KEYS.ADMIN_AUTH);
                 adminPanelModal.classList.remove('show');
                 document.body.style.overflow = '';
             }
         });
+
+        // ============================================
+        // SERVICE WORKER (PWA)
+        // ============================================
+        if ('serviceWorker' in navigator) {
+            window.addEventListener('load', () => {
+                navigator.serviceWorker.register('sw.js')
+                    .then(reg => console.log('Service Worker registered'))
+                    .catch(err => console.log('Service Worker registration failed'));
+            });
+        }
 
         // Initial render
         renderApps();
