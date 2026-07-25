@@ -550,10 +550,81 @@
         @keyframes fadeIn { from { opacity: 0; } to { opacity: 1; } }
         .fade-in { opacity: 0; transform: translateY(30px); transition: all 0.8s ease; }
         .fade-in.visible { opacity: 1; transform: translateY(0); }
+
+        /* Response / Feedback Section */
+        .response-section {
+            padding: 80px 5%;
+            background: linear-gradient(180deg, var(--bg-dark) 0%, var(--bg-card) 100%);
+            border-top: 1px solid var(--border);
+        }
+        .response-container { max-width: 1100px; margin: 0 auto; }
+        .response-form-card {
+            background: linear-gradient(145deg, var(--bg-card), var(--bg-card-2));
+            border: 1px solid var(--border);
+            border-radius: 20px;
+            padding: 28px;
+            margin-bottom: 36px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.3);
+        }
+        .response-form-card h3 {
+            font-size: 1.3rem; font-weight: 800; margin-bottom: 6px;
+            background: var(--gold-gradient);
+            -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text;
+        }
+        .response-form-card > p { color: var(--text-muted); font-size: 0.9rem; margin-bottom: 20px; }
+        .star-rating { display: flex; gap: 6px; margin-bottom: 16px; flex-direction: row-reverse; justify-content: flex-end; }
+        .star-rating input { display: none; }
+        .star-rating label {
+            font-size: 2rem; cursor: pointer; color: rgba(255,255,255,0.2);
+            transition: all 0.2s; user-select: none;
+        }
+        .star-rating label:hover, .star-rating label:hover ~ label,
+        .star-rating input:checked ~ label { color: #FFD700; transform: scale(1.1); }
+        .response-list { display: grid; grid-template-columns: repeat(auto-fill, minmax(300px, 1fr)); gap: 16px; }
+        .response-item {
+            background: linear-gradient(145deg, var(--bg-card), var(--bg-card-2));
+            border: 1px solid var(--border);
+            border-radius: 16px; padding: 20px;
+            transition: all 0.3s;
+        }
+        .response-item:hover { border-color: var(--primary); transform: translateY(-3px); }
+        .response-head { display: flex; align-items: center; gap: 12px; margin-bottom: 12px; }
+        .response-avatar {
+            width: 44px; height: 44px; border-radius: 50%;
+            background: var(--gradient-1); color: #000;
+            display: flex; align-items: center; justify-content: center;
+            font-weight: 800; font-size: 1.1rem; flex-shrink: 0;
+        }
+        .response-meta { flex-grow: 1; min-width: 0; }
+        .response-name { font-weight: 700; color: var(--text); font-size: 0.95rem; word-break: break-word; }
+        .response-date { color: var(--text-muted); font-size: 0.75rem; }
+        .response-stars { color: #FFD700; font-size: 0.9rem; letter-spacing: 2px; margin-bottom: 8px; }
+        .response-text { color: var(--text-muted); font-size: 0.88rem; line-height: 1.6; word-break: break-word; }
+        .response-empty { text-align: center; padding: 40px 20px; color: var(--text-muted); }
+        .response-empty .empty-icon { font-size: 3rem; margin-bottom: 12px; opacity: 0.5; }
+        .response-success {
+            display: none; margin-top: 14px; padding: 10px; text-align: center;
+            background: rgba(0, 230, 118, 0.1); border: 1px solid var(--success);
+            color: var(--success); border-radius: 10px; font-weight: 600; font-size: 0.85rem;
+        }
+        .response-success.show { display: block; animation: fadeInUp 0.4s ease; }
+        .response-stats {
+            display: flex; gap: 20px; margin-bottom: 24px; flex-wrap: wrap; justify-content: center;
+        }
+        .response-stat {
+            background: rgba(0,0,0,0.3); border: 1px solid var(--border);
+            border-radius: 14px; padding: 14px 22px; text-align: center; min-width: 110px;
+        }
+        .response-stat-num {
+            font-size: 1.5rem; font-weight: 900;
+            background: var(--gradient-2);
+            -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text;
+        }
+        .response-stat-label { font-size: 0.75rem; color: var(--text-muted); margin-top: 2px; }
         
         /* Footer */
         footer { padding: 50px 5% 30px; background: var(--bg-darker); border-top: 1px solid var(--border); }
-        .footer-content { max-width: 1200px; margin: 0 auto; display: grid; grid-template-columns: 2fr 1fr 1fr 1fr; gap: 40px; margin-bottom: 30px; }
+        .footer-content { max-width: 1200px; margin: 0 auto; display: grid; grid-template-columns: 2fr 1fr 1fr 1fr 1fr; gap: 40px; margin-bottom: 30px; }
         .footer-brand p { color: var(--text-muted); margin-top: 18px; font-size: 0.9rem; line-height: 1.7; }
         .footer-column h4 { margin-bottom: 20px; font-size: 1rem; font-weight: 700; color: var(--primary); }
         .footer-column ul { list-style: none; }
@@ -582,16 +653,16 @@
             .search-container { order: 3; max-width: 100%; flex-basis: 100%; margin-top: 8px; }
             .nav-links { display: none; }
             .mobile-menu { display: block; }
-            .footer-content { grid-template-columns: 1fr 1fr; }
-            .nav-links.open { 
-                display: flex; 
-                position: absolute; 
-                top: 100%; right: 0; left: 0; 
-                flex-direction: column; 
-                background: rgba(10, 10, 10, 0.98); 
-                padding: 20px; 
-                gap: 15px; 
-                border-top: 1px solid var(--border); 
+            .footer-content { grid-template-columns: 1fr 1fr 1fr; }
+            .nav-links.open {
+                display: flex;
+                position: absolute;
+                top: 100%; right: 0; left: 0;
+                flex-direction: column;
+                background: rgba(10, 10, 10, 0.98);
+                padding: 20px;
+                gap: 15px;
+                border-top: 1px solid var(--border);
             }
         }
         
@@ -601,6 +672,8 @@
             .admin-modal-content { padding: 22px 18px; }
             .admin-modal-content h3 { font-size: 1.15rem; }
             .apps-grid { grid-template-columns: 1fr; }
+            .response-list { grid-template-columns: 1fr; }
+            .response-form-card { padding: 20px 16px; }
         }
     </style>
     
@@ -632,6 +705,7 @@
         <ul class="nav-links" id="navLinks">
             <li><a href="#home">Home</a></li>
             <li><a href="#myapps">Apps</a></li>
+            <li><a href="#responses">Reviews</a></li>
             <li><a href="#admin" id="adminNavLink">Admin</a></li>
         </ul>
         <button class="mobile-menu" id="mobileMenu">☰</button>
@@ -645,7 +719,7 @@
                 Premium Unlocked • VIP Access • 100% Free
             </span>
             <h1>All in One <span class="gradient-text">Mod APK</span> Hub</h1>
-            <p class="subtitle">Sab kuch ek jagah! Premium unlocked apps, VIP modded games, aur tools jo aapko kahin aur nahi milenge. Direct download, koi signup nahi, koi ads nahi.</p>
+            <p class="subtitle">Everything in one place! Premium unlocked apps, VIP modded games, and tools you won't find anywhere else. Direct download, no signup, no ads.</p>
             <div class="hero-buttons">
                 <a href="#myapps" class="btn btn-primary">
                     <span>⬇️</span>
@@ -678,7 +752,7 @@
         <div class="section-header fade-in">
             <span class="section-badge">📱 Premium Modded Apps Collection</span>
             <h2>Download All <span class="accent" style="background: var(--gold-gradient); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text;">Modded Apps</span> 🔥</h2>
-            <p>Premium Unlocked aur VIP versions. Neeche search karein ya apni pasand ki app ka download button dabayein.</p>
+            <p>Premium Unlocked and VIP versions. Search below or click the download button of your favorite app.</p>
             <button class="admin-login-btn" id="adminLoginBtn">🔐 Admin Panel - Add New App</button>
         </div>
         
@@ -686,7 +760,7 @@
         <div class="premium-banner fade-in">
             <div class="premium-banner-content">
                 <h3>👑 Premium Unlock • VIP Access 👑</h3>
-                <p>Saari apps premium unlocked aur VIP features ke saath available hain. Koi subscription ki zaroorat nahi!</p>
+                <p>All apps come with premium unlocked and VIP features enabled. No subscription required!</p>
             </div>
         </div>
         
@@ -707,8 +781,8 @@
         
         <div class="no-results" id="noResults">
             <div class="empty-icon">🔍</div>
-            <h3 style="color: var(--text); margin-bottom: 8px;">Koi app nahi mili</h3>
-            <p>Apna search term change karke dobara try karein.</p>
+            <h3 style="color: var(--text); margin-bottom: 8px;">No apps found</h3>
+            <p>Try changing your search term.</p>
         </div>
     </section>
     
@@ -716,7 +790,7 @@
     <div class="admin-modal" id="adminLoginModal">
         <div class="admin-modal-content">
             <h3>🔐 Admin Login</h3>
-            <p>Sirf admin hi nayi apps add kar sakta hai. Password enter karein.</p>
+            <p>Only admin can add new apps. Please enter the password.</p>
             <div class="link-field">
                 <label>Password</label>
                 <input type="password" id="adminPassword" placeholder="Enter admin password">
@@ -736,7 +810,7 @@
                 <h3>⚙️ Admin Panel - Manage Your Apps</h3>
                 <button class="links-modal-close" id="closeAdminPanel">✕</button>
             </div>
-            <p class="links-modal-desc">Yahan se apni modded apps add karein. Title, description, icon emoji, aur download link daalein. New app add karne ke baad woh automatic grid me show hogi.</p>
+            <p class="links-modal-desc">Add your modded apps here. Fill in the title, description, category, and download link. A universal file icon will be shown automatically. New apps will appear in the grid instantly.</p>
 
             <div class="admin-form">
                 <div class="link-field">
@@ -746,10 +820,6 @@
                 <div class="link-field">
                     <label>📄 Description (optional)</label>
                     <input type="text" id="appDesc" placeholder="e.g., No ads, unlocked features">
-                </div>
-                <div class="link-field">
-                    <label>🎨 Icon Emoji (1-2 characters)</label>
-                    <input type="text" id="appIcon" placeholder="🎵" maxlength="3">
                 </div>
                 <div class="link-field">
                     <label>🔗 Download Link (Google Drive / Mediafire / GitHub / etc.)</label>
@@ -795,6 +865,65 @@
         </div>
     </div>
     
+    <!-- Response / Reviews Section -->
+    <section class="response-section" id="responses">
+        <div class="response-container">
+            <div class="section-header fade-in">
+                <span class="section-badge">💬 User Reviews & Responses</span>
+                <h2>What Users <span class="accent" style="background: var(--gold-gradient); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text;">Think About Us</span> ✨</h2>
+                <p>Have you downloaded our apps? Share your experience - leave a 5-star rating and a review. Your feedback helps us improve!</p>
+            </div>
+
+            <div class="response-stats fade-in" id="responseStats">
+                <div class="response-stat">
+                    <div class="response-stat-num" id="totalReviews">0</div>
+                    <div class="response-stat-label">Total Reviews</div>
+                </div>
+                <div class="response-stat">
+                    <div class="response-stat-num" id="avgRating">0.0</div>
+                    <div class="response-stat-label">Average Rating</div>
+                </div>
+                <div class="response-stat">
+                    <div class="response-stat-num" id="fiveStarCount">0</div>
+                    <div class="response-stat-label">⭐⭐⭐⭐⭐ Reviews</div>
+                </div>
+            </div>
+
+            <div class="response-form-card fade-in">
+                <h3>📝 Write Your Review</h3>
+                <p>Share your name, rating, and experience. Everything is saved only in your browser.</p>
+                <div class="link-field">
+                    <label>👤 Your Name</label>
+                    <input type="text" id="reviewName" placeholder="e.g., John, Alex, etc." maxlength="30">
+                </div>
+                <div class="link-field">
+                    <label>⭐ Rating</label>
+                    <div class="star-rating" id="starRating">
+                        <input type="radio" name="rating" id="star5" value="5"><label for="star5" title="5 stars">★</label>
+                        <input type="radio" name="rating" id="star4" value="4"><label for="star4" title="4 stars">★</label>
+                        <input type="radio" name="rating" id="star3" value="3"><label for="star3" title="3 stars">★</label>
+                        <input type="radio" name="rating" id="star2" value="2"><label for="star2" title="2 stars">★</label>
+                        <input type="radio" name="rating" id="star1" value="1"><label for="star1" title="1 star">★</label>
+                    </div>
+                </div>
+                <div class="link-field">
+                    <label>💬 Your Review</label>
+                    <textarea id="reviewText" rows="4" placeholder="e.g., Amazing website! All apps work perfectly..." maxlength="500"></textarea>
+                </div>
+                <div class="links-modal-actions">
+                    <button class="links-btn links-btn-save" id="submitReviewBtn">✉️ Submit Review</button>
+                    <button class="links-btn links-btn-reset" id="clearReviewBtn">🧹 Clear</button>
+                </div>
+                <div class="response-success" id="reviewSuccess">✅ Thank you! Your review is now shown below.</div>
+            </div>
+
+            <h3 style="text-align:center; margin-bottom: 22px; font-size: 1.4rem; font-weight: 800;">📋 All User Reviews</h3>
+            <div class="response-list" id="responseList">
+                <!-- Reviews will be rendered here -->
+            </div>
+        </div>
+    </section>
+
     <!-- Footer -->
     <footer>
         <div class="footer-content">
@@ -803,7 +932,7 @@
                     <span class="logo-icon">⚡</span>
                     <span>All in One Mod APK</span>
                 </div>
-                <p>Sab kuch ek jagah. Premium unlock aur VIP access ke saath. Direct download, no signup, no surveys, koi paise nahi.</p>
+                <p>Everything in one place. Premium unlock and VIP access. Direct download, no signup, no surveys, completely free.</p>
                 <div class="social-links">
                     <a href="#" class="social-link">📘</a>
                     <a href="#" class="social-link">🐦</a>
@@ -818,6 +947,14 @@
                     <li><a href="#myapps">Games</a></li>
                     <li><a href="#myapps">Tools</a></li>
                     <li><a href="#myapps">Video</a></li>
+                </ul>
+            </div>
+            <div class="footer-column">
+                <h4>Reviews</h4>
+                <ul>
+                    <li><a href="#responses">User Reviews</a></li>
+                    <li><a href="#responses">Write Review</a></li>
+                    <li><a href="#responses">Ratings</a></li>
                 </ul>
             </div>
             <div class="footer-column">
@@ -1041,147 +1178,22 @@
         }
 
         // ============================================
-        // APP ICONS (Real app-style SVG logos)
+        // APP ICONS (Universal File Icon - hamesha file dikhayega)
         // ============================================
         function getAppIcon(iconId) {
-            const icons = {
-                game_guardian: `<svg viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
-                    <defs><linearGradient id="gg" x1="0%" y1="0%" x2="100%" y2="100%"><stop offset="0%" stop-color="#1A1A2E"/><stop offset="100%" stop-color="#16213E"/></linearGradient></defs>
-                    <rect width="100" height="100" rx="20" fill="url(#gg)"/>
-                    <path d="M30 25 L50 50 L30 75 M55 25 L75 50 L55 75" stroke="#00FF88" stroke-width="6" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
-                    <circle cx="50" cy="50" r="8" fill="#00FF88" opacity="0.3"/>
-                </svg>`,
-                movie_box: `<svg viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
-                    <defs><linearGradient id="mb" x1="0%" y1="0%" x2="100%" y2="100%"><stop offset="0%" stop-color="#E50914"/><stop offset="100%" stop-color="#831010"/></linearGradient></defs>
-                    <rect width="100" height="100" rx="18" fill="url(#mb)"/>
-                    <rect x="20" y="30" width="60" height="40" rx="4" fill="none" stroke="white" stroke-width="3"/>
-                    <polygon points="42,40 42,60 62,50" fill="white"/>
-                </svg>`,
-                shellmind_ai: `<svg viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
-                    <defs><linearGradient id="sm" x1="0%" y1="0%" x2="100%" y2="100%"><stop offset="0%" stop-color="#6C3BFF"/><stop offset="100%" stop-color="#2D1B69"/></linearGradient></defs>
-                    <rect width="100" height="100" rx="20" fill="url(#sm)"/>
-                    <circle cx="50" cy="50" r="20" fill="none" stroke="#00D4FF" stroke-width="3"/>
-                    <circle cx="50" cy="50" r="6" fill="#00D4FF"/>
-                    <circle cx="50" cy="20" r="3" fill="#00D4FF"/>
-                    <circle cx="50" cy="80" r="3" fill="#00D4FF"/>
-                    <circle cx="20" cy="50" r="3" fill="#00D4FF"/>
-                    <circle cx="80" cy="50" r="3" fill="#00D4FF"/>
-                    <text x="50" y="55" text-anchor="middle" fill="white" font-family="Arial" font-size="14" font-weight="bold">AI</text>
-                </svg>`,
-                nitflix: `<svg viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
-                    <defs><linearGradient id="nf" x1="0%" y1="0%" x2="0%" y2="100%"><stop offset="0%" stop-color="#E50914"/><stop offset="100%" stop-color="#B20710"/></linearGradient></defs>
-                    <rect width="100" height="100" rx="4" fill="url(#nf)"/>
-                    <text x="50" y="68" text-anchor="middle" fill="white" font-family="Arial Black, sans-serif" font-size="50" font-weight="900" font-style="italic">N</text>
-                </svg>`,
-                current_activity: `<svg viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
-                    <defs><linearGradient id="ca" x1="0%" y1="0%" x2="100%" y2="100%"><stop offset="0%" stop-color="#2196F3"/><stop offset="100%" stop-color="#0D47A1"/></linearGradient></defs>
-                    <rect width="100" height="100" rx="20" fill="url(#ca)"/>
-                    <rect x="20" y="60" width="10" height="20" rx="2" fill="white"/>
-                    <rect x="35" y="50" width="10" height="30" rx="2" fill="white"/>
-                    <rect x="50" y="35" width="10" height="45" rx="2" fill="white"/>
-                    <rect x="65" y="45" width="10" height="35" rx="2" fill="white"/>
-                    <path d="M20 25 L35 15 L50 20 L70 10" stroke="white" stroke-width="3" fill="none" stroke-linecap="round"/>
-                    <circle cx="70" cy="10" r="4" fill="white"/>
-                </svg>`,
-                capcut: `<svg viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
-                    <defs><linearGradient id="cc" x1="0%" y1="0%" x2="100%" y2="100%"><stop offset="0%" stop-color="#000000"/><stop offset="50%" stop-color="#1A1A1A"/><stop offset="100%" stop-color="#2D2D2D"/></linearGradient></defs>
-                    <rect width="100" height="100" rx="22" fill="url(#cc)"/>
-                    <path d="M25 25 L25 75 M25 25 L60 25 M25 75 L60 75" stroke="white" stroke-width="8" stroke-linecap="round" fill="none"/>
-                    <circle cx="70" cy="50" r="12" fill="none" stroke="white" stroke-width="5"/>
-                    <line x1="78" y1="58" x2="85" y2="65" stroke="white" stroke-width="5" stroke-linecap="round"/>
-                </svg>`,
-                vphonegaga: `<svg viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
-                    <defs><linearGradient id="vp" x1="0%" y1="0%" x2="100%" y2="100%"><stop offset="0%" stop-color="#FF6B35"/><stop offset="100%" stop-color="#C13D00"/></linearGradient></defs>
-                    <rect width="100" height="100" rx="20" fill="url(#vp)"/>
-                    <rect x="32" y="20" width="36" height="60" rx="6" fill="#1A1A1A" stroke="white" stroke-width="2"/>
-                    <rect x="36" y="28" width="28" height="38" rx="2" fill="#4A90E2"/>
-                    <circle cx="50" cy="73" r="2" fill="white"/>
-                    <path d="M65 35 L75 30 L80 40 L70 45 Z" fill="#FFD700" stroke="white" stroke-width="1.5"/>
-                </svg>`,
-                lulubox: `<svg viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
-                    <defs><linearGradient id="lb" x1="0%" y1="0%" x2="100%" y2="100%"><stop offset="0%" stop-color="#9C27B0"/><stop offset="50%" stop-color="#E91E63"/><stop offset="100%" stop-color="#FF5722"/></linearGradient></defs>
-                    <rect width="100" height="100" rx="20" fill="url(#lb)"/>
-                    <rect x="20" y="20" width="60" height="60" rx="10" fill="none" stroke="white" stroke-width="3"/>
-                    <rect x="20" y="20" width="60" height="60" rx="10" fill="none" stroke="white" stroke-width="2" stroke-dasharray="5,5"/>
-                    <path d="M40 35 L50 25 L60 35 M50 25 L50 75" stroke="white" stroke-width="3" fill="none" stroke-linecap="round"/>
-                </svg>`,
-                zarchiver: `<svg viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
-                    <defs><linearGradient id="za" x1="0%" y1="0%" x2="100%" y2="100%"><stop offset="0%" stop-color="#1E88E5"/><stop offset="100%" stop-color="#0D47A1"/></linearGradient></defs>
-                    <rect width="100" height="100" rx="20" fill="url(#za)"/>
-                    <rect x="25" y="20" width="50" height="60" rx="4" fill="white"/>
-                    <path d="M30 35 L45 35 M30 45 L55 45 M30 55 L50 55 M30 65 L45 65" stroke="#1E88E5" stroke-width="2.5" stroke-linecap="round"/>
-                    <rect x="55" y="55" width="20" height="20" rx="2" fill="#FF9800" stroke="white" stroke-width="2"/>
-                    <text x="65" y="71" text-anchor="middle" fill="white" font-family="Arial Black" font-size="14" font-weight="900">Z</text>
-                </svg>`,
-                ax_manager: `<svg viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
-                    <defs><linearGradient id="ax" x1="0%" y1="0%" x2="100%" y2="100%"><stop offset="0%" stop-color="#37474F"/><stop offset="100%" stop-color="#000000"/></linearGradient></defs>
-                    <rect width="100" height="100" rx="20" fill="url(#ax)"/>
-                    <circle cx="50" cy="50" r="25" fill="none" stroke="#00E5FF" stroke-width="3"/>
-                    <path d="M50 25 L50 35 M50 65 L50 75 M25 50 L35 50 M65 50 L75 50" stroke="#00E5FF" stroke-width="3" stroke-linecap="round"/>
-                    <text x="50" y="58" text-anchor="middle" fill="#00E5FF" font-family="Arial Black" font-size="18" font-weight="900">AX</text>
-                </svg>`,
-                lucky_patcher: `<svg viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
-                    <defs><linearGradient id="lp" x1="0%" y1="0%" x2="100%" y2="100%"><stop offset="0%" stop-color="#4CAF50"/><stop offset="100%" stop-color="#1B5E20"/></linearGradient></defs>
-                    <rect width="100" height="100" rx="20" fill="url(#lp)"/>
-                    <path d="M50 20 C30 30 25 45 30 55 C35 65 45 70 50 75 C55 70 65 65 70 55 C75 45 70 30 50 20 Z" fill="white"/>
-                    <path d="M50 25 C40 30 35 40 38 50 L50 50 Z" fill="#FFEB3B"/>
-                    <path d="M50 25 C60 30 65 40 62 50 L50 50 Z" fill="#4CAF50"/>
-                    <path d="M50 50 L38 50 C40 60 45 65 50 75 L50 50 Z" fill="#F44336"/>
-                    <path d="M50 50 L62 50 C60 60 55 65 50 75 L50 50 Z" fill="#2196F3"/>
-                </svg>`,
-                hack_app_data: `<svg viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
-                    <defs><linearGradient id="hd" x1="0%" y1="0%" x2="100%" y2="100%"><stop offset="0%" stop-color="#FF5722"/><stop offset="100%" stop-color="#BF360C"/></linearGradient></defs>
-                    <rect width="100" height="100" rx="20" fill="url(#hd)"/>
-                    <rect x="25" y="35" width="50" height="40" rx="3" fill="none" stroke="white" stroke-width="3"/>
-                    <ellipse cx="50" cy="35" rx="25" ry="8" fill="none" stroke="white" stroke-width="3"/>
-                    <line x1="25" y1="50" x2="75" y2="50" stroke="white" stroke-width="2"/>
-                    <line x1="25" y1="60" x2="75" y2="60" stroke="white" stroke-width="2"/>
-                    <text x="50" y="85" text-anchor="middle" fill="white" font-family="Arial Black" font-size="10" font-weight="900">HACK</text>
-                </svg>`,
-                cheat_engine: `<svg viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
-                    <defs><linearGradient id="ce" x1="0%" y1="0%" x2="100%" y2="100%"><stop offset="0%" stop-color="#000000"/><stop offset="100%" stop-color="#1A1A1A"/></linearGradient></defs>
-                    <rect width="100" height="100" rx="20" fill="url(#ce)"/>
-                    <circle cx="50" cy="50" r="28" fill="none" stroke="#00FF00" stroke-width="3"/>
-                    <circle cx="50" cy="50" r="20" fill="none" stroke="#00FF00" stroke-width="2"/>
-                    <circle cx="50" cy="50" r="12" fill="none" stroke="#00FF00" stroke-width="2"/>
-                    <circle cx="50" cy="50" r="4" fill="#00FF00"/>
-                    <line x1="50" y1="50" x2="72" y2="28" stroke="#00FF00" stroke-width="3" stroke-linecap="round"/>
-                    <line x1="50" y1="50" x2="28" y2="50" stroke="#00FF00" stroke-width="2" stroke-linecap="round"/>
-                </svg>`,
-                mt_manager: `<svg viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
-                    <defs><linearGradient id="mt" x1="0%" y1="0%" x2="100%" y2="100%"><stop offset="0%" stop-color="#FF9800"/><stop offset="100%" stop-color="#E65100"/></linearGradient></defs>
-                    <rect width="100" height="100" rx="20" fill="url(#mt)"/>
-                    <rect x="20" y="20" width="60" height="60" rx="4" fill="#FFFFFF" opacity="0.95"/>
-                    <path d="M20 30 L80 30" stroke="#FF9800" stroke-width="2"/>
-                    <text x="50" y="58" text-anchor="middle" fill="#FF9800" font-family="Arial Black" font-size="22" font-weight="900">MT</text>
-                    <text x="50" y="74" text-anchor="middle" fill="#FF9800" font-family="Arial" font-size="9" font-weight="700">MANAGER</text>
-                </svg>`,
-                antisplit_m: `<svg viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
-                    <defs><linearGradient id="as" x1="0%" y1="0%" x2="100%" y2="100%"><stop offset="0%" stop-color="#3F51B5"/><stop offset="100%" stop-color="#1A237E"/></linearGradient></defs>
-                    <rect width="100" height="100" rx="20" fill="url(#as)"/>
-                    <rect x="25" y="25" width="22" height="50" rx="3" fill="white" opacity="0.9"/>
-                    <rect x="53" y="25" width="22" height="50" rx="3" fill="white" opacity="0.9"/>
-                    <path d="M50 35 L50 65" stroke="#3F51B5" stroke-width="3" stroke-dasharray="3,3"/>
-                    <path d="M47 45 L50 50 L53 45" fill="#3F51B5"/>
-                </svg>`
-            };
-            
-            // If icon is an emoji (user-added from admin), use it directly
-            if (!icons[iconId] && iconId && iconId.length <= 3) {
-                return `<div style="font-size:3.5rem;text-align:center;">${escapeHtml(iconId)}</div>`;
-            }
-            
-            // If icon is a custom SVG string, return it
-            if (iconId && iconId.startsWith('<svg')) {
-                return iconId;
-            }
-            
-            // If not found, return a generic icon
-            if (!icons[iconId]) {
-                return `<svg viewBox="0 0 100 100"><rect width="100" height="100" rx="20" fill="#1A1A1A"/><text x="50" y="65" text-anchor="middle" fill="white" font-size="40">📱</text></svg>`;
-            }
-            
-            return icons[iconId];
+            // Hamesha file icon show hoga - chahe app kaisi bhi ho
+            return `<svg viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
+                <defs><linearGradient id="fileg" x1="0%" y1="0%" x2="100%" y2="100%">
+                    <stop offset="0%" stop-color="#FFB800"/>
+                    <stop offset="100%" stop-color="#FF3D00"/>
+                </linearGradient></defs>
+                <rect width="100" height="100" rx="20" fill="url(#fileg)"/>
+                <path d="M28 18 L60 18 L78 36 L78 82 L28 82 Z" fill="white" opacity="0.95"/>
+                <path d="M60 18 L60 36 L78 36" fill="white" opacity="0.7" stroke="#FFB800" stroke-width="1.5"/>
+                <line x1="36" y1="48" x2="70" y2="48" stroke="#FFB800" stroke-width="3" stroke-linecap="round"/>
+                <line x1="36" y1="58" x2="70" y2="58" stroke="#FFB800" stroke-width="3" stroke-linecap="round"/>
+                <line x1="36" y1="68" x2="58" y2="68" stroke="#FFB800" stroke-width="3" stroke-linecap="round"/>
+            </svg>`;
         }
 
         function getCategoryEmoji(cat) {
@@ -1194,12 +1206,6 @@
             if (!stored) return DEFAULT_APPS;
             try {
                 const apps = JSON.parse(stored);
-                // Migration: detect if any app still has emoji icons (old format) and replace with default
-                const emojiApps = apps.filter(a => a.icon && !a.icon.startsWith('<svg') && a.icon.length <= 3 && !DEFAULT_APPS.find(d => d.id === a.icon));
-                if (emojiApps.length > 0) {
-                    // User has old data with emojis - return defaults with their custom links preserved
-                    return DEFAULT_APPS;
-                }
                 return apps;
             } catch (e) {
                 return DEFAULT_APPS;
@@ -1469,7 +1475,7 @@
             adminAppsContainer.innerHTML = '';
             
             if (apps.length === 0) {
-                adminAppsContainer.innerHTML = '<p style="color:var(--text-muted);text-align:center;padding:20px;">Koi app nahi hai abhi. Form fill karke add karein.</p>';
+                adminAppsContainer.innerHTML = '<p style="color:var(--text-muted);text-align:center;padding:20px;">No apps yet. Fill the form above to add your first app.</p>';
                 return;
             }
             
@@ -1480,7 +1486,7 @@
                     <div class="admin-app-icon" style="width:48px;height:48px;display:flex;align-items:center;justify-content:center;flex-shrink:0;">${getAppIcon(app.icon)}</div>
                     <div class="admin-app-info">
                         <div class="admin-app-title">${escapeHtml(app.title)}${app.vip ? ' 👑' : ''}</div>
-                        <div class="admin-app-link">${escapeHtml(app.link || 'no link')}</div>
+                        <div class="admin-app-link">${escapeHtml(app.link || 'No link')}</div>
                     </div>
                     <div class="admin-app-actions">
                         <button class="admin-app-btn" title="Edit" data-id="${app.id}" data-action="edit">✏️</button>
@@ -1503,7 +1509,8 @@
         function clearAppForm() {
             document.getElementById('appTitle').value = '';
             document.getElementById('appDesc').value = '';
-            document.getElementById('appIcon').value = '';
+            const iconEl = document.getElementById('appIcon');
+            if (iconEl) iconEl.value = '';
             document.getElementById('appLink').value = '';
             document.getElementById('appCategory').value = 'other';
             document.getElementById('appSize').value = '';
@@ -1518,7 +1525,8 @@
             if (!app) return;
             document.getElementById('appTitle').value = app.title;
             document.getElementById('appDesc').value = app.desc || '';
-            document.getElementById('appIcon').value = app.icon || '';
+            const iconEl = document.getElementById('appIcon');
+            if (iconEl) iconEl.value = app.icon || '';
             document.getElementById('appLink').value = app.link || '';
             document.getElementById('appCategory').value = app.category || 'other';
             document.getElementById('appSize').value = app.size || '';
@@ -1529,7 +1537,7 @@
         }
 
         function deleteApp(id) {
-            if (!confirm('Kya aap ye app delete karna chahte hain?')) return;
+            if (!confirm('Are you sure you want to delete this app?')) return;
             const apps = getApps().filter(a => a.id !== id);
             saveApps(apps);
             renderApps();
@@ -1569,7 +1577,7 @@
                 adminPasswordInput.value = '';
                 adminPasswordInput.style.borderColor = 'var(--secondary)';
                 setTimeout(() => { adminPasswordInput.style.borderColor = ''; }, 1500);
-                alert('❌ Galat password!');
+                alert('❌ Wrong password!');
             }
         });
 
@@ -1599,16 +1607,17 @@
         addAppBtn.addEventListener('click', () => {
             const title = document.getElementById('appTitle').value.trim();
             const link = document.getElementById('appLink').value.trim();
-            if (!title) { alert('⚠️ App title zaroori hai!'); return; }
-            if (!link) { alert('⚠️ Download link zaroori hai!'); return; }
-            
+            if (!title) { alert('⚠️ App title is required!'); return; }
+            if (!link) { alert('⚠️ Download link is required!'); return; }
+
             const apps = getApps();
             const desc = document.getElementById('appDesc').value.trim();
-            const icon = document.getElementById('appIcon').value.trim() || '📱';
+            const iconEl = document.getElementById('appIcon');
+            const icon = (iconEl ? iconEl.value.trim() : '') || 'file';
             const category = document.getElementById('appCategory').value;
             const size = document.getElementById('appSize').value.trim();
             const vip = document.getElementById('appVip').checked;
-            
+
             if (editingAppId) {
                 const idx = apps.findIndex(a => a.id === editingAppId);
                 if (idx >= 0) {
@@ -1627,7 +1636,7 @@
             clearAppForm();
             renderApps();
             renderAdminApps();
-            alert('✅ App successfully add ho gayi!');
+            alert('✅ App successfully added!');
         });
 
         clearFormBtn.addEventListener('click', clearAppForm);
@@ -1645,13 +1654,154 @@
         });
 
         logoutAdminBtn.addEventListener('click', () => {
-            if (confirm('Logout karein?')) {
+            if (confirm('Are you sure you want to logout?')) {
                 isAdminLoggedIn = false;
                 sessionStorage.removeItem(STORAGE_KEYS.ADMIN_AUTH);
                 adminPanelModal.classList.remove('show');
                 document.body.style.overflow = '';
             }
         });
+
+        // ============================================
+        // RESPONSE / REVIEWS SYSTEM
+        // ============================================
+        const RESPONSES_KEY = 'allinone_responses';
+        let selectedRating = 0;
+
+        function getResponses() {
+            try {
+                return JSON.parse(localStorage.getItem(RESPONSES_KEY) || '[]');
+            } catch (e) {
+                return [];
+            }
+        }
+
+        function saveResponses(responses) {
+            localStorage.setItem(RESPONSES_KEY, JSON.stringify(responses));
+        }
+
+        function getInitials(name) {
+            if (!name) return '?';
+            const parts = name.trim().split(/\s+/);
+            if (parts.length === 1) return parts[0].charAt(0).toUpperCase();
+            return (parts[0].charAt(0) + parts[parts.length - 1].charAt(0)).toUpperCase();
+        }
+
+        function formatDate(timestamp) {
+            const d = new Date(timestamp);
+            const now = new Date();
+            const diff = Math.floor((now - d) / 1000); // seconds
+            if (diff < 60) return 'Just now';
+            if (diff < 3600) return Math.floor(diff / 60) + ' min ago';
+            if (diff < 86400) return Math.floor(diff / 3600) + ' hours ago';
+            if (diff < 604800) return Math.floor(diff / 86400) + ' days ago';
+            return d.toLocaleDateString('en-GB', { day: 'numeric', month: 'short', year: 'numeric' });
+        }
+
+        function renderStars(rating) {
+            let stars = '';
+            for (let i = 0; i < 5; i++) {
+                stars += i < rating ? '★' : '☆';
+            }
+            return stars;
+        }
+
+        function renderResponses() {
+            const responses = getResponses();
+            const list = document.getElementById('responseList');
+            const totalReviewsEl = document.getElementById('totalReviews');
+            const avgRatingEl = document.getElementById('avgRating');
+            const fiveStarEl = document.getElementById('fiveStarCount');
+
+            // Update stats
+            totalReviewsEl.textContent = responses.length;
+            if (responses.length > 0) {
+                const sum = responses.reduce((acc, r) => acc + (r.rating || 0), 0);
+                const avg = (sum / responses.length).toFixed(1);
+                avgRatingEl.textContent = avg;
+            } else {
+                avgRatingEl.textContent = '0.0';
+            }
+            fiveStarEl.textContent = responses.filter(r => r.rating === 5).length;
+
+            // Render list (newest first)
+            if (responses.length === 0) {
+                list.innerHTML = `
+                    <div class="response-empty" style="grid-column: 1 / -1;">
+                        <div class="empty-icon">💭</div>
+                        <h3 style="color: var(--text); margin-bottom: 8px;">No reviews yet</h3>
+                        <p>Be the first to share your experience and help us improve!</p>
+                    </div>
+                `;
+                return;
+            }
+
+            const sorted = [...responses].sort((a, b) => (b.timestamp || 0) - (a.timestamp || 0));
+            list.innerHTML = sorted.map(r => `
+                <div class="response-item">
+                    <div class="response-head">
+                        <div class="response-avatar">${escapeHtml(getInitials(r.name))}</div>
+                        <div class="response-meta">
+                            <div class="response-name">${escapeHtml(r.name || 'Anonymous')}</div>
+                            <div class="response-date">${formatDate(r.timestamp)}</div>
+                        </div>
+                    </div>
+                    <div class="response-stars">${renderStars(r.rating || 0)}</div>
+                    <div class="response-text">${escapeHtml(r.text || '')}</div>
+                </div>
+            `).join('');
+        }
+
+        // Star rating interaction
+        document.querySelectorAll('#starRating input').forEach(input => {
+            input.addEventListener('change', (e) => {
+                selectedRating = parseInt(e.target.value, 10);
+            });
+        });
+
+        document.getElementById('submitReviewBtn').addEventListener('click', () => {
+            const name = document.getElementById('reviewName').value.trim();
+            const text = document.getElementById('reviewText').value.trim();
+            const rating = selectedRating;
+
+            if (!name) { alert('⚠️ Your name is required!'); return; }
+            if (!rating) { alert('⚠️ Please select a rating (1 to 5 stars)!'); return; }
+            if (!text) { alert('⚠️ Review text is required!'); return; }
+
+            const responses = getResponses();
+            responses.push({
+                id: 'rev_' + Date.now() + '_' + Math.random().toString(36).slice(2, 6),
+                name: name,
+                rating: rating,
+                text: text,
+                timestamp: Date.now()
+            });
+            saveResponses(responses);
+
+            // Show success message
+            const success = document.getElementById('reviewSuccess');
+            success.classList.add('show');
+            setTimeout(() => success.classList.remove('show'), 3500);
+
+            // Clear form
+            document.getElementById('reviewName').value = '';
+            document.getElementById('reviewText').value = '';
+            document.querySelectorAll('#starRating input').forEach(inp => inp.checked = false);
+            selectedRating = 0;
+
+            // Re-render
+            renderResponses();
+        });
+
+        document.getElementById('clearReviewBtn').addEventListener('click', () => {
+            document.getElementById('reviewName').value = '';
+            document.getElementById('reviewText').value = '';
+            document.querySelectorAll('#starRating input').forEach(inp => inp.checked = false);
+            selectedRating = 0;
+        });
+
+        // Initial render of responses
+        renderResponses();
 
         // ============================================
         // SERVICE WORKER (PWA)

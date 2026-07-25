@@ -19,14 +19,17 @@ A complete **PWA website** for downloading premium unlocked & VIP modded apps fo
 - ⚡ **All in One Mod APK** - branded dark theme
 - 🔍 **Search Bar** - search any app instantly (top of page)
 - 🎯 **Filter Buttons** - Games / Tools / Video / Photo / AI / Other
+- 📁 **Universal File Icon** - same file icon for every app (clean look)
 - 📥 **Download Buttons** - one-click download
 - ⏳ **Download Progress** - shows % then "Fixed" (opens link)
 - 👑 **VIP badges** - for premium apps
+- 💬 **User Reviews/Responses** - users can give 1-5 star reviews
+- 📊 **Review Stats** - total reviews, average rating, 5-star count
 - 📱 **100% Responsive** - works on all devices
 
 ### 🔐 Admin Panel
 - 🔑 **Password protected** - default: `tiger2024`
-- ➕ **Add new apps** - title, desc, icon, link, category
+- ➕ **Add new apps** - title, desc, download link, category
 - ✏️ **Edit existing apps**
 - 🗑️ **Delete apps**
 - 📤 **Export backup (JSON)**
