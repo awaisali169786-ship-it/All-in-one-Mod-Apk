@@ -1857,13 +1857,19 @@
         ];
 
         // ============================================
+        // APPS DATA VERSION (Bump this to force refresh of cached apps)
+        // ============================================
+        const APPS_VERSION = 2; // v2 added: Secure VPN, PLAYit, Super VPN Pro, Tweeload, Word Sport
+
+        // ============================================
         // STATE & STORAGE
         // ============================================
         const ADMIN_PASSWORD = 'tiger2024';
         const STORAGE_KEYS = {
             APPS: 'allinone_apps',
             DOWNLOADS: 'allinone_downloads',
-            ADMIN_AUTH: 'allinone_admin'
+            ADMIN_AUTH: 'allinone_admin',
+            APPS_VERSION: 'allinone_apps_version'
         };
         
         let isAdminLoggedIn = sessionStorage.getItem(STORAGE_KEYS.ADMIN_AUTH) === 'true';
@@ -1909,18 +1915,44 @@
         }
 
         function getApps() {
+            // ✅ FORCE REFRESH: If apps version changed OR nothing stored, use DEFAULT_APPS
+            const storedVersion = localStorage.getItem(STORAGE_KEYS.APPS_VERSION);
             const stored = localStorage.getItem(STORAGE_KEYS.APPS);
-            if (!stored) return DEFAULT_APPS;
+
+            // If version mismatch or no cached apps, refresh from defaults
+            if (!stored || storedVersion === null || String(storedVersion) !== String(APPS_VERSION)) {
+                localStorage.setItem(STORAGE_KEYS.APPS, JSON.stringify(DEFAULT_APPS));
+                localStorage.setItem(STORAGE_KEYS.APPS_VERSION, String(APPS_VERSION));
+                return DEFAULT_APPS;
+            }
+
+            // Merge: DEFAULT_APPS ke new ids add hon (preserve user edits where possible)
             try {
-                const apps = JSON.parse(stored);
-                return apps;
+                const storedApps = JSON.parse(stored);
+                const storedIds = new Set(storedApps.map(a => a.id));
+                // Add any missing apps from DEFAULT_APPS that aren't in stored
+                const merged = [...storedApps];
+                DEFAULT_APPS.forEach(defApp => {
+                    if (!storedIds.has(defApp.id)) {
+                        merged.push(defApp);
+                    }
+                });
+                return merged;
             } catch (e) {
                 return DEFAULT_APPS;
             }
         }
-        
+
         function saveApps(apps) {
             localStorage.setItem(STORAGE_KEYS.APPS, JSON.stringify(apps));
+            // Mark stored version as current to avoid forced refresh wiping user edits
+            localStorage.setItem(STORAGE_KEYS.APPS_VERSION, String(APPS_VERSION));
+        }
+
+        // ✅ Clear cache helper exposed for troubleshooting
+        function clearAppsCache() {
+            localStorage.removeItem(STORAGE_KEYS.APPS);
+            localStorage.removeItem(STORAGE_KEYS.APPS_VERSION);
         }
         
         function getDownloads() {
