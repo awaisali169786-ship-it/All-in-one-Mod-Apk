@@ -654,7 +654,7 @@
                 Direct Download Links • Instant Download • 100% Free
             </span>
             <h1>All in One <span class="gradient-text">Mod APK</span></h1>
-            <p class="subtitle">Premium unlocked & VIP modded apps collection. Admin adds download links — click the download button and your file starts downloading instantly, no new tab opens.</p>
+            <p class="subtitle">Premium unlocked & VIP modded apps. Click the download button — your file downloads instantly without leaving the site. 10+ modded apps ready to download now!</p>
             <div class="hero-buttons">
                 <a href="#myapps" class="btn btn-primary">⬇️ Browse All Apps</a>
                 <a href="#myapps" class="btn btn-secondary">🔥 VIP Mods</a>
@@ -684,7 +684,7 @@
         <div class="section-header fade-in">
             <span class="section-badge">📱 Premium Modded Apps Collection</span>
             <h2>Download All <span class="gradient-text" style="background: var(--gradient-hero); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text;">Modded Apps</span> 🔥</h2>
-            <p>Click any download button and the file starts downloading instantly — no new tab, no redirects, no waiting.</p>
+            <p>Click any download button and your file starts downloading instantly. MediaFire-hosted files open in a new tab — auto-redirect to download page with one tap.</p>
             <button class="admin-login-btn" id="adminLoginBtn">🔐 Admin Panel - Add Download Links</button>
         </div>
         
@@ -800,7 +800,6 @@
     <div class="toast" id="toast"></div>
     
     <script>
-    <script>
         // ============================================
         // CONFIGURATION
         // ============================================
@@ -838,7 +837,7 @@
             toast.className = 'toast show' + (type === 'error' ? ' error' : '');
             setTimeout(() => {
                 toast.classList.remove('show');
-            }, 3000);
+            }, 3500);
         }
 
         function formatBytes(bytes) {
@@ -878,7 +877,12 @@
         function getApps() {
             try {
                 const stored = localStorage.getItem(STORAGE_KEYS.APPS);
-                if (!stored) return [];
+                if (!stored) {
+                    // First visit: load default apps and save them
+                    const defaults = getDefaultApps();
+                    saveApps(defaults);
+                    return defaults;
+                }
                 return JSON.parse(stored);
             } catch (e) {
                 return [];
@@ -933,6 +937,124 @@
             } catch (_) {
                 return 'download';
             }
+        }
+
+        // ============================================
+        // DEFAULT APPS (Auto-loaded on first visit)
+        // ============================================
+        function getDefaultApps() {
+            return [
+                {
+                    id: 'app_default_1',
+                    title: 'Netflix Premium',
+                    desc: 'Premium unlocked modded app',
+                    category: 'video',
+                    size: '60.24 MB',
+                    vip: true,
+                    link: 'https://www.mediafire.com/file/bddex3r2fzbo4jq/Netflix+Premium+v9.76.0+Modded+by+Getmodpc.net.apk/file',
+                    fileName: 'Netflix_Premium_v9.76.0_Modded.apk',
+                    createdAt: new Date().toISOString()
+                },
+                {
+                    id: 'app_default_2',
+                    title: 'Game Guardian No Root Modded',
+                    desc: 'Game Guardian without root — Modifier',
+                    category: 'tools',
+                    size: '53.84 MB',
+                    vip: false,
+                    link: 'https://www.mediafire.com/file/z8fal3nk3gf0x8i/game+guardian+no+roo+Modifier.apk/file',
+                    fileName: 'game_guardian_no_roo_Modifier.apk',
+                    createdAt: new Date().toISOString()
+                },
+                {
+                    id: 'app_default_3',
+                    title: 'MovieBox Premium',
+                    desc: 'Premium unlocked — Watch latest movies',
+                    category: 'video',
+                    size: '55.14 MB',
+                    vip: true,
+                    link: 'https://www.mediafire.com/file/iu32lecvjlpmz0f/MovieBox_premium.apk/file',
+                    fileName: 'MovieBox_premium.apk',
+                    createdAt: new Date().toISOString()
+                },
+                {
+                    id: 'app_default_4',
+                    title: 'Hack App Data Pro',
+                    desc: 'Hack app data without root — Pro version',
+                    category: 'tools',
+                    size: '3.43 MB',
+                    vip: false,
+                    link: 'https://www.mediafire.com/file/8vc9rku3pc0z084/hack_app_Data_pro.apk/file',
+                    fileName: 'hack_app_Data_pro.apk',
+                    createdAt: new Date().toISOString()
+                },
+                {
+                    id: 'app_default_5',
+                    title: 'Current Activity 2.0',
+                    desc: 'Check currently running app activity',
+                    category: 'tools',
+                    size: '603 KB',
+                    vip: false,
+                    link: 'https://www.mediafire.com/file/dvu1hv8nm06qa8z/Current+Activity+_2.0.apk/file',
+                    fileName: 'Current_Activity_2.0.apk',
+                    createdAt: new Date().toISOString()
+                },
+                {
+                    id: 'app_default_6',
+                    title: 'Secure VPN — No Ads Premium',
+                    desc: 'Ad-free, premium unlocked VPN app',
+                    category: 'tools',
+                    size: '13.47 MB',
+                    vip: true,
+                    link: 'https://www.mediafire.com/file/8sc0adg6rjcnn5w/Secure_VPN_4.4.4.apk/file',
+                    fileName: 'Secure_VPN_4.4.4.apk',
+                    createdAt: new Date().toISOString()
+                },
+                {
+                    id: 'app_default_7',
+                    title: 'PLAYit Premium Unlocked',
+                    desc: 'Unlock premium features — Video player',
+                    category: 'video',
+                    size: '19.40 MB',
+                    vip: true,
+                    link: 'https://www.mediafire.com/file/uyuwm53nr7c3a2t/PLAYit_2.7.50.12_apks_kill.apk/file',
+                    fileName: 'PLAYit_2.7.50.12.apk',
+                    createdAt: new Date().toISOString()
+                },
+                {
+                    id: 'app_default_8',
+                    title: 'Super VPN Pro',
+                    desc: 'Pro features unlocked — Fast & secure VPN',
+                    category: 'tools',
+                    size: '14.86 MB',
+                    vip: true,
+                    link: 'https://www.mediafire.com/file/offh2c6yjaeiswj/Super_VPN_Pro.apk/file',
+                    fileName: 'Super_VPN_Pro.apk',
+                    createdAt: new Date().toISOString()
+                },
+                {
+                    id: 'app_default_9',
+                    title: 'Tweeload — No Ads',
+                    desc: 'Ad-free Tweeload app — Download videos',
+                    category: 'tools',
+                    size: '13.75 MB',
+                    vip: false,
+                    link: 'https://www.mediafire.com/file/cba2igdapg1zve1/Tweeload_2.7.apk/file',
+                    fileName: 'Tweeload_2.7.apk',
+                    createdAt: new Date().toISOString()
+                },
+                {
+                    id: 'app_default_10',
+                    title: 'Word Spot — Unlimited Coins',
+                    desc: 'Game modded with unlimited coins',
+                    category: 'games',
+                    size: '13.10 MB',
+                    vip: false,
+                    link: 'https://www.mediafire.com/file/t2jgegqd2g20x3g/Word_Spot_3.3.5.apk/file',
+                    fileName: 'Word_Spot_3.3.5.apk',
+                    createdAt: new Date().toISOString()
+                }
+            ];
         }
 
         // ============================================
@@ -1087,7 +1209,62 @@
         function triggerFileDownload(app) {
             try {
                 const fileName = app.fileName || getFileNameFromUrl(app.link);
-                // Create hidden iframe-less download via temporary anchor
+                const isMediaFire = /mediafire\.com/i.test(app.link);
+
+                if (isMediaFire) {
+                    // MediaFire special handling: open in background tab so current page stays
+                    // Then auto-redirect to direct download after page loads
+                    showToast('⏳ Preparing download... Please wait');
+                    const w = window.open('about:blank', '_blank');
+                    if (w) {
+                        // Build HTML that loads MediaFire in iframe and auto-clicks download
+                        w.document.write(`<!DOCTYPE html><html><head><title>Downloading ${escapeHtml(app.title)}</title>
+                        <meta name="viewport" content="width=device-width, initial-scale=1">
+                        <style>
+                            body{margin:0;background:#0A0A0A;color:#fff;font-family:system-ui;display:flex;align-items:center;justify-content:center;height:100vh;flex-direction:column;text-align:center;padding:20px;}
+                            h1{color:#FFB800;margin:0 0 10px;}
+                            p{color:#9CA3AF;}
+                            .box{background:#15151A;border:1px solid rgba(255,184,0,.2);border-radius:12px;padding:30px;max-width:420px;}
+                            .btn{display:inline-block;margin-top:18px;padding:12px 28px;background:linear-gradient(135deg,#FFB800,#FF3D00);color:#fff;text-decoration:none;border-radius:8px;font-weight:600;border:none;cursor:pointer;font-size:1rem;}
+                            iframe{position:fixed;top:-9999px;left:-9999px;width:1px;height:1px;border:0;visibility:hidden;}
+                        </style>
+                        </head><body>
+                        <div class="box">
+                            <h1>⬇️ ${escapeHtml(app.title)}</h1>
+                            <p>If download doesn't start automatically, tap the button below.</p>
+                            <a class="btn" id="dlBtn" href="${app.link}" target="_self" rel="noopener">⬇️ Open Download Page</a>
+                            <p style="margin-top:14px;font-size:.8rem;opacity:.7;">Size: ${escapeHtml(app.size || '—')} • Powered by All in One Mod APK</p>
+                        </div>
+                        <iframe id="mf" src="${app.link}"></iframe>
+                        <script>
+                            // Wait for iframe to load, then redirect main window to MediaFire direct download if possible
+                            setTimeout(function(){
+                                try {
+                                    var f = document.getElementById('mf').contentWindow;
+                                    // Try clicking the MediaFire download button via iframe is blocked by CORS
+                                    // So we open MediaFire file in same window after a short delay
+                                    window.location.href = document.getElementById('dlBtn').href;
+                                } catch(e) {
+                                    window.location.href = document.getElementById('dlBtn').href;
+                                }
+                            }, 2500);
+                        <\/script>
+                        </body></html>`);
+                        w.document.close();
+                    } else {
+                        // Popup blocked — fall back to direct link click
+                        const link = document.createElement('a');
+                        link.href = app.link;
+                        link.target = '_blank';
+                        link.rel = 'noopener noreferrer';
+                        document.body.appendChild(link);
+                        link.click();
+                        setTimeout(() => { if (link.parentNode) link.parentNode.removeChild(link); }, 100);
+                    }
+                    return;
+                }
+
+                // For non-MediaFire direct links (e.g., GitHub Releases, direct .apk URLs):
                 const link = document.createElement('a');
                 link.href = app.link;
                 link.download = fileName;
@@ -1095,7 +1272,6 @@
                 link.style.display = 'none';
                 document.body.appendChild(link);
                 link.click();
-                // Clean up after a moment
                 setTimeout(() => {
                     if (link.parentNode) link.parentNode.removeChild(link);
                 }, 100);
