@@ -8,13 +8,13 @@
     <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
     <meta name="apple-mobile-web-app-title" content="All in One Mod APK">
     <meta name="mobile-web-app-capable" content="yes">
-    <meta name="description" content="All in One Mod APK - Direct download premium unlocked & VIP modded apps. No external links, instant download.">
-    <meta name="keywords" content="mod apk, premium apk, vip apk, unlocked apps, modded apps, free premium apps, direct download">
+    <meta name="description" content="All in One Mod APK - Premium unlocked & VIP modded apps with direct download links. Click download and file starts instantly.">
+    <meta name="keywords" content="mod apk, premium apk, vip apk, unlocked apps, modded apps, free premium apps, direct download links">
     <meta name="author" content="All in One Mod APK">
     <meta name="robots" content="index, follow">
 
-    <meta property="og:title" content="All in One Mod APK - Direct Download Premium Apps">
-    <meta property="og:description" content="Download premium unlocked & VIP modded apps directly. No external links, instant download!">
+    <meta property="og:title" content="All in One Mod APK - Premium & VIP Modded Apps">
+    <meta property="og:description" content="Download premium unlocked & VIP modded apps. Click download and the file starts instantly!">
     <meta property="og:type" content="website">
 
     <link rel="manifest" href="manifest.json">
@@ -22,7 +22,7 @@
     <link rel="icon" type="image/png" sizes="512x512" href="icon-512.png">
     <link rel="apple-touch-icon" href="icon-192.png">
 
-    <title>All in One Mod APK — Direct Download Premium & VIP Apps</title>
+    <title>All in One Mod APK — Premium & VIP Modded Apps</title>
 
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -651,10 +651,10 @@
         <div class="hero-content">
             <span class="badge">
                 <span class="badge-dot"></span>
-                Direct Download • No External Links • 100% Free
+                Direct Download Links • Instant Download • 100% Free
             </span>
             <h1>All in One <span class="gradient-text">Mod APK</span></h1>
-            <p class="subtitle">Premium unlocked & VIP modded apps with direct download. No external links, no surveys. Just click download and the file is yours instantly.</p>
+            <p class="subtitle">Premium unlocked & VIP modded apps collection. Admin adds download links — click the download button and your file starts downloading instantly, no new tab opens.</p>
             <div class="hero-buttons">
                 <a href="#myapps" class="btn btn-primary">⬇️ Browse All Apps</a>
                 <a href="#myapps" class="btn btn-secondary">🔥 VIP Mods</a>
@@ -684,8 +684,8 @@
         <div class="section-header fade-in">
             <span class="section-badge">📱 Premium Modded Apps Collection</span>
             <h2>Download All <span class="gradient-text" style="background: var(--gradient-hero); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text;">Modded Apps</span> 🔥</h2>
-            <p>Direct downloads. Click the button and the file starts downloading — no external websites, no redirects.</p>
-            <button class="admin-login-btn" id="adminLoginBtn">🔐 Admin Panel - Upload Your APK Files</button>
+            <p>Click any download button and the file starts downloading instantly — no new tab, no redirects, no waiting.</p>
+            <button class="admin-login-btn" id="adminLoginBtn">🔐 Admin Panel - Add Download Links</button>
         </div>
         
         <div class="filter-bar">
@@ -709,7 +709,7 @@
         <div class="empty-apps" id="emptyApps" style="display:none;">
             <div class="empty-icon">📦</div>
             <h3>No apps available yet</h3>
-            <p>Admin can upload APK files to get started.</p>
+            <p>Admin can add download links to get started.</p>
         </div>
     </section>
     
@@ -717,7 +717,7 @@
     <div class="admin-modal" id="adminLoginModal">
         <div class="admin-modal-content" style="max-width: 460px;">
             <h3>🔐 Admin Login</h3>
-            <p>Only admin can upload APK files. Enter the password to continue.</p>
+            <p>Only admin can add download links. Enter the password to continue.</p>
             <div class="link-field">
                 <label>Password</label>
                 <input type="password" id="adminPassword" placeholder="Enter admin password">
@@ -734,37 +734,30 @@
     <div class="admin-modal" id="adminPanelModal">
         <div class="admin-modal-content">
             <div class="links-modal-header">
-                <h3>📤 Admin - Upload APK Files</h3>
+                <h3>📤 Admin - Add Download Link</h3>
                 <button class="links-modal-close" id="closeAdminPanel">✕</button>
             </div>
-            <p class="links-modal-desc">Upload your APK file directly. Users will see a "Download" button on the site, and clicking it will download the file instantly — no external links opened.</p>
+            <p class="links-modal-desc">Add a new app using its direct download link. Users will see a card with title, description, category and size — clicking download will start the file download instantly without opening any new page.</p>
 
             <div class="admin-form">
                 <div class="link-field">
-                    <label>📝 App Title</label>
+                    <label>📝 App Title *</label>
                     <input type="text" id="appTitle" placeholder="e.g., Spotify Premium Mod">
                 </div>
                 <div class="link-field">
                     <label>📄 Description (optional)</label>
-                    <input type="text" id="appDesc" placeholder="e.g., No ads, unlocked features">
+                    <textarea id="appDesc" rows="2" placeholder="e.g., No ads, unlocked features, premium unlocked"></textarea>
                 </div>
-                
                 <div class="link-field">
-                    <label>📁 Select APK File (from your device)</label>
-                    <div class="file-drop-zone" id="fileDropZone">
-                        <div class="drop-icon">📂</div>
-                        <p>Click here or drag & drop your APK file</p>
-                        <small>Supported: .apk, .zip, .7z, .rar (max 500MB)</small>
-                    </div>
-                    <input type="file" id="apkFileInput" accept=".apk,.zip,.7z,.rar,.apks,.xapk" style="display:none;">
-                    <div class="file-selected-info" id="fileSelectedInfo">
-                        <strong>✓ File selected:</strong> <span id="fileName"></span><br>
-                        <strong>Size:</strong> <span id="fileSize"></span>
-                    </div>
+                    <label>🔗 Download Link (URL) *</label>
+                    <input type="url" id="appLink" placeholder="https://example.com/file.apk">
                 </div>
-                
                 <div class="link-field">
-                    <label>📂 Category</label>
+                    <label>📦 File Size (optional)</label>
+                    <input type="text" id="appSize" placeholder="e.g., 45 MB">
+                </div>
+                <div class="link-field">
+                    <label>📂 Category *</label>
                     <select id="appCategory">
                         <option value="other">📦 Other</option>
                         <option value="games">🎮 Games</option>
@@ -781,12 +774,12 @@
             </div>
 
             <div class="links-modal-actions">
-                <button class="links-btn links-btn-save" id="addAppBtn">➕ Upload App</button>
+                <button class="links-btn links-btn-save" id="addAppBtn">➕ Add App</button>
                 <button class="links-btn links-btn-reset" id="clearFormBtn">🧹 Clear</button>
             </div>
 
             <div class="admin-apps-list" id="adminAppsList">
-                <h4 style="color: var(--text); margin-bottom: 14px; font-size: 1rem;">📋 Your Uploaded Apps (<span id="appsCount">0</span>)</h4>
+                <h4 style="color: var(--text); margin-bottom: 14px; font-size: 1rem;">📋 Added Apps (<span id="appsCount">0</span>)</h4>
                 <div id="adminAppsContainer"></div>
             </div>
 
@@ -799,7 +792,7 @@
     
     <footer>
         <div class="footer-bottom">
-            <p>© 2026 All in One Mod APK. Direct Download • No External Links</p>
+            <p>© 2026 All in One Mod APK. Direct Download Links • Instant Download</p>
             <div class="vip-text">👑 Premium Unlock • VIP Access 👑</div>
         </div>
     </footer>
@@ -807,16 +800,16 @@
     <div class="toast" id="toast"></div>
     
     <script>
+    <script>
         // ============================================
         // CONFIGURATION
         // ============================================
         const ADMIN_PASSWORD = 'tiger2024';
         const STORAGE_KEYS = {
-            APPS: 'allinone_apps_v3',         // changed to v3 because new structure
+            APPS: 'allinone_apps_v4',         // v4: link-based system
             DOWNLOADS: 'allinone_downloads',
             ADMIN_AUTH: 'allinone_admin'
         };
-        const MAX_FILE_SIZE = 500 * 1024 * 1024; // 500MB
 
         // ============================================
         // STATE
@@ -825,7 +818,6 @@
         let editingAppId = null;
         let currentFilter = 'all';
         let currentSearch = '';
-        let selectedFile = null;
 
         // ============================================
         // UTILITIES
@@ -920,41 +912,27 @@
         }
 
         // ============================================
-        // FILE HANDLING
+        // URL VALIDATION
         // ============================================
-        function readFileAsDataURL(file) {
-            return new Promise((resolve, reject) => {
-                const reader = new FileReader();
-                reader.onload = () => resolve(reader.result);
-                reader.onerror = reject;
-                reader.readAsDataURL(file);
-            });
+        function isValidUrl(string) {
+            try {
+                const url = new URL(string);
+                return url.protocol === 'http:' || url.protocol === 'https:';
+            } catch (_) {
+                return false;
+            }
         }
 
-        function handleFileSelect(file) {
-            if (!file) return;
-            
-            if (file.size > MAX_FILE_SIZE) {
-                showToast('❌ File too large! Max 500MB allowed.', 'error');
-                return;
+        function getFileNameFromUrl(url) {
+            try {
+                const pathname = new URL(url).pathname;
+                const segments = pathname.split('/');
+                let name = segments[segments.length - 1] || 'download';
+                name = name.split('?')[0].split('#')[0];
+                return decodeURIComponent(name) || 'download';
+            } catch (_) {
+                return 'download';
             }
-            
-            const validExts = ['.apk', '.zip', '.7z', '.rar', '.apks', '.xapk'];
-            const fileName = file.name.toLowerCase();
-            const isValid = validExts.some(ext => fileName.endsWith(ext));
-            
-            if (!isValid) {
-                showToast('❌ Invalid file type! Use .apk, .zip, .7z, .rar', 'error');
-                return;
-            }
-            
-            selectedFile = file;
-            document.getElementById('fileName').textContent = file.name;
-            document.getElementById('fileSize').textContent = formatBytes(file.size);
-            document.getElementById('fileSelectedInfo').classList.add('show');
-            
-            // Auto-fill size in form
-            document.getElementById('appSizeInput').value = formatBytes(file.size);
         }
 
         // ============================================
@@ -1033,7 +1011,7 @@
         }
 
         // ============================================
-        // DIRECT DOWNLOAD (No external links)
+        // DIRECT DOWNLOAD (Link-based, no new tab)
         // ============================================
         function handleDownloadClick(e) {
             const btn = e.currentTarget;
@@ -1046,8 +1024,8 @@
                 return;
             }
             
-            if (!app.fileData) {
-                showToast('❌ File not available!', 'error');
+            if (!app.link) {
+                showToast('❌ Download link not available!', 'error');
                 return;
             }
             
@@ -1071,11 +1049,11 @@
             btn.appendChild(progressBar);
             
             let percent = 0;
-            const totalTime = 2500 + Math.random() * 1500;
-            const interval = 80;
+            const totalTime = 1800 + Math.random() * 1200;
+            const interval = 70;
             const increment = (interval / totalTime) * 100;
             
-            contentSpan.textContent = '⏳ Downloading... 0%';
+            contentSpan.textContent = '⏳ Starting... 0%';
             
             const timer = setInterval(() => {
                 percent += increment;
@@ -1086,9 +1064,9 @@
                     btn.classList.remove('downloading');
                     btn.classList.add('fixed');
                     progressBar.style.width = '100%';
-                    contentSpan.textContent = '✅ Downloaded - Tap Again';
+                    contentSpan.textContent = '✅ Started - Tap Again';
                     
-                    // Trigger actual file download
+                    // Trigger actual file download using direct link (no new tab)
                     triggerFileDownload(app);
                     incrementDownload(appId);
                     
@@ -1097,26 +1075,34 @@
                         contentSpan.textContent = '⬇️ Download Now';
                         progressBar.remove();
                         renderApps();
-                    }, 3500);
+                    }, 3000);
                 } else {
                     progressBar.style.width = percent + '%';
-                    contentSpan.textContent = `⏳ Downloading... ${Math.floor(percent)}%`;
+                    contentSpan.textContent = `⏳ Starting... ${Math.floor(percent)}%`;
                 }
             }, interval);
         }
 
-        // Trigger actual file download from embedded base64
+        // Trigger file download from direct URL — no new tab opens
         function triggerFileDownload(app) {
             try {
+                const fileName = app.fileName || getFileNameFromUrl(app.link);
+                // Create hidden iframe-less download via temporary anchor
                 const link = document.createElement('a');
-                link.href = app.fileData;
-                link.download = app.fileName || (app.title.replace(/[^a-z0-9]/gi, '_') + '.apk');
+                link.href = app.link;
+                link.download = fileName;
+                link.rel = 'noopener noreferrer';
+                link.style.display = 'none';
                 document.body.appendChild(link);
                 link.click();
-                document.body.removeChild(link);
+                // Clean up after a moment
+                setTimeout(() => {
+                    if (link.parentNode) link.parentNode.removeChild(link);
+                }, 100);
                 showToast('✅ Download started: ' + app.title);
             } catch (e) {
-                showToast('❌ Download failed!', 'error');
+                showToast('❌ Download failed! Try again.', 'error');
+                console.error('Download error:', e);
             }
         }
 
@@ -1195,28 +1181,6 @@
         const exportAppsBtn = document.getElementById('exportAppsBtn');
         const logoutAdminBtn = document.getElementById('logoutAdminBtn');
         const adminNavLink = document.getElementById('adminNavLink');
-        const fileDropZone = document.getElementById('fileDropZone');
-        const apkFileInput = document.getElementById('apkFileInput');
-
-        // File drop zone
-        fileDropZone.addEventListener('click', () => apkFileInput.click());
-        fileDropZone.addEventListener('dragover', (e) => {
-            e.preventDefault();
-            fileDropZone.classList.add('dragover');
-        });
-        fileDropZone.addEventListener('dragleave', () => {
-            fileDropZone.classList.remove('dragover');
-        });
-        fileDropZone.addEventListener('drop', (e) => {
-            e.preventDefault();
-            fileDropZone.classList.remove('dragover');
-            const file = e.dataTransfer.files[0];
-            if (file) handleFileSelect(file);
-        });
-        apkFileInput.addEventListener('change', (e) => {
-            const file = e.target.files[0];
-            if (file) handleFileSelect(file);
-        });
 
         function renderAdminApps() {
             const apps = getApps();
@@ -1224,7 +1188,7 @@
             adminAppsContainer.innerHTML = '';
             
             if (apps.length === 0) {
-                adminAppsContainer.innerHTML = '<p style="color:var(--text-muted);text-align:center;padding:20px;">No apps uploaded yet. Use the form above to upload your first APK file.</p>';
+                adminAppsContainer.innerHTML = '<p style="color:var(--text-muted);text-align:center;padding:20px;">No apps added yet. Use the form above to add your first app with a download link.</p>';
                 return;
             }
             
@@ -1235,7 +1199,7 @@
                     <div class="admin-app-icon">${getAppIcon()}</div>
                     <div class="admin-app-info">
                         <div class="admin-app-title">${escapeHtml(app.title)}${app.vip ? ' 👑' : ''}</div>
-                        <div class="admin-app-link">${escapeHtml(app.fileName || 'Unknown')} • ${escapeHtml(app.size || '')}</div>
+                        <div class="admin-app-link">${escapeHtml((app.category || 'other').toUpperCase())} • ${escapeHtml(app.size || '—')} • ${escapeHtml(getFileNameFromUrl(app.link))}</div>
                     </div>
                     <div class="admin-app-actions">
                         <button class="admin-app-btn delete" title="Delete" data-id="${app.id}" data-action="delete">🗑️</button>
@@ -1256,14 +1220,12 @@
         function clearAppForm() {
             document.getElementById('appTitle').value = '';
             document.getElementById('appDesc').value = '';
-            document.getElementById('appSizeInput').value = '';
+            document.getElementById('appLink').value = '';
+            document.getElementById('appSize').value = '';
             document.getElementById('appCategory').value = 'other';
             document.getElementById('appVip').checked = false;
-            document.getElementById('fileSelectedInfo').classList.remove('show');
-            apkFileInput.value = '';
-            selectedFile = null;
             editingAppId = null;
-            addAppBtn.textContent = '➕ Upload App';
+            addAppBtn.textContent = '➕ Add App';
         }
 
         function deleteApp(id) {
@@ -1336,33 +1298,32 @@
             }
         });
 
-        // Add size field that auto-fills when file is selected
-        const sizeInput = document.createElement('input');
-        sizeInput.type = 'hidden';
-        sizeInput.id = 'appSizeInput';
-        document.body.appendChild(sizeInput);
-
-        addAppBtn.addEventListener('click', async () => {
+        addAppBtn.addEventListener('click', () => {
             const title = document.getElementById('appTitle').value.trim();
+            const link = document.getElementById('appLink').value.trim();
             
             if (!title) {
                 showToast('⚠️ App title is required!', 'error');
                 return;
             }
-            if (!selectedFile) {
-                showToast('⚠️ Please select an APK file!', 'error');
+            if (!link) {
+                showToast('⚠️ Download link is required!', 'error');
+                return;
+            }
+            if (!isValidUrl(link)) {
+                showToast('⚠️ Please enter a valid URL (https://...)', 'error');
                 return;
             }
 
             addAppBtn.disabled = true;
-            addAppBtn.textContent = '⏳ Uploading...';
+            addAppBtn.textContent = '⏳ Adding...';
 
             try {
-                const fileData = await readFileAsDataURL(selectedFile);
                 const desc = document.getElementById('appDesc').value.trim();
                 const category = document.getElementById('appCategory').value;
-                const size = formatBytes(selectedFile.size);
+                const size = document.getElementById('appSize').value.trim();
                 const vip = document.getElementById('appVip').checked;
+                const fileName = getFileNameFromUrl(link);
 
                 const apps = getApps();
                 const newApp = {
@@ -1370,10 +1331,10 @@
                     title,
                     desc: desc || 'Modded app',
                     category,
-                    size,
+                    size: size || '—',
                     vip,
-                    fileName: selectedFile.name,
-                    fileData: fileData,
+                    link: link,
+                    fileName: fileName,
                     createdAt: new Date().toISOString()
                 };
 
@@ -1382,12 +1343,12 @@
                 clearAppForm();
                 renderApps();
                 renderAdminApps();
-                showToast('✅ App uploaded successfully!');
+                showToast('✅ App added successfully!');
             } catch (e) {
-                showToast('❌ Upload failed: ' + e.message, 'error');
+                showToast('❌ Failed to add app: ' + e.message, 'error');
             } finally {
                 addAppBtn.disabled = false;
-                addAppBtn.textContent = '➕ Upload App';
+                addAppBtn.textContent = '➕ Add App';
             }
         });
 
@@ -1396,8 +1357,7 @@
         exportAppsBtn.addEventListener('click', () => {
             const apps = getApps().map(a => ({
                 id: a.id, title: a.title, desc: a.desc, category: a.category,
-                size: a.size, vip: a.vip, fileName: a.fileName, createdAt: a.createdAt
-                // fileData excluded to keep JSON small
+                size: a.size, vip: a.vip, link: a.link, fileName: a.fileName, createdAt: a.createdAt
             }));
             const json = JSON.stringify(apps, null, 2);
             const blob = new Blob([json], { type: 'application/json' });
