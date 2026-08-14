@@ -6,7 +6,7 @@ A complete **PWA website** for downloading premium unlocked & VIP modded apps fo
 
 | File | Purpose |
 |------|---------|
-| `index.html` | Main website + PWA + Admin Panel |
+| `index.html` | Main website + PWA |
 | `manifest.json` | PWA configuration (installable) |
 | `sw.js` | Service Worker (offline support) |
 | `robots.txt` | Search engine instructions |
@@ -27,32 +27,11 @@ A complete **PWA website** for downloading premium unlocked & VIP modded apps fo
 - 📊 **Review Stats** - total reviews, average rating, 5-star count
 - 📱 **100% Responsive** - works on all devices
 
-### 🔐 Admin Panel
-- 🔑 **Password protected** - default: `tiger2024`
-- ➕ **Add new apps** - title, desc, download link, category
-- ✏️ **Edit existing apps**
-- 🗑️ **Delete apps**
-- 📤 **Export backup (JSON)**
-- 🚪 **Logout**
-
 ### PWA Features
 - 📱 Installable on phone home screen
 - 🔌 Works offline
 - 🚀 Fast loading
 - 🎨 Custom icon
-
-## 🔐 How to Use Admin Panel
-
-1. Open the website
-2. Click **🔐 Admin Panel** button
-3. Enter password: `tiger2024` (change this in code!)
-4. Add your modded apps with download links
-5. Apps appear on main page automatically
-
-**Change admin password:** Edit line in `index.html`:
-```javascript
-const ADMIN_PASSWORD = 'tiger2024'; // Change this!
-```
 
 ## 🚀 How to Publish
 
@@ -97,9 +76,7 @@ Buy a domain like `allinonemodapk.com` and connect it.
 
 ## 💡 Adding New Apps in the Future
 
-Just open the site, click **🔐 Admin Panel**, login with password, fill the form, and click **➕ Add App**. Done!
-
-Or directly edit the `DEFAULT_APPS` array in `index.html`.
+To add new modded apps, edit the `getDefaultApps()` array in `index.html`. Each entry includes the title, description, category, size, VIP flag, and direct download link.
 
 ## ⚠️ Disclaimer
 

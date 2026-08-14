@@ -1,5 +1,5 @@
 // Service Worker for All in One Mod APK PWA
-const CACHE_NAME = 'allinone-modapk-v2';
+const CACHE_NAME = 'allinone-modapk-v3';
 const urlsToCache = [
   '/',
   '/index.html',
