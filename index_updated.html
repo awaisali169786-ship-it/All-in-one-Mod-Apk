@@ -1,0 +1,1730 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0">
+    <meta name="theme-color" content="#FFB800">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <meta name="apple-mobile-web-app-title" content="All in One Mod APK">
+    <meta name="mobile-web-app-capable" content="yes">
+    <meta name="description" content="All in One Mod APK - Premium unlocked & VIP modded apps with direct download links. Click download and file starts instantly.">
+    <meta name="keywords" content="mod apk, premium apk, vip apk, unlocked apps, modded apps, free premium apps, direct download links">
+    <meta name="author" content="All in One Mod APK">
+    <meta name="robots" content="index, follow">
+
+    <meta property="og:title" content="All in One Mod APK - Premium & VIP Modded Apps">
+    <meta property="og:description" content="Download premium unlocked & VIP modded apps. Click download and the file starts instantly!">
+    <meta property="og:type" content="website">
+
+    <link rel="manifest" href="manifest.json">
+    <link rel="icon" type="image/png" sizes="192x192" href="icon-192.png">
+    <link rel="icon" type="image/png" sizes="512x512" href="icon-512.png">
+    <link rel="apple-touch-icon" href="icon-192.png">
+
+    <title>All in One Mod APK — Premium & VIP Modded Apps</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800;900&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+
+        :root {
+            --primary: #FFB800;
+            --primary-dark: #FF8C00;
+            --secondary: #FF3D00;
+            --accent: #00E5FF;
+            --success: #00E676;
+            --purple: #B026FF;
+            --pink: #FF2E93;
+            --bg-dark: #0A0A0A;
+            --bg-darker: #050505;
+            --bg-card: #15151A;
+            --bg-card-2: #1E1E26;
+            --text: #FFFFFF;
+            --text-muted: #9CA3AF;
+            --border: rgba(255, 184, 0, 0.12);
+            --glass: rgba(255, 255, 255, 0.04);
+            --glass-strong: rgba(255, 255, 255, 0.08);
+            --gradient-1: linear-gradient(135deg, #FFB800 0%, #FF3D00 100%);
+            --gradient-2: linear-gradient(135deg, #FF3D00 0%, #FFB800 100%);
+            --gradient-hero: linear-gradient(135deg, #FFB800 0%, #FF3D00 35%, #B026FF 70%, #00E5FF 100%);
+            --gold-gradient: linear-gradient(135deg, #FFD700 0%, #FFA500 50%, #FF8C00 100%);
+            --shadow-gold: 0 10px 40px rgba(255, 184, 0, 0.35);
+            --shadow-card: 0 8px 32px rgba(0, 0, 0, 0.4);
+        }
+
+        html { scroll-behavior: smooth; }
+
+        body {
+            font-family: 'Poppins', -apple-system, BlinkMacSystemFont, sans-serif;
+            background: var(--bg-dark);
+            color: var(--text);
+            overflow-x: hidden;
+            line-height: 1.6;
+            -webkit-font-smoothing: antialiased;
+        }
+
+        body::before {
+            content: '';
+            position: fixed;
+            top: 0; left: 0; width: 100%; height: 100%;
+            background-image:
+                radial-gradient(circle at 20% 10%, rgba(255, 184, 0, 0.06) 0%, transparent 40%),
+                radial-gradient(circle at 80% 60%, rgba(176, 38, 255, 0.06) 0%, transparent 40%),
+                radial-gradient(circle at 50% 100%, rgba(0, 229, 255, 0.05) 0%, transparent 50%);
+            z-index: -2;
+            pointer-events: none;
+        }
+
+        .bg-animation {
+            position: fixed; top: 0; left: 0; width: 100%; height: 100%;
+            z-index: -1; overflow: hidden; pointer-events: none;
+        }
+        .bg-animation::before, .bg-animation::after {
+            content: ''; position: absolute; border-radius: 50%;
+            filter: blur(120px); opacity: 0.35;
+            animation: float 20s infinite ease-in-out;
+        }
+        .bg-animation::before {
+            width: 600px; height: 600px; background: var(--primary);
+            top: -200px; right: -200px;
+        }
+        .bg-animation::after {
+            width: 500px; height: 500px; background: var(--purple);
+            bottom: -200px; left: -200px; animation-delay: -7s;
+        }
+        @keyframes float {
+            0%, 100% { transform: translate(0, 0) scale(1); }
+            50% { transform: translate(60px, -60px) scale(1.1); }
+        }
+
+        .loader {
+            position: fixed; inset: 0;
+            background: var(--bg-darker);
+            display: flex; align-items: center; justify-content: center;
+            flex-direction: column; gap: 22px;
+            z-index: 99999;
+            transition: opacity 0.6s ease, visibility 0.6s;
+        }
+        .loader.hide { opacity: 0; visibility: hidden; }
+        .loader-logo {
+            font-family: 'Space Grotesk', sans-serif;
+            font-size: 2.4rem; font-weight: 700;
+            background: var(--gradient-hero);
+            -webkit-background-clip: text; -webkit-text-fill-color: transparent;
+            background-clip: text;
+            animation: pulseText 1.5s infinite;
+        }
+        .loader-bar {
+            width: 200px; height: 3px;
+            background: rgba(255, 255, 255, 0.08);
+            border-radius: 10px; overflow: hidden;
+        }
+        .loader-bar::before {
+            content: ''; display: block; width: 40%; height: 100%;
+            background: var(--gradient-hero);
+            border-radius: 10px;
+            animation: loaderSlide 1.2s ease-in-out infinite;
+        }
+        @keyframes loaderSlide {
+            0% { transform: translateX(-100%); }
+            100% { transform: translateX(350%); }
+        }
+        @keyframes pulseText {
+            0%, 100% { opacity: 1; }
+            50% { opacity: 0.6; }
+        }
+
+        .back-to-top {
+            position: fixed; bottom: 24px; right: 24px;
+            width: 50px; height: 50px;
+            background: var(--gradient-1);
+            color: #000; border: none; border-radius: 50%;
+            display: flex; align-items: center; justify-content: center;
+            font-size: 1.4rem; cursor: pointer;
+            box-shadow: var(--shadow-gold);
+            opacity: 0; visibility: hidden;
+            transition: all 0.3s;
+            z-index: 999;
+        }
+        .back-to-top.show { opacity: 1; visibility: visible; }
+        .back-to-top:hover { transform: translateY(-5px) scale(1.05); }
+
+        nav {
+            position: fixed; top: 0; left: 0; right: 0;
+            padding: 16px 5%; display: flex; justify-content: space-between;
+            align-items: center; z-index: 1000;
+            backdrop-filter: blur(24px);
+            -webkit-backdrop-filter: blur(24px);
+            background: rgba(10, 10, 10, 0.7);
+            border-bottom: 1px solid var(--border);
+            gap: 15px; flex-wrap: wrap;
+        }
+
+        .logo {
+            font-family: 'Space Grotesk', sans-serif;
+            font-size: 1.3rem; font-weight: 700;
+            background: var(--gradient-1);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            display: flex; align-items: center; gap: 10px;
+        }
+
+        .logo-icon {
+            width: 38px; height: 38px;
+            background: var(--gradient-1);
+            border-radius: 11px;
+            display: flex; align-items: center; justify-content: center;
+            font-size: 1.2rem;
+            box-shadow: 0 4px 20px rgba(255, 184, 0, 0.4);
+        }
+
+        .search-container {
+            flex: 1; max-width: 480px; min-width: 220px; position: relative;
+        }
+        .search-input {
+            width: 100%;
+            padding: 12px 18px 12px 46px;
+            background: var(--glass);
+            border: 1px solid var(--border);
+            border-radius: 50px;
+            color: var(--text);
+            font-family: 'Poppins', sans-serif;
+            font-size: 0.9rem;
+            outline: none;
+            transition: all 0.3s;
+        }
+        .search-input:focus {
+            border-color: var(--primary);
+            background: rgba(255, 184, 0, 0.06);
+        }
+        .search-icon {
+            position: absolute;
+            left: 18px; top: 50%;
+            transform: translateY(-50%);
+            font-size: 1rem; pointer-events: none;
+            color: var(--text-muted);
+        }
+
+        .nav-links { display: flex; gap: 30px; list-style: none; }
+        .nav-links a {
+            color: var(--text-muted); text-decoration: none;
+            font-weight: 500; font-size: 0.92rem;
+            transition: all 0.3s;
+        }
+        .nav-links a:hover { color: var(--primary); }
+
+        .mobile-menu {
+            display: none; background: var(--glass);
+            border: 1px solid var(--border); color: var(--primary);
+            font-size: 1.3rem; cursor: pointer;
+            width: 42px; height: 42px; border-radius: 12px;
+        }
+
+        .hero {
+            min-height: 100vh;
+            display: flex; align-items: center; justify-content: center;
+            padding: 130px 5% 80px;
+            text-align: center;
+            position: relative; overflow: hidden;
+        }
+
+        .hero-content { max-width: 1000px; position: relative; z-index: 2; }
+
+        .badge {
+            display: inline-flex; align-items: center; gap: 10px;
+            padding: 9px 20px;
+            background: rgba(255, 184, 0, 0.08);
+            border: 1px solid rgba(255, 184, 0, 0.25);
+            border-radius: 50px;
+            color: var(--primary);
+            font-size: 0.85rem; font-weight: 600;
+            margin-bottom: 26px;
+        }
+        .badge-dot {
+            width: 8px; height: 8px;
+            background: var(--success);
+            border-radius: 50%;
+            animation: blink 1.5s infinite;
+        }
+        @keyframes blink { 0%, 100% { opacity: 1; } 50% { opacity: 0.3; } }
+
+        .hero h1 {
+            font-family: 'Space Grotesk', sans-serif;
+            font-size: clamp(2.8rem, 7vw, 5.5rem);
+            font-weight: 700;
+            line-height: 1.02;
+            margin-bottom: 24px;
+            letter-spacing: -3px;
+        }
+        .hero h1 .gradient-text {
+            background: var(--gradient-hero);
+            background-size: 200% 200%;
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            animation: gradientShift 6s ease infinite;
+        }
+        @keyframes gradientShift {
+            0%, 100% { background-position: 0% 50%; }
+            50% { background-position: 100% 50%; }
+        }
+
+        .hero .subtitle {
+            font-size: 1.15rem; color: var(--text-muted);
+            margin: 0 auto 38px;
+            line-height: 1.7;
+            max-width: 720px;
+        }
+
+        .hero-buttons {
+            display: flex; gap: 16px; flex-wrap: wrap;
+            justify-content: center;
+            margin-bottom: 60px;
+        }
+
+        .btn {
+            padding: 15px 32px;
+            border-radius: 50px;
+            font-weight: 600; font-size: 0.95rem;
+            text-decoration: none;
+            display: inline-flex; align-items: center; gap: 10px;
+            transition: all 0.3s; cursor: pointer;
+            border: none; font-family: 'Poppins', sans-serif;
+        }
+        .btn-primary {
+            background: var(--gradient-1); color: #000;
+            box-shadow: var(--shadow-gold); font-weight: 700;
+        }
+        .btn-primary:hover { transform: translateY(-3px); }
+        .btn-secondary {
+            background: var(--glass); color: var(--text);
+            border: 1px solid rgba(255, 184, 0, 0.2);
+        }
+        .btn-secondary:hover { background: rgba(255, 184, 0, 0.1); }
+
+        .hero-stats {
+            display: flex; gap: 50px;
+            justify-content: center; flex-wrap: wrap;
+        }
+        .stat { text-align: center; }
+        .stat-number {
+            font-family: 'Space Grotesk', sans-serif;
+            font-size: 2.4rem; font-weight: 700;
+            background: var(--gradient-2);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+        .stat-label {
+            font-size: 0.85rem; color: var(--text-muted);
+            margin-top: 6px;
+        }
+
+        .myapps { padding: 80px 5% 100px; max-width: 1400px; margin: 0 auto; }
+        .section-header { text-align: center; margin-bottom: 50px; }
+        .section-badge {
+            display: inline-block; padding: 8px 18px; background: rgba(255, 184, 0, 0.08);
+            border: 1px solid rgba(255, 184, 0, 0.25); border-radius: 50px;
+            color: var(--primary); font-size: 0.85rem; font-weight: 600; margin-bottom: 18px;
+        }
+        .section-header h2 {
+            font-family: 'Space Grotesk', sans-serif;
+            font-size: clamp(2.2rem, 4.5vw, 3.4rem);
+            font-weight: 700; margin-bottom: 16px;
+        }
+        .section-header p { color: var(--text-muted); font-size: 1.05rem; max-width: 620px; margin: 0 auto; }
+
+        .filter-bar {
+            display: flex; gap: 10px; flex-wrap: wrap;
+            justify-content: center; margin-bottom: 40px;
+            padding: 8px;
+            background: var(--glass);
+            border: 1px solid var(--border);
+            border-radius: 50px;
+            max-width: max-content;
+            margin-left: auto; margin-right: auto;
+        }
+        .filter-btn {
+            padding: 9px 18px; background: transparent;
+            border: none; border-radius: 50px;
+            color: var(--text-muted); font-size: 0.85rem; font-weight: 600;
+            cursor: pointer; transition: all 0.3s; font-family: 'Poppins', sans-serif;
+        }
+        .filter-btn:hover { background: rgba(255, 184, 0, 0.08); color: var(--primary); }
+        .filter-btn.active {
+            background: var(--gradient-1); color: #000;
+        }
+
+        .apps-grid {
+            display: grid; grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+            gap: 24px;
+        }
+
+        .app-card {
+            background: linear-gradient(145deg, var(--bg-card), var(--bg-card-2));
+            border: 1px solid var(--border); border-radius: 22px; padding: 26px 22px;
+            transition: all 0.4s;
+            position: relative; overflow: hidden;
+            display: flex; flex-direction: column;
+        }
+        .app-card:hover { transform: translateY(-8px); border-color: var(--primary); }
+
+        .app-card.premium { border-color: rgba(255, 215, 0, 0.3); }
+        .crown-badge {
+            position: absolute; top: 14px; right: 14px;
+            font-size: 1.3rem; z-index: 2;
+        }
+
+        .app-icon-large {
+            font-size: 3.5rem; text-align: center; margin-bottom: 16px;
+            width: 90px; height: 90px;
+            margin-left: auto; margin-right: auto;
+            display: flex; align-items: center; justify-content: center;
+        }
+        .app-icon-large svg {
+            width: 100%; height: 100%;
+            border-radius: 22px;
+        }
+        .app-title { font-size: 1.18rem; font-weight: 700; margin-bottom: 8px; color: var(--text); }
+        .app-desc { color: var(--text-muted); font-size: 0.88rem; line-height: 1.55; margin-bottom: 14px; flex-grow: 1; }
+        .app-meta { display: flex; gap: 8px; flex-wrap: wrap; margin-bottom: 16px; }
+        .app-tag {
+            padding: 4px 11px; background: rgba(255, 184, 0, 0.08); border: 1px solid var(--border);
+            border-radius: 20px; font-size: 0.7rem; color: var(--primary); font-weight: 600;
+        }
+        .app-tag.size { background: rgba(0, 229, 255, 0.08); color: var(--accent); }
+        .app-tag.vip { background: rgba(255, 215, 0, 0.12); color: #FFD700; }
+
+        .app-download-btn {
+            display: block; padding: 13px; text-align: center;
+            background: var(--gradient-1); color: #000; border-radius: 12px;
+            text-decoration: none; font-weight: 700; font-size: 0.95rem;
+            transition: all 0.3s; border: none; cursor: pointer;
+            font-family: 'Poppins', sans-serif;
+            position: relative; overflow: hidden;
+        }
+        .app-download-btn:hover { transform: scale(1.03); }
+
+        .app-download-btn.downloading {
+            background: var(--bg-card-2);
+            color: var(--text);
+            cursor: progress;
+        }
+        .app-download-btn.downloading::before {
+            content: '';
+            position: absolute;
+            top: 0; left: 0; bottom: 0;
+            background: var(--gradient-1);
+            transition: width 0.2s linear;
+            z-index: 0;
+        }
+        .app-download-btn .btn-content {
+            position: relative; z-index: 1;
+        }
+        .app-download-btn.fixed {
+            background: var(--success);
+            color: #000;
+        }
+        .app-download-btn.disabled {
+            background: rgba(255, 255, 255, 0.1);
+            color: var(--text-muted);
+            cursor: not-allowed;
+        }
+
+        .empty-apps { text-align: center; padding: 60px 20px; }
+        .empty-icon { font-size: 4rem; margin-bottom: 16px; opacity: 0.5; }
+        .empty-apps h3 { color: var(--text); margin-bottom: 8px; }
+        .empty-apps p { color: var(--text-muted); }
+
+        .no-results { text-align: center; padding: 40px 20px; color: var(--text-muted); display: none; }
+        .no-results.show { display: block; }
+
+        /* ========== REPLIES / COMMENTS ========== */
+        .replies-section {
+            margin-top: 14px;
+            padding-top: 12px;
+            border-top: 1px solid var(--border);
+        }
+        .replies-toggle {
+            background: transparent;
+            border: none;
+            color: var(--accent);
+            font-size: 0.82rem;
+            font-weight: 600;
+            cursor: pointer;
+            padding: 4px 0;
+            font-family: 'Poppins', sans-serif;
+            display: inline-flex;
+            align-items: center;
+            gap: 6px;
+        }
+        .replies-toggle:hover { color: var(--primary); }
+        .replies-list {
+            margin-top: 10px;
+            display: none;
+            max-height: 220px;
+            overflow-y: auto;
+            padding-right: 4px;
+        }
+        .replies-list.open { display: block; }
+        .replies-list::-webkit-scrollbar { width: 4px; }
+        .replies-list::-webkit-scrollbar-thumb { background: var(--border); border-radius: 4px; }
+        .reply-item {
+            background: rgba(0, 0, 0, 0.3);
+            border-radius: 10px;
+            padding: 8px 12px;
+            margin-bottom: 6px;
+            font-size: 0.85rem;
+        }
+        .reply-name {
+            color: var(--primary);
+            font-weight: 700;
+            font-size: 0.8rem;
+            margin-bottom: 2px;
+        }
+        .reply-msg {
+            color: var(--text);
+            word-break: break-word;
+        }
+        .reply-time {
+            color: var(--text-muted);
+            font-size: 0.7rem;
+            margin-top: 2px;
+        }
+        .reply-form {
+            display: flex;
+            gap: 6px;
+            margin-top: 8px;
+        }
+        .reply-form input, .reply-form textarea {
+            flex: 1;
+            background: rgba(0, 0, 0, 0.4);
+            border: 1px solid var(--border);
+            border-radius: 10px;
+            padding: 8px 10px;
+            color: var(--text);
+            font-family: 'Poppins', sans-serif;
+            font-size: 0.82rem;
+            outline: none;
+            resize: none;
+            min-height: 36px;
+            max-height: 100px;
+        }
+        .reply-form input:focus, .reply-form textarea:focus { border-color: var(--accent); }
+        .reply-form button {
+            background: var(--gradient-1);
+            color: #000;
+            border: none;
+            border-radius: 10px;
+            padding: 0 14px;
+            font-weight: 700;
+            font-size: 0.9rem;
+            cursor: pointer;
+            font-family: 'Poppins', sans-serif;
+        }
+        .reply-form button:hover { transform: scale(1.05); }
+        .reply-count-badge {
+            background: rgba(0, 229, 255, 0.1);
+            color: var(--accent);
+            padding: 1px 8px;
+            border-radius: 10px;
+            font-size: 0.72rem;
+            font-weight: 700;
+        }
+
+        /* ========== REPLIES MODAL (for site-wide view) ========== */
+        .replies-modal {
+            display: none;
+            position: fixed;
+            top: 0; left: 0; width: 100%; height: 100%;
+            background: rgba(0, 0, 0, 0.85);
+            backdrop-filter: blur(10px);
+            z-index: 10003;
+            align-items: center;
+            justify-content: center;
+            padding: 20px;
+        }
+        .replies-modal.show { display: flex; }
+        .replies-modal-content {
+            background: linear-gradient(145deg, var(--bg-card), var(--bg-card-2));
+            border: 1px solid var(--accent);
+            border-radius: 24px;
+            padding: 26px;
+            max-width: 560px;
+            width: 100%;
+            max-height: 85vh;
+            overflow-y: auto;
+        }
+
+        /* View all button */
+        .view-all-wrap {
+            text-align: center;
+            margin-top: 36px;
+        }
+        .view-all-btn {
+            padding: 14px 36px;
+            background: var(--gradient-1);
+            color: #000;
+            border: none;
+            border-radius: 50px;
+            font-weight: 700;
+            font-size: 1rem;
+            cursor: pointer;
+            font-family: 'Poppins', sans-serif;
+            box-shadow: var(--shadow-gold);
+            transition: all 0.3s;
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+        }
+        .view-all-btn:hover { transform: translateY(-3px) scale(1.03); }
+        .view-all-wrap.hidden { display: none; }
+
+        /* Anonymous reply badge */
+        .anon-badge {
+            display: inline-block;
+            background: rgba(255, 184, 0, 0.08);
+            color: var(--primary);
+            padding: 2px 8px;
+            border-radius: 8px;
+            font-size: 0.7rem;
+            font-weight: 600;
+            margin-left: 6px;
+        }
+
+        @keyframes fadeInUp { from { opacity: 0; transform: translateY(30px); } to { opacity: 1; transform: translateY(0); } }
+        .fade-in { opacity: 0; transform: translateY(30px); transition: all 0.8s ease; }
+        .fade-in.visible { opacity: 1; transform: translateY(0); }
+
+        /* Toast notification */
+        .toast {
+            position: fixed;
+            top: 90px;
+            right: 20px;
+            background: linear-gradient(145deg, var(--bg-card), var(--bg-card-2));
+            border: 1px solid var(--success);
+            border-radius: 14px;
+            padding: 16px 22px;
+            color: var(--success);
+            font-weight: 600;
+            z-index: 10002;
+            box-shadow: 0 10px 40px rgba(0, 230, 118, 0.3);
+            transform: translateX(400px);
+            transition: transform 0.4s ease;
+            max-width: 340px;
+        }
+        .toast.show { transform: translateX(0); }
+        .toast.error { border-color: var(--secondary); color: var(--secondary); box-shadow: 0 10px 40px rgba(255, 61, 0, 0.3); }
+
+        footer {
+            padding: 60px 5% 30px;
+            background: var(--bg-darker);
+            border-top: 1px solid var(--border);
+            text-align: center;
+        }
+        .footer-bottom p { color: var(--text-muted); font-size: 0.88rem; }
+        .vip-text {
+            display: inline-block; margin-top: 10px;
+            padding: 7px 18px;
+            background: rgba(255, 215, 0, 0.08);
+            border: 1px solid rgba(255, 215, 0, 0.2);
+            border-radius: 50px;
+            font-weight: 700;
+            color: #FFD700;
+        }
+
+        @media (max-width: 968px) {
+            nav { padding: 12px 4%; }
+            .search-container { order: 3; max-width: 100%; flex-basis: 100%; margin-top: 8px; }
+            .nav-links { display: none; }
+            .mobile-menu { display: flex; align-items: center; justify-content: center; }
+        }
+        @media (max-width: 568px) {
+            .apps-grid { grid-template-columns: 1fr; }
+            .hero { padding: 110px 5% 60px; }
+        }
+    </style>
+</head>
+<body>
+    <div class="loader" id="loader">
+        <div class="loader-logo">⚡ All in One Mod APK</div>
+        <div class="loader-bar"></div>
+    </div>
+
+    <button class="back-to-top" id="backToTop" title="Back to top">↑</button>
+
+    <div class="bg-animation"></div>
+
+    <nav id="navbar">
+        <div class="logo">
+            <span class="logo-icon">⚡</span>
+            <span>All in One Mod APK</span>
+        </div>
+        <div class="search-container">
+            <span class="search-icon">🔍</span>
+            <input type="text" class="search-input" id="searchInput" placeholder="Search modded apps...">
+        </div>
+        <ul class="nav-links" id="navLinks">
+            <li><a href="#home">Home</a></li>
+            <li><a href="#myapps">Apps</a></li>
+        </ul>
+        <button class="mobile-menu" id="mobileMenu">☰</button>
+    </nav>
+
+    <section class="hero" id="home">
+        <div class="hero-content">
+            <span class="badge">
+                <span class="badge-dot"></span>
+                Direct Download Links • Instant Download • 100% Free
+            </span>
+            <h1>All in One <span class="gradient-text">Mod APK</span></h1>
+            <p class="subtitle">Premium unlocked & VIP modded apps. Click the download button — your file downloads instantly without leaving the site. 20+ modded apps ready to download now!</p>
+            <div class="hero-buttons">
+                <a href="#myapps" class="btn btn-primary">⬇️ Browse All Apps</a>
+                <a href="#myapps" class="btn btn-secondary">🔥 VIP Mods</a>
+            </div>
+            <div class="hero-stats">
+                <div class="stat">
+                    <div class="stat-number" id="totalAppsStat">0</div>
+                    <div class="stat-label">Modded Apps</div>
+                </div>
+                <div class="stat">
+                    <div class="stat-number">100%</div>
+                    <div class="stat-label">Premium</div>
+                </div>
+                <div class="stat">
+                    <div class="stat-number">VIP</div>
+                    <div class="stat-label">All Features</div>
+                </div>
+                <div class="stat">
+                    <div class="stat-number" id="downloadsCounter">0</div>
+                    <div class="stat-label">Downloads</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="myapps" id="myapps">
+        <div class="section-header fade-in">
+            <span class="section-badge">📱 Premium Modded Apps Collection</span>
+            <h2>Download All <span class="gradient-text" style="background: var(--gradient-hero); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text;">Modded Apps</span> 🔥</h2>
+            <p>Click any download button and your file starts downloading instantly. Tap 💬 to read reviews or leave your own comment about the app.</p>
+        </div>
+
+        <div class="filter-bar">
+            <button class="filter-btn active" data-filter="all">🌟 All</button>
+            <button class="filter-btn" data-filter="games">🎮 Games</button>
+            <button class="filter-btn" data-filter="tools">🛠️ Tools</button>
+            <button class="filter-btn" data-filter="video">🎬 Video</button>
+            <button class="filter-btn" data-filter="photo">📸 Photo</button>
+            <button class="filter-btn" data-filter="ai">🤖 AI</button>
+            <button class="filter-btn" data-filter="other">📦 Other</button>
+        </div>
+
+        <div class="apps-grid" id="appsGrid"></div>
+
+        <div class="view-all-wrap hidden" id="viewAllWrap">
+            <button class="view-all-btn" id="viewAllBtn">👁️ View All Apps</button>
+        </div>
+
+        <div class="no-results" id="noResults">
+            <div class="empty-icon">🔍</div>
+            <h3 style="color: var(--text); margin-bottom: 8px;">No apps found</h3>
+            <p>Try changing your search term.</p>
+        </div>
+
+        <div class="empty-apps" id="emptyApps" style="display:none;">
+            <div class="empty-icon">📦</div>
+            <h3>No apps available yet</h3>
+            <p>Check back later for new modded apps.</p>
+        </div>
+    </section>
+
+    <!-- Replies Modal (for site-wide view) -->
+    <div class="replies-modal" id="repliesModal">
+        <div class="replies-modal-content">
+            <div class="links-modal-header">
+                <h3 id="repliesModalTitle">💬 Reviews & Comments</h3>
+                <button class="links-modal-close" id="closeRepliesModal">✕</button>
+            </div>
+            <p class="links-modal-desc" id="repliesModalSubtitle">—</p>
+            <div id="repliesModalList" style="margin-top: 14px;"></div>
+            <div class="reply-form" style="margin-top: 14px;">
+                <input type="text" id="replyName" placeholder="Your name (optional)" maxlength="30">
+                <textarea id="replyMessage" placeholder="Write a comment..." maxlength="500" rows="1"></textarea>
+                <button id="replySubmitBtn" title="Send">📤</button>
+            </div>
+        </div>
+    </div>
+
+    <footer>
+        <div class="footer-bottom">
+            <p>© 2026 All in One Mod APK. Direct Download Links • Instant Download</p>
+            <div class="vip-text">👑 Premium Unlock • VIP Access 👑</div>
+        </div>
+    </footer>
+
+    <div class="toast" id="toast"></div>
+
+    <script>
+        // ============================================
+        // CONFIGURATION
+        // ============================================
+        const STORAGE_KEYS = {
+            APPS: 'allinone_apps_v6',         // v6: + APK Manager 2.0 + Twitter (add download button)
+            DOWNLOADS: 'allinone_downloads',
+            REPLIES: 'allinone_replies',
+            // Base downloads: har visitor ko starting point mile
+            BASE_DOWNLOADS_KEY: 'allinone_base_downloads'
+        };
+        const BASE_DOWNLOADS = 500;          // Har visitor 500 se start karega
+        const SHOW_ALL_THRESHOLD = 12;       // 12 se zyada apps ho to "View All" button dikhao
+        const INITIAL_VISIBLE = 12;           // Pehle 12 apps dikhao, baqi "View All" se
+
+        // ============================================
+        // STATE
+        // ============================================
+        let currentFilter = 'all';
+        let currentSearch = '';
+        let showAllApps = false;             // "View All" toggle
+        let currentRepliesAppId = null;      // replies modal me konsa app
+
+        // ============================================
+        // UTILITIES
+        // ============================================
+        function escapeHtml(s) {
+            if (s === null || s === undefined) return '';
+            return String(s)
+                .replace(/&/g, '&amp;')
+                .replace(/</g, '&lt;')
+                .replace(/>/g, '&gt;')
+                .replace(/"/g, '&quot;')
+                .replace(/'/g, '&#39;');
+        }
+
+        function showToast(message, type = 'success') {
+            const toast = document.getElementById('toast');
+            toast.textContent = message;
+            toast.className = 'toast show' + (type === 'error' ? ' error' : '');
+            setTimeout(() => {
+                toast.classList.remove('show');
+            }, 3500);
+        }
+
+        // ============================================
+        // APP ICON (Universal file icon)
+        // ============================================
+        function getAppIcon() {
+            return `<svg viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
+                <defs><linearGradient id="fileg" x1="0%" y1="0%" x2="100%" y2="100%">
+                    <stop offset="0%" stop-color="#FFB800"/>
+                    <stop offset="100%" stop-color="#FF3D00"/>
+                </linearGradient></defs>
+                <rect width="100" height="100" rx="20" fill="url(#fileg)"/>
+                <path d="M28 18 L60 18 L78 36 L78 82 L28 82 Z" fill="white" opacity="0.95"/>
+                <path d="M60 18 L60 36 L78 36" fill="white" opacity="0.7" stroke="#FFB800" stroke-width="1.5"/>
+                <line x1="36" y1="48" x2="70" y2="48" stroke="#FFB800" stroke-width="3" stroke-linecap="round"/>
+                <line x1="36" y1="58" x2="70" y2="58" stroke="#FFB800" stroke-width="3" stroke-linecap="round"/>
+                <line x1="36" y1="68" x2="58" y2="68" stroke="#FFB800" stroke-width="3" stroke-linecap="round"/>
+            </svg>`;
+        }
+
+        function getCategoryEmoji(cat) {
+            const map = { games: '🎮', tools: '🛠️', video: '🎬', photo: '📸', ai: '🤖', other: '📦' };
+            return map[cat] || '📦';
+        }
+
+        function timeAgo(ts) {
+            const diff = Date.now() - ts;
+            const sec = Math.floor(diff / 1000);
+            if (sec < 60) return 'just now';
+            const min = Math.floor(sec / 60);
+            if (min < 60) return min + 'm ago';
+            const hr = Math.floor(min / 60);
+            if (hr < 24) return hr + 'h ago';
+            const day = Math.floor(hr / 24);
+            if (day < 30) return day + 'd ago';
+            const mo = Math.floor(day / 30);
+            if (mo < 12) return mo + 'mo ago';
+            return Math.floor(mo / 12) + 'y ago';
+        }
+
+        // ============================================
+        // APPS STORAGE
+        // ============================================
+        function getApps() {
+            try {
+                const stored = localStorage.getItem(STORAGE_KEYS.APPS);
+                if (stored) {
+                    const parsed = JSON.parse(stored);
+                    if (Array.isArray(parsed)) return parsed;   // empty array bhi valid
+                }
+                // First visit: defaults load karo
+                const defaults = getDefaultApps();
+                saveApps(defaults);
+                return defaults;
+            } catch (e) {
+                return [];
+            }
+        }
+
+        function saveApps(apps) {
+            try {
+                localStorage.setItem(STORAGE_KEYS.APPS, JSON.stringify(apps));
+            } catch (e) {
+                showToast('❌ Storage full! Remove some apps.', 'error');
+            }
+        }
+
+        // ============================================
+        // DOWNLOADS — base 500 + per-device counts
+        // ============================================
+        function getBaseDownloads() {
+            // Har visitor ko same shuruwat dikhane ke liye server jaisa kaam karta hai
+            // (Actually per-device hai, but appearance 500+ hoti hai)
+            return BASE_DOWNLOADS;
+        }
+
+        function getDownloads() {
+            try {
+                return JSON.parse(localStorage.getItem(STORAGE_KEYS.DOWNLOADS) || '{}');
+            } catch (e) {
+                return {};
+            }
+        }
+
+        function saveDownloads(downloads) {
+            localStorage.setItem(STORAGE_KEYS.DOWNLOADS, JSON.stringify(downloads));
+        }
+
+        function incrementDownload(appId) {
+            const downloads = getDownloads();
+            downloads[appId] = (downloads[appId] || 0) + 1;
+            saveDownloads(downloads);
+        }
+
+        // Per-app count for display: base + this-device-count
+        function getAppDownloadCount(appId) {
+            return getBaseDownloads() + (getDownloads()[appId] || 0);
+        }
+
+        // Total download counter: base 500 + all real per-device counts
+        function getTotalDownloadCount() {
+            const per = Object.values(getDownloads()).reduce((a, b) => a + b, 0);
+            return getBaseDownloads() + per;
+        }
+
+        // ============================================
+        // REPLIES STORAGE (per appId)
+        // ============================================
+        function getReplies(appId) {
+            try {
+                const all = JSON.parse(localStorage.getItem(STORAGE_KEYS.REPLIES) || '{}');
+                return Array.isArray(all[appId]) ? all[appId] : [];
+            } catch (e) {
+                return [];
+            }
+        }
+
+        function saveReply(appId, name, message) {
+            const all = JSON.parse(localStorage.getItem(STORAGE_KEYS.REPLIES) || '{}');
+            if (!Array.isArray(all[appId])) all[appId] = [];
+            all[appId].push({
+                id: 'r_' + Date.now() + '_' + Math.random().toString(36).slice(2, 8),
+                name: (name || '').trim().slice(0, 30) || 'Anonymous',
+                message: (message || '').trim().slice(0, 500),
+                ts: Date.now()
+            });
+            // Max 100 replies per app to avoid storage issues
+            if (all[appId].length > 100) {
+                all[appId] = all[appId].slice(-100);
+            }
+            localStorage.setItem(STORAGE_KEYS.REPLIES, JSON.stringify(all));
+        }
+
+        function getReplyCount(appId) {
+            return getReplies(appId).length;
+        }
+
+        // ============================================
+        // URL VALIDATION
+        // ============================================
+        function isValidUrl(string) {
+            try {
+                const url = new URL(string);
+                return url.protocol === 'http:' || url.protocol === 'https:';
+            } catch (_) {
+                return false;
+            }
+        }
+
+        function getFileNameFromUrl(url) {
+            try {
+                const pathname = new URL(url).pathname;
+                const segments = pathname.split('/');
+                let name = segments[segments.length - 1] || 'download';
+                name = name.split('?')[0].split('#')[0];
+                return decodeURIComponent(name) || 'download';
+            } catch (_) {
+                return 'download';
+            }
+        }
+
+        // ============================================
+        // DEFAULT APPS (User ke 11 apps + 10 existing = 21 total)
+        // ============================================
+        function getDefaultApps() {
+            return [
+                // ============ USER KE NAYE 11 APPS ============
+                {
+                    id: 'app_user_1',
+                    title: '1.1.1.1 VPN',
+                    desc: 'Premium unlocked — Fast & secure DNS/VPN by Cloudflare',
+                    category: 'tools',
+                    size: '55.65 MB',
+                    vip: true,
+                    link: 'https://www.mediafire.com/file/m8ps0b6a3579pbf/1.1.1.1_6.38.8.apk/file',
+                    fileName: '1.1.1.1_6.38.8.apk',
+                    createdAt: new Date().toISOString()
+                },
+                {
+                    id: 'app_user_2',
+                    title: 'AccuWeather',
+                    desc: 'Accurate weather forecast — Premium features unlocked',
+                    category: 'tools',
+                    size: '25.77 MB',
+                    vip: false,
+                    link: 'https://www.mediafire.com/file/eqlwm914cpjv9zi/AccuWeather_21.1.14-5-rc.apk/file',
+                    fileName: 'AccuWeather_21.1.14-5-rc.apk',
+                    createdAt: new Date().toISOString()
+                },
+                {
+                    id: 'app_user_3',
+                    title: 'CapCut Pro',
+                    desc: 'Video editor — Pro unlocked, no watermark',
+                    category: 'video',
+                    size: '278.36 MB',
+                    vip: true,
+                    link: 'https://www.mediafire.com/file/dhlau3t6ow652x9/CapCut_18.7.0.apk/file',
+                    fileName: 'CapCut_18.7.0.apk',
+                    createdAt: new Date().toISOString()
+                },
+                {
+                    id: 'app_user_4',
+                    title: 'Claude AI',
+                    desc: 'AI assistant — Premium unlocked, unlimited chat',
+                    category: 'ai',
+                    size: '41.26 MB',
+                    vip: true,
+                    link: 'https://www.mediafire.com/file/kryz67jgrpyhbtw/Claude_ai.apk/file',
+                    fileName: 'Claude_ai.apk',
+                    createdAt: new Date().toISOString()
+                },
+                {
+                    id: 'app_user_5',
+                    title: 'Developer Assistant',
+                    desc: 'Developer tools & utilities — Pro version',
+                    category: 'tools',
+                    size: '6.60 MB',
+                    vip: false,
+                    link: 'https://www.mediafire.com/file/cdi3p9rhmsdanz5/Developer_Assistant_1.4.2.apk/file',
+                    fileName: 'Developer_Assistant_1.4.2.apk',
+                    createdAt: new Date().toISOString()
+                },
+                {
+                    id: 'app_user_6',
+                    title: 'InShot Pro',
+                    desc: 'Video & photo editor — Pro features unlocked, no watermark',
+                    category: 'photo',
+                    size: '91.23 MB',
+                    vip: true,
+                    link: 'https://www.mediafire.com/file/kdoyfcp6larp5pz/InShot_2.219.1545.apk/file',
+                    fileName: 'InShot_2.219.1545.apk',
+                    createdAt: new Date().toISOString()
+                },
+                {
+                    id: 'app_user_7',
+                    title: 'Scribd Premium',
+                    desc: 'Unlimited books, audiobooks & documents — Premium unlocked',
+                    category: 'tools',
+                    size: '84.29 MB',
+                    vip: true,
+                    link: 'https://www.mediafire.com/file/s7mmj6q9opi35ho/Scribd_16.5.2.apk/file',
+                    fileName: 'Scribd_16.5.2.apk',
+                    createdAt: new Date().toISOString()
+                },
+                {
+                    id: 'app_user_8',
+                    title: 'Telegram Premium',
+                    desc: 'Premium unlocked — Fast & secure messaging',
+                    category: 'tools',
+                    size: '83.85 MB',
+                    vip: true,
+                    link: 'https://www.mediafire.com/file/56cqs9wjdflmzs9/Telegram_v13.2.0_Premium.apk/file',
+                    fileName: 'Telegram_v13.2.0_Premium.apk',
+                    createdAt: new Date().toISOString()
+                },
+                {
+                    id: 'app_user_9',
+                    title: 'Tera VPN',
+                    desc: 'Secure VPN — Premium unlocked, fast servers',
+                    category: 'tools',
+                    size: '47.63 MB',
+                    vip: false,
+                    link: 'https://www.mediafire.com/file/sqxpr2uk2k45hmf/Tera_VPN_4.5.apk/file',
+                    fileName: 'Tera_VPN_4.5.apk',
+                    createdAt: new Date().toISOString()
+                },
+                {
+                    id: 'app_user_10',
+                    title: 'TeraBox Premium',
+                    desc: 'Cloud storage — 1TB free, premium unlocked',
+                    category: 'tools',
+                    size: '198.10 MB',
+                    vip: true,
+                    link: 'https://www.mediafire.com/file/pzmeugscbtnu81t/TeraBox_4.16.10.apk/file',
+                    fileName: 'TeraBox_4.16.10.apk',
+                    createdAt: new Date().toISOString()
+                },
+                {
+                    id: 'app_user_11',
+                    title: 'WeMuslim Pro',
+                    desc: 'Quran, prayer times, Qibla — Premium features unlocked',
+                    category: 'other',
+                    size: '70.65 MB',
+                    vip: false,
+                    link: 'https://www.mediafire.com/file/5z9c88mnb52q2h6/WeMuslim_3.4.1.apk/file',
+                    fileName: 'WeMuslim_3.4.1.apk',
+                    createdAt: new Date().toISOString()
+                },
+
+                // ============ USER KE NAYE 2 APPS (v6) ============
+                {
+                    id: 'app_user_12',
+                    title: 'APK Manager 2.0',
+                    desc: 'APK Manager — Premium unlocked, manage & install apps easily',
+                    category: 'tools',
+                    size: '12 MB',
+                    vip: true,
+                    link: 'https://www.mediafire.com/file/ze1uh50gnkye4fs/APK_Manager_2.0.apk/file',
+                    fileName: 'APK_Manager_2.0.apk',
+                    createdAt: new Date().toISOString()
+                },
+                {
+                    id: 'app_user_13',
+                    title: 'Twitter (X) — Add Download Button',
+                    desc: 'Twitter with download button enabled — Save videos, GIFs & images directly',
+                    category: 'other',
+                    size: '255 MB',
+                    vip: true,
+                    link: 'https://www.mediafire.com/file/1o0hf68knqerfrz/Twitter_12.11.0-release.0.apk/file',
+                    fileName: 'Twitter_12.11.0-release.0.apk',
+                    createdAt: new Date().toISOString()
+                },
+
+                // ============ NEW APP ============
+                {
+                    id: 'app_user_14',
+                    title: 'Easy Urdu',
+                    desc: 'Premium version — No Ads',
+                    category: 'other',
+                    size: '31.82 MB',
+                    vip: true,
+                    link: 'https://www.mediafire.com/file/nifda3djxzhgovf/Easy_Urdu_5.3.12.apk/file',
+                    fileName: 'Easy_Urdu_5.3.12.apk',
+                    createdAt: new Date().toISOString()
+                },
+
+                // ============ PEHLE SE 10 EXISTING APPS ============
+                {
+                    id: 'app_default_1',
+                    title: 'Netflix Premium',
+                    desc: 'Premium unlocked modded app — Watch 4K HDR',
+                    category: 'video',
+                    size: '60.24 MB',
+                    vip: true,
+                    link: 'https://www.mediafire.com/file/bddex3r2fzbo4jq/Netflix+Premium+v9.76.0+Modded+by+Getmodpc.net.apk/file',
+                    fileName: 'Netflix_Premium_v9.76.0_Modded.apk',
+                    createdAt: new Date().toISOString()
+                },
+                {
+                    id: 'app_default_2',
+                    title: 'Game Guardian No Root',
+                    desc: 'Game Guardian without root — Modifier tool',
+                    category: 'games',
+                    size: '53.84 MB',
+                    vip: false,
+                    link: 'https://www.mediafire.com/file/z8fal3nk3gf0x8i/game+guardian+no+roo+Modifier.apk/file',
+                    fileName: 'game_guardian_no_roo_Modifier.apk',
+                    createdAt: new Date().toISOString()
+                },
+                {
+                    id: 'app_default_3',
+                    title: 'MovieBox Premium',
+                    desc: 'Premium unlocked — Watch latest movies & TV shows',
+                    category: 'video',
+                    size: '55.14 MB',
+                    vip: true,
+                    link: 'https://www.mediafire.com/file/iu32lecvjlpmz0f/MovieBox_premium.apk/file',
+                    fileName: 'MovieBox_premium.apk',
+                    createdAt: new Date().toISOString()
+                },
+                {
+                    id: 'app_default_4',
+                    title: 'Hack App Data Pro',
+                    desc: 'Hack app data without root — Pro version',
+                    category: 'tools',
+                    size: '3.43 MB',
+                    vip: false,
+                    link: 'https://www.mediafire.com/file/8vc9rku3pc0z084/hack_app_Data_pro.apk/file',
+                    fileName: 'hack_app_Data_pro.apk',
+                    createdAt: new Date().toISOString()
+                },
+                {
+                    id: 'app_default_5',
+                    title: 'Current Activity 2.0',
+                    desc: 'Check currently running app activity',
+                    category: 'tools',
+                    size: '603 KB',
+                    vip: false,
+                    link: 'https://www.mediafire.com/file/dvu1hv8nm06qa8z/Current+Activity+_2.0.apk/file',
+                    fileName: 'Current_Activity_2.0.apk',
+                    createdAt: new Date().toISOString()
+                },
+                {
+                    id: 'app_default_6',
+                    title: 'Secure VPN — No Ads',
+                    desc: 'Ad-free, premium unlocked VPN app',
+                    category: 'tools',
+                    size: '13.47 MB',
+                    vip: true,
+                    link: 'https://www.mediafire.com/file/8sc0adg6rjcnn5w/Secure_VPN_4.4.4.apk/file',
+                    fileName: 'Secure_VPN_4.4.4.apk',
+                    createdAt: new Date().toISOString()
+                },
+                {
+                    id: 'app_default_7',
+                    title: 'PLAYit Premium',
+                    desc: 'Unlock premium features — All-format video player',
+                    category: 'video',
+                    size: '19.40 MB',
+                    vip: true,
+                    link: 'https://www.mediafire.com/file/uyuwm53nr7c3a2t/PLAYit_2.7.50.12_apks_kill.apk/file',
+                    fileName: 'PLAYit_2.7.50.12.apk',
+                    createdAt: new Date().toISOString()
+                },
+                {
+                    id: 'app_default_8',
+                    title: 'Super VPN Pro',
+                    desc: 'Pro features unlocked — Fast & secure VPN',
+                    category: 'tools',
+                    size: '14.86 MB',
+                    vip: true,
+                    link: 'https://www.mediafire.com/file/offh2c6yjaeiswj/Super_VPN_Pro.apk/file',
+                    fileName: 'Super_VPN_Pro.apk',
+                    createdAt: new Date().toISOString()
+                },
+                {
+                    id: 'app_default_9',
+                    title: 'Tweeload — No Ads',
+                    desc: 'Ad-free Tweeload app — Download videos',
+                    category: 'tools',
+                    size: '13.75 MB',
+                    vip: false,
+                    link: 'https://www.mediafire.com/file/cba2igdapg1zve1/Tweeload_2.7.apk/file',
+                    fileName: 'Tweeload_2.7.apk',
+                    createdAt: new Date().toISOString()
+                },
+                {
+                    id: 'app_default_10',
+                    title: 'Word Spot — Unlimited Coins',
+                    desc: 'Game modded with unlimited coins',
+                    category: 'games',
+                    size: '13.10 MB',
+                    vip: false,
+                    link: 'https://www.mediafire.com/file/t2jgegqd2g20x3g/Word_Spot_3.3.5.apk/file',
+                    fileName: 'Word_Spot_3.3.5.apk',
+                    createdAt: new Date().toISOString()
+                }
+            ];
+        }
+
+        // ============================================
+        // RENDER APPS GRID
+        // ============================================
+        function renderApps() {
+            const apps = getApps();
+            const appsGrid = document.getElementById('appsGrid');
+            const noResults = document.getElementById('noResults');
+            const emptyApps = document.getElementById('emptyApps');
+            const viewAllWrap = document.getElementById('viewAllWrap');
+
+            const filtered = apps.filter(app => {
+                const matchesFilter = currentFilter === 'all' || app.category === currentFilter;
+                const matchesSearch = !currentSearch ||
+                    (app.title || '').toLowerCase().includes(currentSearch.toLowerCase()) ||
+                    (app.desc || '').toLowerCase().includes(currentSearch.toLowerCase()) ||
+                    (app.category || '').toLowerCase().includes(currentSearch.toLowerCase());
+                return matchesFilter && matchesSearch;
+            });
+
+            appsGrid.innerHTML = '';
+
+            if (apps.length === 0) {
+                appsGrid.style.display = 'none';
+                noResults.classList.remove('show');
+                emptyApps.style.display = 'block';
+                viewAllWrap.classList.add('hidden');
+            } else if (filtered.length === 0) {
+                appsGrid.style.display = 'none';
+                emptyApps.style.display = 'none';
+                noResults.classList.add('show');
+                viewAllWrap.classList.add('hidden');
+            } else {
+                appsGrid.style.display = 'grid';
+                emptyApps.style.display = 'none';
+                noResults.classList.remove('show');
+
+                // "View All" button: agar filtered apps INITIAL_VISIBLE se zyada hain
+                if (filtered.length > INITIAL_VISIBLE && !showAllApps) {
+                    viewAllWrap.classList.remove('hidden');
+                } else {
+                    viewAllWrap.classList.add('hidden');
+                }
+            }
+
+            // Show limited or all
+            const visibleApps = (showAllApps || filtered.length <= INITIAL_VISIBLE)
+                ? filtered
+                : filtered.slice(0, INITIAL_VISIBLE);
+
+            visibleApps.forEach(app => {
+                const dCount = getAppDownloadCount(app.id);
+                const rCount = getReplyCount(app.id);
+                const card = document.createElement('div');
+                card.className = 'app-card fade-in' + (app.vip ? ' premium' : '');
+
+                const sizeTag = app.size ? `<span class="app-tag size">📦 ${escapeHtml(app.size)}</span>` : '';
+                const catTag = app.category ? `<span class="app-tag">${getCategoryEmoji(app.category)} ${escapeHtml(app.category)}</span>` : '';
+                const vipTag = app.vip ? '<span class="app-tag vip">👑 VIP</span>' : '';
+                const crown = app.vip ? '<div class="crown-badge">👑</div>' : '';
+
+                card.innerHTML = `
+                    ${crown}
+                    <div class="app-icon-large">${getAppIcon()}</div>
+                    <div class="app-title">${escapeHtml(app.title)}</div>
+                    <div class="app-desc">${escapeHtml(app.desc || 'Modded app')}</div>
+                    <div class="app-meta">${vipTag}${catTag}${sizeTag}</div>
+                    <div class="app-downloads" style="font-size: 0.78rem; color: var(--text-muted); margin-bottom: 10px;">⬇️ ${dCount}+ downloads</div>
+                    <button class="app-download-btn" data-app-id="${app.id}">
+                        <span class="btn-content">⬇️ Download Now</span>
+                    </button>
+                    <div class="replies-section">
+                        <button class="replies-toggle" data-app-id="${app.id}">
+                            💬 Reviews <span class="reply-count-badge">${rCount}</span>
+                        </button>
+                        <div class="replies-list" id="replies-${app.id}"></div>
+                    </div>
+                `;
+                appsGrid.appendChild(card);
+            });
+
+            // Attach download handlers
+            appsGrid.querySelectorAll('.app-download-btn').forEach(btn => {
+                btn.addEventListener('click', handleDownloadClick);
+            });
+
+            // Attach replies toggle
+            appsGrid.querySelectorAll('.replies-toggle').forEach(btn => {
+                btn.addEventListener('click', () => {
+                    const appId = btn.dataset.appId;
+                    openRepliesModal(appId);
+                });
+            });
+
+            // Update stat
+            const statEl = document.getElementById('totalAppsStat');
+            if (statEl) statEl.textContent = apps.length;
+
+            // Re-observe animations
+            document.querySelectorAll('.fade-in').forEach(el => {
+                el.classList.remove('visible');
+                observer.observe(el);
+            });
+        }
+
+        // ============================================
+        // REPLIES MODAL (site-wide)
+        // ============================================
+        function openRepliesModal(appId) {
+            const app = getApps().find(a => a.id === appId);
+            if (!app) return;
+            currentRepliesAppId = appId;
+            const modal = document.getElementById('repliesModal');
+            document.getElementById('repliesModalTitle').textContent = `💬 ${app.title} — Reviews`;
+            document.getElementById('repliesModalSubtitle').textContent = `Read what others say about ${app.title}, or leave your own comment.`;
+            document.getElementById('replyName').value = '';
+            document.getElementById('replyMessage').value = '';
+            renderRepliesModal();
+            modal.classList.add('show');
+            document.body.style.overflow = 'hidden';
+        }
+
+        function closeRepliesModal() {
+            const modal = document.getElementById('repliesModal');
+            modal.classList.remove('show');
+            document.body.style.overflow = '';
+            currentRepliesAppId = null;
+        }
+
+        function renderRepliesModal() {
+            if (!currentRepliesAppId) return;
+            const list = document.getElementById('repliesModalList');
+            const replies = getReplies(currentRepliesAppId);
+            if (replies.length === 0) {
+                list.innerHTML = '<p style="text-align:center;color:var(--text-muted);padding:24px 0;">No reviews yet. Be the first to comment! 💬</p>';
+                return;
+            }
+            // Newest first
+            const sorted = [...replies].sort((a, b) => b.ts - a.ts);
+            list.innerHTML = sorted.map(r => `
+                <div class="reply-item">
+                    <div class="reply-name">${escapeHtml(r.name)}${r.name === 'Anonymous' ? '<span class="anon-badge">anonymous</span>' : ''}</div>
+                    <div class="reply-msg">${escapeHtml(r.message)}</div>
+                    <div class="reply-time">${timeAgo(r.ts)}</div>
+                </div>
+            `).join('');
+        }
+
+        function submitReply() {
+            if (!currentRepliesAppId) return;
+            const nameInput = document.getElementById('replyName');
+            const msgInput = document.getElementById('replyMessage');
+            const msg = msgInput.value.trim();
+            if (!msg) {
+                showToast('⚠️ Please write a comment first!', 'error');
+                return;
+            }
+            saveReply(currentRepliesAppId, nameInput.value, msg);
+            msgInput.value = '';
+            renderRepliesModal();
+            // Update count badge on card
+            const card = document.querySelector(`.replies-toggle[data-app-id="${currentRepliesAppId}"]`);
+            if (card) {
+                const badge = card.querySelector('.reply-count-badge');
+                if (badge) badge.textContent = getReplyCount(currentRepliesAppId);
+            }
+            showToast('✅ Review posted! Thanks for your feedback.');
+        }
+
+        // ============================================
+        // DOWNLOAD HANDLER
+        // ============================================
+        function handleDownloadClick(e) {
+            const btn = e.currentTarget;
+            const appId = btn.dataset.appId;
+            const contentSpan = btn.querySelector('.btn-content');
+
+            const app = getApps().find(a => a.id === appId);
+            if (!app) {
+                showToast('❌ App not found!', 'error');
+                return;
+            }
+
+            if (!app.link) {
+                showToast('❌ Download link not available!', 'error');
+                return;
+            }
+
+            if (btn.classList.contains('downloading') || btn.classList.contains('fixed')) {
+                return;
+            }
+
+            // Start download animation
+            btn.classList.add('downloading');
+            btn.style.position = 'relative';
+
+            const progressBar = document.createElement('div');
+            progressBar.style.cssText = `
+                position: absolute;
+                top: 0; left: 0; bottom: 0;
+                width: 0%;
+                background: var(--gradient-1);
+                transition: width 0.2s linear;
+                z-index: 0;
+            `;
+            btn.appendChild(progressBar);
+
+            let percent = 0;
+            const totalTime = 1800 + Math.random() * 1200;
+            const interval = 70;
+            const increment = (interval / totalTime) * 100;
+
+            contentSpan.textContent = '⏳ Starting... 0%';
+
+            const timer = setInterval(() => {
+                percent += increment;
+                if (percent >= 100) {
+                    percent = 100;
+                    clearInterval(timer);
+
+                    btn.classList.remove('downloading');
+                    btn.classList.add('fixed');
+                    progressBar.style.width = '100%';
+                    contentSpan.textContent = '✅ Started - Tap Again';
+
+                    // Trigger actual file download
+                    triggerFileDownload(app);
+                    incrementDownload(appId);
+
+                    setTimeout(() => {
+                        btn.classList.remove('fixed');
+                        contentSpan.textContent = '⬇️ Download Now';
+                        progressBar.remove();
+                        renderApps();
+                    }, 3000);
+                } else {
+                    progressBar.style.width = percent + '%';
+                    contentSpan.textContent = `⏳ Starting... ${Math.floor(percent)}%`;
+                }
+            }, interval);
+        }
+
+        // ============================================
+        // TRIGGER FILE DOWNLOAD
+        // ============================================
+        function triggerFileDownload(app) {
+            try {
+                const fileName = app.fileName || getFileNameFromUrl(app.link);
+                const isMediaFire = /mediafire\.com/i.test(app.link);
+
+                if (isMediaFire) {
+                    showToast('⏳ Preparing download... Please wait');
+                    const w = window.open('about:blank', '_blank');
+                    if (w) {
+                        w.document.write(`<!DOCTYPE html><html><head><title>Downloading ${escapeHtml(app.title)}</title>
+                        <meta name="viewport" content="width=device-width, initial-scale=1">
+                        <style>
+                            body{margin:0;background:#0A0A0A;color:#fff;font-family:system-ui;display:flex;align-items:center;justify-content:center;height:100vh;flex-direction:column;text-align:center;padding:20px;}
+                            h1{color:#FFB800;margin:0 0 10px;}
+                            p{color:#9CA3AF;}
+                            .box{background:#15151A;border:1px solid rgba(255,184,0,.2);border-radius:12px;padding:30px;max-width:420px;}
+                            .btn{display:inline-block;margin-top:18px;padding:12px 28px;background:linear-gradient(135deg,#FFB800,#FF3D00);color:#fff;text-decoration:none;border-radius:8px;font-weight:600;border:none;cursor:pointer;font-size:1rem;}
+                            iframe{position:fixed;top:-9999px;left:-9999px;width:1px;height:1px;border:0;visibility:hidden;}
+                        </style>
+                        </head><body>
+                        <div class="box">
+                            <h1>⬇️ ${escapeHtml(app.title)}</h1>
+                            <p>If download doesn't start automatically, tap the button below.</p>
+                            <a class="btn" id="dlBtn" href="${app.link}" target="_self" rel="noopener">⬇️ Open Download Page</a>
+                            <p style="margin-top:14px;font-size:.8rem;opacity:.7;">Size: ${escapeHtml(app.size || '—')} • Powered by All in One Mod APK</p>
+                        </div>
+                        <iframe id="mf" src="${app.link}"></iframe>
+                        <script>
+                            setTimeout(function(){
+                                try {
+                                    var f = document.getElementById('mf').contentWindow;
+                                    window.location.href = document.getElementById('dlBtn').href;
+                                } catch(e) {
+                                    window.location.href = document.getElementById('dlBtn').href;
+                                }
+                            }, 2500);
+                        <\/script>
+                        </body></html>`);
+                        w.document.close();
+                    } else {
+                        const link = document.createElement('a');
+                        link.href = app.link;
+                        link.target = '_blank';
+                        link.rel = 'noopener noreferrer';
+                        document.body.appendChild(link);
+                        link.click();
+                        setTimeout(() => { if (link.parentNode) link.parentNode.removeChild(link); }, 100);
+                    }
+                    return;
+                }
+
+                const link = document.createElement('a');
+                link.href = app.link;
+                link.download = fileName;
+                link.rel = 'noopener noreferrer';
+                link.style.display = 'none';
+                document.body.appendChild(link);
+                link.click();
+                setTimeout(() => {
+                    if (link.parentNode) link.parentNode.removeChild(link);
+                }, 100);
+                showToast('✅ Download started: ' + app.title);
+            } catch (e) {
+                showToast('❌ Download failed! Try again.', 'error');
+                console.error('Download error:', e);
+            }
+        }
+
+        // ============================================
+        // VIEW ALL TOGGLE
+        // ============================================
+        const viewAllBtn = document.getElementById('viewAllBtn');
+        if (viewAllBtn) {
+            viewAllBtn.addEventListener('click', () => {
+                showAllApps = true;
+                renderApps();
+                // Scroll to last visible card smoothly
+                setTimeout(() => {
+                    const cards = document.querySelectorAll('.app-card');
+                    if (cards.length > 0) {
+                        cards[cards.length - 1].scrollIntoView({ behavior: 'smooth', block: 'center' });
+                    }
+                }, 100);
+            });
+        }
+
+        // ============================================
+        // SEARCH & FILTER
+        // ============================================
+        const searchInput = document.getElementById('searchInput');
+        searchInput.addEventListener('input', (e) => {
+            currentSearch = e.target.value.trim();
+            // Jab search ya filter use ho raha ho to "View All" auto-on
+            if (currentSearch || currentFilter !== 'all') {
+                showAllApps = true;
+            }
+            renderApps();
+        });
+
+        document.querySelectorAll('.filter-btn').forEach(btn => {
+            btn.addEventListener('click', () => {
+                document.querySelectorAll('.filter-btn').forEach(b => b.classList.remove('active'));
+                btn.classList.add('active');
+                currentFilter = btn.dataset.filter;
+                if (currentFilter !== 'all') showAllApps = true;
+                renderApps();
+            });
+        });
+
+        // ============================================
+        // MOBILE MENU
+        // ============================================
+        document.getElementById('mobileMenu').addEventListener('click', () => {
+            const nl = document.getElementById('navLinks');
+            if (nl.style.display === 'flex') {
+                nl.style.display = '';
+            } else {
+                nl.style.display = 'flex';
+                nl.style.position = 'absolute';
+                nl.style.top = '100%';
+                nl.style.left = '0';
+                nl.style.right = '0';
+                nl.style.flexDirection = 'column';
+                nl.style.background = 'rgba(10,10,10,0.95)';
+                nl.style.padding = '20px';
+                nl.style.borderTop = '1px solid var(--border)';
+            }
+        });
+
+        // ============================================
+        // SCROLL ANIMATIONS
+        // ============================================
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) entry.target.classList.add('visible');
+            });
+        }, { threshold: 0.1, rootMargin: '0px 0px -50px 0px' });
+
+        // Smooth scroll
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function(e) {
+                const href = this.getAttribute('href');
+                if (href === '#' || !href) return;
+                const target = document.querySelector(href);
+                if (target) {
+                    e.preventDefault();
+                    target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+                }
+            });
+        });
+
+        // Back to top
+        const backToTop = document.getElementById('backToTop');
+        window.addEventListener('scroll', () => {
+            if (window.scrollY > 500) backToTop.classList.add('show');
+            else backToTop.classList.remove('show');
+        });
+        backToTop.addEventListener('click', () => {
+            window.scrollTo({ top: 0, behavior: 'smooth' });
+        });
+
+        // ============================================
+        // REPLIES MODAL EVENTS
+        // ============================================
+        document.getElementById('closeRepliesModal').addEventListener('click', closeRepliesModal);
+        document.getElementById('repliesModal').addEventListener('click', (e) => {
+            if (e.target === document.getElementById('repliesModal')) closeRepliesModal();
+        });
+        document.getElementById('replySubmitBtn').addEventListener('click', submitReply);
+        document.getElementById('replyMessage').addEventListener('keypress', (e) => {
+            if (e.key === 'Enter' && !e.shiftKey) {
+                e.preventDefault();
+                submitReply();
+            }
+        });
+
+        // ============================================
+        // DOWNLOADS COUNTER (with base 500)
+        // ============================================
+        function animateCounter(el, target, duration = 1500) {
+            let start = 0;
+            const increment = target / (duration / 16);
+            const timer = setInterval(() => {
+                start += increment;
+                if (start >= target) {
+                    el.textContent = target + '+';
+                    clearInterval(timer);
+                } else {
+                    el.textContent = Math.floor(start);
+                }
+            }, 16);
+        }
+        const counterObserver = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    const el = document.getElementById('downloadsCounter');
+                    if (el && !el.dataset.animated) {
+                        el.dataset.animated = 'true';
+                        animateCounter(el, getTotalDownloadCount(), 1500);
+                    }
+                }
+            });
+        }, { threshold: 0.5 });
+        const counterEl = document.getElementById('downloadsCounter');
+        if (counterEl) counterObserver.observe(counterEl);
+
+        // ============================================
+        // INITIALIZATION
+        // ============================================
+        function hideLoader() {
+            const loader = document.getElementById('loader');
+            if (loader) loader.classList.add('hide');
+        }
+        window.addEventListener('load', () => {
+            setTimeout(hideLoader, 600);
+        });
+        setTimeout(hideLoader, 4000);
+        window.addEventListener('error', hideLoader);
+        window.addEventListener('unhandledrejection', hideLoader);
+
+        // Initial render
+        try {
+            renderApps();
+        } catch (e) {
+            console.error('Render error:', e);
+            showToast('❌ Failed to load apps. Please refresh.', 'error');
+        }
+    </script>
+</body>
+</html>
