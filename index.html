@@ -862,7 +862,18 @@
                 const stored = localStorage.getItem(STORAGE_KEYS.APPS);
                 if (stored) {
                     const parsed = JSON.parse(stored);
-                    if (Array.isArray(parsed)) return parsed;   // empty array bhi valid
+                    if (Array.isArray(parsed)) {
+                        // Add newly released default apps to existing visitors' localStorage.
+                        const defaults = getDefaultApps();
+                        const existingIds = new Set(parsed.map(app => app && app.id));
+                        const missingDefaults = defaults.filter(app => !existingIds.has(app.id));
+                        if (missingDefaults.length) {
+                            const merged = parsed.concat(missingDefaults);
+                            saveApps(merged);
+                            return merged;
+                        }
+                        return parsed;   // empty array bhi valid
+                    }
                 }
                 // First visit: defaults load karo
                 const defaults = getDefaultApps();
